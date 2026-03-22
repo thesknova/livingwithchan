@@ -35,12 +35,12 @@ export default function HomePage() {
       <AgentBio compact />
 
       {/* Contact CTA banner */}
-      <section className="bg-primary py-16 px-6">
+      <section className="bg-primary-dark py-16 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Make Your Move?
           </h2>
-          <p className="text-blue-200 text-lg mb-8 leading-relaxed">
+          <p className="text-stone-400 text-lg mb-8 leading-relaxed">
             Whether you&apos;re buying, selling, or just exploring your
             options — Chan is here to guide you every step of the way.
           </p>
@@ -50,7 +50,7 @@ export default function HomePage() {
             </Button>
             <a
               href="tel:4036810107"
-              className="inline-flex items-center justify-center font-semibold rounded-full px-8 py-4 text-lg border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-200"
+              className="inline-flex items-center justify-center font-semibold rounded-full px-8 py-4 text-lg border-2 border-stone-600 text-stone-300 hover:border-accent hover:text-accent transition-all duration-200"
             >
               📞 403-681-0107
             </a>

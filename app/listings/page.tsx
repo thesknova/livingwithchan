@@ -14,11 +14,11 @@ export default function ListingsPage() {
       {/* Page header */}
       <div className="bg-primary text-white py-14 px-6">
         <div className="max-w-6xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-300">
+          <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Calgary Real Estate
           </span>
           <h1 className="text-4xl font-bold mt-2 mb-2">Current Listings</h1>
-          <p className="text-blue-200 text-lg">
+          <p className="text-stone-400 text-lg">
             {listings.length} properties across Calgary&apos;s top communities
           </p>
         </div>

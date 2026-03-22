@@ -14,19 +14,19 @@ const testimonials = [
     name: "Sarah & Mike T.",
     community: "Tuscany",
     quote:
-      "Chan made buying our first home an absolute breeze. He was patient, knowledgeable, and always available to answer our questions. We couldn't be happier with our home in Tuscany!",
+      "Chan made buying our first home an absolute breeze. She was patient, knowledgeable, and always available to answer our questions. We couldn't be happier with our home in Tuscany!",
   },
   {
     name: "David L.",
     community: "Inglewood",
     quote:
-      "I've bought and sold three properties with Chan over the years. His market knowledge is unmatched and he always gets top dollar. I wouldn't use anyone else.",
+      "I've bought and sold three properties with Chan over the years. Her market knowledge is unmatched and she always gets top dollar. I wouldn't use anyone else.",
   },
   {
     name: "The Nguyen Family",
     community: "Cranston",
     quote:
-      "Relocating from Vancouver was stressful, but Chan made the Calgary real estate process seamless. He found us exactly what we needed within our budget.",
+      "Relocating from Vancouver was stressful, but Chan made the Calgary real estate process seamless. She found us exactly what we needed within our budget.",
   },
 ];
 
@@ -120,12 +120,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-16 px-6 text-center">
+      <section className="bg-primary-dark py-16 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-4">
             Let&apos;s Work Together
           </h2>
-          <p className="text-blue-200 mb-8">
+          <p className="text-stone-400 mb-8">
             Ready to start your real estate journey in Calgary? Chan is here to help.
           </p>
           <Button href="/contact" size="lg">

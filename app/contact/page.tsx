@@ -40,11 +40,11 @@ export default function ContactPage() {
       {/* Page header */}
       <div className="bg-primary text-white py-14 px-6">
         <div className="max-w-6xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-300">
+          <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Reach Out
           </span>
           <h1 className="text-4xl font-bold mt-2 mb-2">Contact Chan</h1>
-          <p className="text-blue-200 text-lg">
+          <p className="text-stone-400 text-lg">
             Let&apos;s talk real estate. No pressure, no obligation.
           </p>
         </div>
