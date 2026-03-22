@@ -34,13 +34,26 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    // TODO: Replace with Resend / Formspree / your preferred form service
-    // e.g. await fetch('/api/contact', { method: 'POST', body: JSON.stringify(form) })
-    await new Promise((r) => setTimeout(r, 800)); // simulate network
+    // Formspree endpoint — https://formspree.io/f/xwvrdoyj
+    const res = await fetch("https://formspree.io/f/xwvrdoyj", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        name: `${form.firstName} ${form.lastName}`,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      }),
+    });
 
     setLoading(false);
-    setSubmitted(true);
-    setForm(initial);
+
+    if (res.ok) {
+      setSubmitted(true);
+      setForm(initial);
+    } else {
+      alert("Something went wrong. Please try again or call 403-681-0107.");
+    }
   }
 
   if (submitted) {
