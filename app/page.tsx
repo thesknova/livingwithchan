@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
+import FeaturedListings from "@/components/FeaturedListings";
 import SearchCommunities from "@/components/SearchCommunities";
 import AgentBio from "@/components/AgentBio";
 import Button from "@/components/ui/Button";
@@ -9,6 +10,8 @@ export default function HomePage() {
     <>
       <Hero />
       <StatsBar />
+
+      <FeaturedListings />
 
       <SearchCommunities />
 
