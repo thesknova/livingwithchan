@@ -14,7 +14,7 @@ export default function AgentBio({ compact = false }: AgentBioProps) {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] max-w-md mx-auto lg:mx-0">
               <Image
-                src="/chan-headshot.png"
+                src="/chan-headshot-color.jpg"
                 alt="Chan Kawaguchi — REMAX Real Estate Agent, Calgary"
                 width={600}
                 height={750}

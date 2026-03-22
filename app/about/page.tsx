@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import AgentBio from "@/components/AgentBio";
 import StatsBar from "@/components/StatsBar";
 import Button from "@/components/ui/Button";
@@ -84,6 +85,23 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* B&W portrait break */}
+      <section className="relative h-[420px] overflow-hidden">
+        <Image
+          src="/chan-headshot-bw.jpg"
+          alt="Chan Kawaguchi"
+          fill
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent flex items-center">
+          <div className="max-w-6xl mx-auto px-6">
+            <p className="text-white text-2xl sm:text-3xl font-bold max-w-sm leading-snug">
+              Dedicated to every client, every step of the way.
+            </p>
           </div>
         </div>
       </section>

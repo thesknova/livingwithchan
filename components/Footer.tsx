@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -12,10 +13,17 @@ export default function Footer() {
           <p className="text-sm text-accent mb-4">
             REMAX Real Estate Agent · Calgary, AB
           </p>
-          <p className="text-sm text-stone-400 leading-relaxed">
+          <p className="text-sm text-stone-400 leading-relaxed mb-5">
             Helping Calgary families buy, sell, and invest in real estate with
             local expertise and honest guidance.
           </p>
+          <Image
+            src="/remax-logo.jpg"
+            alt="REMAX Complete Realty"
+            width={160}
+            height={60}
+            className="rounded-lg opacity-90"
+          />
         </div>
 
         {/* Quick links */}
