@@ -1,9 +1,8 @@
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
-import ListingGrid from "@/components/ListingGrid";
+import SearchCommunities from "@/components/SearchCommunities";
 import AgentBio from "@/components/AgentBio";
 import Button from "@/components/ui/Button";
-import { featuredListings } from "@/lib/listings";
 
 export default function HomePage() {
   return (
@@ -11,25 +10,7 @@ export default function HomePage() {
       <Hero />
       <StatsBar />
 
-      {/* Featured Listings */}
-      <section className="bg-neutral-light py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-                Just Listed
-              </span>
-              <h2 className="text-3xl font-bold text-primary mt-1">
-                Featured Properties
-              </h2>
-            </div>
-            <Button href="/listings" variant="outline" size="sm">
-              See All Listings →
-            </Button>
-          </div>
-          <ListingGrid listings={featuredListings} />
-        </div>
-      </section>
+      <SearchCommunities />
 
       {/* Agent Bio teaser */}
       <AgentBio compact />
