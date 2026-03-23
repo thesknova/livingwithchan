@@ -1,8 +1,19 @@
 "use client";
 
-import Script from "next/script";
+import { useEffect } from "react";
 
 export default function FeaturedListings() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://s.realtyninja.com/static/js/prod/embed.min.js";
+    script.type = "module";
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <section className="bg-neutral-light py-16 px-6">
       <div className="max-w-6xl mx-auto">
@@ -20,11 +31,6 @@ export default function FeaturedListings() {
           data-name="shinkawaguchi"
           data-path="featured-properties"
           style={{ minHeight: "95vh" }}
-        />
-
-        <Script
-          src="https://s.realtyninja.com/static/js/prod/embed.min.js"
-          strategy="afterInteractive"
         />
       </div>
     </section>
