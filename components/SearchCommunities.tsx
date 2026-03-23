@@ -15,7 +15,7 @@ const communities = [
     description: "Evanston, Nolan Hill, Redstone & more",
     imageUrl:
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=85",
-    href: "/listings?area=NE",
+    href: "/search/ne",
   },
   {
     quadrant: "SW",
@@ -23,7 +23,7 @@ const communities = [
     description: "Aspen Woods, Cougar Ridge, Signal Hill & more",
     imageUrl:
       "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=85",
-    href: "/listings?area=SW",
+    href: "/search/sw",
   },
   {
     quadrant: "SE",
