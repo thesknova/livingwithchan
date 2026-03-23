@@ -7,7 +7,7 @@ const communities = [
     description: "Tuscany, Rocky Ridge, Scenic Acres & more",
     imageUrl:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=85",
-    href: "/listings?area=NW",
+    href: "/search/nw",
   },
   {
     quadrant: "NE",
