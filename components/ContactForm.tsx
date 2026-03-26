@@ -34,17 +34,23 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    // Formspree endpoint — https://formspree.io/f/xwvrdoyj
-    const res = await fetch("https://formspree.io/f/xwvrdoyj", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        name: `${form.firstName} ${form.lastName}`,
-        email: form.email,
-        phone: form.phone,
-        message: form.message,
-      }),
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_CRM_INGEST_URL}/api/leads/ingest`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.NEXT_PUBLIC_CRM_INGEST_KEY ?? "",
+        },
+        body: JSON.stringify({
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
+      }
+    );
 
     setLoading(false);
 
