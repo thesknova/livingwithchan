@@ -34,31 +34,35 @@ export default function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_CRM_INGEST_URL}/api/leads/ingest`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": process.env.NEXT_PUBLIC_CRM_INGEST_KEY ?? "",
-        },
-        body: JSON.stringify({
-          firstName: form.firstName,
-          lastName: form.lastName,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-        }),
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_CRM_INGEST_URL}/api/leads/ingest`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": process.env.NEXT_PUBLIC_CRM_INGEST_KEY ?? "",
+          },
+          body: JSON.stringify({
+            firstName: form.firstName,
+            lastName: form.lastName,
+            email: form.email,
+            phone: form.phone,
+            message: form.message,
+          }),
+        }
+      );
+
+      if (res.ok) {
+        setSubmitted(true);
+        setForm(initial);
+      } else {
+        alert("Something went wrong. Please try again or call 403-681-0107.");
       }
-    );
-
-    setLoading(false);
-
-    if (res.ok) {
-      setSubmitted(true);
-      setForm(initial);
-    } else {
+    } catch {
       alert("Something went wrong. Please try again or call 403-681-0107.");
+    } finally {
+      setLoading(false);
     }
   }
 
