@@ -5,7 +5,9 @@ import { useEffect } from "react";
 export default function FeaturedListings() {
   useEffect(() => {
     const RN_SCRIPT = "https://s.realtyninja.com/static/js/prod/embed.min.js";
-    if (document.querySelector(`script[src="${RN_SCRIPT}"]`)) return;
+    // Always remove any stale instance so the script re-runs and re-scans
+    // the rn-embed div that React has just committed to the DOM.
+    document.querySelector(`script[src="${RN_SCRIPT}"]`)?.remove();
     const script = document.createElement("script");
     script.src = RN_SCRIPT;
     script.type = "module";

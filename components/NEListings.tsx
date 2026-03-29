@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function NEListings() {
   useEffect(() => {
     const RN_SCRIPT = "https://s.realtyninja.com/static/js/prod/embed.min.js";
-    if (document.querySelector(`script[src="${RN_SCRIPT}"]`)) return;
+    document.querySelector(`script[src="${RN_SCRIPT}"]`)?.remove();
     const script = document.createElement("script");
     script.src = RN_SCRIPT;
     script.type = "module";
