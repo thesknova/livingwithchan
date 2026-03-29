@@ -6,21 +6,21 @@ const segments = [
     title: "First-Time Buyers",
     description:
       "New to real estate? Chan walks you through every step — from mortgage pre-approval to possession day — so nothing catches you off guard.",
-    href: "/contact",
+    href: "/buyers/first-time",
   },
   {
     icon: "⬆️",
     title: "Move-Up Buyers",
     description:
       "Growing family, growing needs. Chan coordinates your sale and purchase so you never miss a beat — and always land in the right home.",
-    href: "/contact",
+    href: "/buyers/move-up",
   },
   {
     icon: "🔑",
     title: "Downsizing",
     description:
       "Ready to simplify? Chan helps empty nesters and retirees find the perfect lock-and-leave or right-sized home without the stress.",
-    href: "/contact",
+    href: "/buyers/downsizing",
   },
   {
     icon: "📈",
