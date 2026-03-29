@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ListingGrid from "@/components/ListingGrid";
+import ListingsClient from "@/components/ListingsClient";
 import { listings } from "@/lib/listings";
 
 export const metadata: Metadata = {
@@ -24,31 +24,7 @@ export default function ListingsPage() {
         </div>
       </div>
 
-      {/* Filter bar (placeholder — wire up with real filter logic) */}
-      <div className="bg-white border-b border-neutral-mid sticky top-16 z-40">
-        <div className="max-w-6xl mx-auto px-6 py-3 flex flex-wrap gap-3">
-          {["All", "Detached", "Semi-Detached", "Condo", "Townhouse"].map(
-            (type) => (
-              <button
-                key={type}
-                className="text-sm font-medium px-4 py-1.5 rounded-full border border-neutral-mid hover:border-accent hover:text-accent transition-colors first:bg-primary first:text-white first:border-primary"
-              >
-                {type}
-              </button>
-            )
-          )}
-        </div>
-      </div>
-
-      {/* Grid */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <ListingGrid listings={listings} />
-
-        {/* TODO: Pagination or load-more */}
-        <p className="text-center text-sm text-gray-400 mt-10">
-          Showing all {listings.length} listings · Contact Chan for off-market opportunities
-        </p>
-      </div>
+      <ListingsClient listings={listings} />
 
       {/* CTA */}
       <div className="bg-white border-t border-neutral-mid py-12 px-6 text-center">

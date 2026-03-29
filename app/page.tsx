@@ -3,6 +3,9 @@ import StatsBar from "@/components/StatsBar";
 import FeaturedListings from "@/components/FeaturedListings";
 import SearchCommunities from "@/components/SearchCommunities";
 import AgentBio from "@/components/AgentBio";
+import ProcessSteps from "@/components/ProcessSteps";
+import BuyerSegments from "@/components/BuyerSegments";
+import TestimonialsStrip from "@/components/TestimonialsStrip";
 import Button from "@/components/ui/Button";
 
 export default function HomePage() {
@@ -11,9 +14,18 @@ export default function HomePage() {
       <Hero />
       <StatsBar />
 
+      {/* How it works */}
+      <ProcessSteps />
+
+      {/* Who I Help */}
+      <BuyerSegments />
+
       <FeaturedListings />
 
       <SearchCommunities />
+
+      {/* Social proof */}
+      <TestimonialsStrip />
 
       {/* Agent Bio teaser */}
       <AgentBio compact />
