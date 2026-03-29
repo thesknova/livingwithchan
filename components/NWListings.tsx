@@ -4,14 +4,12 @@ import { useEffect } from "react";
 
 export default function NWListings() {
   useEffect(() => {
+    const RN_SCRIPT = "https://s.realtyninja.com/static/js/prod/embed.min.js";
+    if (document.querySelector(`script[src="${RN_SCRIPT}"]`)) return;
     const script = document.createElement("script");
-    script.src = "https://s.realtyninja.com/static/js/prod/embed.min.js";
+    script.src = RN_SCRIPT;
     script.type = "module";
-    script.defer = true;
     document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
   }, []);
 
   return (

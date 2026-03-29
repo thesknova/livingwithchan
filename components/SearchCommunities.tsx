@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 const communities = [
   {
@@ -56,7 +55,7 @@ export default function SearchCommunities() {
         {/* Cards grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {communities.map((community) => (
-            <Link
+            <a
               key={community.quadrant}
               href={community.href}
               className="group relative rounded-lg overflow-hidden aspect-[3/4] block"
@@ -95,7 +94,7 @@ export default function SearchCommunities() {
                   {community.description}
                 </span>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
