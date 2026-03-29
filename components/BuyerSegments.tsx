@@ -24,10 +24,31 @@ const segments = [
   },
   {
     icon: "📈",
-    title: "Investors & Luxury",
+    title: "Investors",
     description:
-      "Whether it's your first rental or a luxury purchase, Chan's market knowledge and network give you a competitive edge in Calgary's top communities.",
-    href: "/listings",
+      "From cash-flow rentals to multi-family properties, Chan identifies the Calgary neighbourhoods and property types that deliver real returns.",
+    href: "/buyers/investors",
+  },
+  {
+    icon: "✨",
+    title: "Luxury Homes",
+    description:
+      "Discerning buyers deserve a discerning agent. Chan specializes in Calgary's finest estates, from Aspen Woods to Elbow Park and beyond.",
+    href: "/buyers/luxury",
+  },
+  {
+    icon: "✈️",
+    title: "New to Calgary",
+    description:
+      "Relocating from out of province or abroad? Chan helps newcomers understand Calgary's communities, schools, and market so you land in the right neighbourhood.",
+    href: "/buyers/new-to-calgary",
+  },
+  {
+    icon: "🌾",
+    title: "Acreages",
+    description:
+      "Craving space and privacy just outside the city? Chan knows Rocky View County and Foothills acreage properties inside and out.",
+    href: "/buyers/acreages",
   },
 ];
 
