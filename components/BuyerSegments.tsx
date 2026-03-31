@@ -50,6 +50,13 @@ const segments = [
       "Craving space and privacy just outside the city? Chan knows Rocky View County and Foothills acreage properties inside and out.",
     href: "/buyers/acreages",
   },
+  {
+    icon: "🏗️",
+    title: "New Construction",
+    description:
+      "Buy direct from the builder with confidence. Chan negotiates upgrades, reviews contracts, and represents your interests throughout the build.",
+    href: "/buyers/new-construction",
+  },
 ];
 
 export default function BuyerSegments() {
