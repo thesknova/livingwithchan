@@ -41,7 +41,7 @@ export default function Footer() {
             </a>
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/livingwithchan"
+              href="https://www.instagram.com/living.with.chan"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
