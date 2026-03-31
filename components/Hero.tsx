@@ -4,13 +4,18 @@ import Button from "@/components/ui/Button";
 export default function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=85"
-        alt="Beautiful Calgary home"
+      {/* Background video — poster shows while video loads */}
+      <video
         className="absolute inset-0 w-full h-full object-cover"
-      />
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=85"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70" />
