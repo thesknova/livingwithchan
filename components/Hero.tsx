@@ -1,11 +1,22 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.6;
+    }
+  }, []);
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
       {/* Background video — poster shows while video loads */}
       <video
+        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
