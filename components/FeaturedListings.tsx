@@ -5,11 +5,12 @@ import { useEffect } from "react";
 export default function FeaturedListings() {
   useEffect(() => {
     const RN_SCRIPT = "https://s.realtyninja.com/static/js/prod/embed.min.js";
-    // Always remove any stale instance so the script re-runs and re-scans
-    // the rn-embed div that React has just committed to the DOM.
-    document.querySelector(`script[src="${RN_SCRIPT}"]`)?.remove();
+    // Remove any stale script tag (matches on base URL prefix).
+    document.querySelector(`script[src^="${RN_SCRIPT}"]`)?.remove();
     const script = document.createElement("script");
-    script.src = RN_SCRIPT;
+    // Cache-bust so the browser re-executes the module instead of serving
+    // from the module map (which would skip DOM scanning).
+    script.src = `${RN_SCRIPT}?t=${Date.now()}`;
     script.type = "module";
     document.body.appendChild(script);
   }, []);
