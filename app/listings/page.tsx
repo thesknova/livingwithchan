@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import ListingsClient from "@/components/ListingsClient";
-import { listings } from "@/lib/listings";
+import OfficeListings from "@/components/OfficeListings";
 
 export const metadata: Metadata = {
   title: "Listings",
@@ -19,12 +18,15 @@ export default function ListingsPage() {
           </span>
           <h1 className="text-4xl font-bold mt-2 mb-2">Current Listings</h1>
           <p className="text-stone-400 text-lg">
-            {listings.length} properties across Calgary&apos;s top communities
+            Browse available properties — updated live from MLS
           </p>
         </div>
       </div>
 
-      <ListingsClient listings={listings} />
+      {/* Live RealtyNinja embed */}
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <OfficeListings />
+      </div>
 
       {/* CTA */}
       <div className="bg-white border-t border-neutral-mid py-12 px-6 text-center">
