@@ -18,6 +18,12 @@ const stats = [
 
 const blogPosts = [
   {
+    title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning",
+    excerpt: "The 2024 blanket rezoning changed thousands of Calgary lots to R-CG. Learn what it means for investors — and whether the 2026 repeal will affect you.",
+    href: "/blog/calgary-zoning-explained",
+    category: "Investor Tips",
+  },
+  {
     title: "Renting vs. Buying in Calgary: An Honest Comparison",
     excerpt: "Understand the financial math behind owning vs. renting — essential reading before your first investment.",
     href: "/blog/renting-vs-buying",

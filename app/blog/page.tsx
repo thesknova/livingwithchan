@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "calgary-zoning-explained",
+    title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
+    excerpt:
+      "The 2024 blanket rezoning automatically converted thousands of Calgary lots to R-CG. Here's what that means — and what the potential 2026 repeal could change again.",
+    date: "April 1, 2026",
+    category: "Investor Tips",
+    readTime: "10 min read",
+  },
+  {
     slug: "renting-vs-buying",
     title: "Renting vs. Buying in Calgary: A Honest Comparison",
     excerpt:
