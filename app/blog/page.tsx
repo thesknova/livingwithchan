@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "bitcoin-real-estate-calgary",
+    title: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
+    excerpt:
+      "Calgary has been at the forefront of Bitcoin real estate in Canada. Chan breaks down how it works, the CRA tax implications, and includes a live BTC/CAD calculator.",
+    date: "April 1, 2026",
+    category: "Investor Tips",
+    readTime: "12 min read",
+  },
+  {
     slug: "legal-vs-illegal-basement-suites-calgary",
     title: "Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know",
     excerpt:

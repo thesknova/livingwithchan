@@ -18,6 +18,12 @@ const stats = [
 
 const blogPosts = [
   {
+    title: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
+    excerpt: "How to buy or sell a Calgary property with Bitcoin — the process, CRA tax rules, and a live BTC/CAD calculator.",
+    href: "/blog/bitcoin-real-estate-calgary",
+    category: "Investor Tips",
+  },
+  {
     title: "Legal vs. Illegal Basement Suites in Calgary",
     excerpt: "Permits, egress windows, fire separation, fines up to $40,000 — what makes a suite legal and why it matters for landlords and tenants.",
     href: "/blog/legal-vs-illegal-basement-suites-calgary",
