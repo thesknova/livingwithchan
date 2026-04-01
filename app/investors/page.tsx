@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CashFlowCalculator from "@/components/CashFlowCalculator";
-import InvestmentListings from "@/components/InvestmentListings";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -53,10 +52,10 @@ export default function InvestorsPage() {
               Run Cash Flow Analysis
             </a>
             <a
-              href="#listings"
+              href="#contact"
               className="border border-white/30 hover:border-accent hover:text-accent text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
             >
-              Browse Investment Properties
+              Get Property Recommendations
             </a>
           </div>
         </div>
@@ -134,17 +133,32 @@ export default function InvestorsPage() {
           <CashFlowCalculator />
         </div>
 
-        {/* Investment property listings */}
-        <div id="listings">
-          <div className="text-center mb-8">
-            <span className="text-xs font-semibold uppercase tracking-widest text-accent">Properties</span>
-            <h2 className="text-3xl font-bold text-primary mt-2">Investment Properties</h2>
-            <p className="text-gray-500 mt-2 max-w-lg mx-auto text-sm">
-              Browse current listings curated for investors — multi-family,
-              income suites, and high-demand rental communities.
-            </p>
+        {/* Investment property search CTA */}
+        <div className="bg-primary rounded-2xl p-10 text-center">
+          <span className="text-xs font-semibold uppercase tracking-widest text-accent">Find Investment Properties</span>
+          <h2 className="text-3xl font-bold text-white mt-2 mb-4">
+            Looking for the Right Investment Property?
+          </h2>
+          <p className="text-stone-400 max-w-xl mx-auto text-sm leading-relaxed mb-8">
+            Finding a true investment property requires more than a standard MLS
+            search — it takes local knowledge of rental yields, tenant demand,
+            and neighbourhood trajectories. Chan curates opportunities
+            specifically matched to your budget and return targets.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#contact"
+              className="bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
+            >
+              Send Chan Your Criteria
+            </a>
+            <a
+              href="tel:4036810107"
+              className="border border-white/30 hover:border-accent hover:text-accent text-white font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
+            >
+              📞 403-681-0107
+            </a>
           </div>
-          <InvestmentListings />
         </div>
 
         {/* Blog posts */}
@@ -183,7 +197,7 @@ export default function InvestorsPage() {
         </div>
 
         {/* Contact */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 border-t border-neutral-mid pt-16">
+        <div id="contact" className="grid grid-cols-1 lg:grid-cols-5 gap-12 border-t border-neutral-mid pt-16">
           <div className="lg:col-span-2 space-y-5">
             <div>
               <h2 className="text-xl font-bold text-primary mb-1">
