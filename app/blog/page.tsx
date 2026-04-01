@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "legal-vs-illegal-basement-suites-calgary",
+    title: "Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know",
+    excerpt:
+      "Calgary has 20,000+ registered suites — but many more aren't. Chan breaks down what makes a suite legal, the real risks of an illegal one, and how to legalize yours.",
+    date: "April 1, 2026",
+    category: "Investor Tips",
+    readTime: "11 min read",
+  },
+  {
     slug: "calgary-zoning-explained",
     title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
     excerpt:

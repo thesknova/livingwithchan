@@ -18,6 +18,12 @@ const stats = [
 
 const blogPosts = [
   {
+    title: "Legal vs. Illegal Basement Suites in Calgary",
+    excerpt: "Permits, egress windows, fire separation, fines up to $40,000 — what makes a suite legal and why it matters for landlords and tenants.",
+    href: "/blog/legal-vs-illegal-basement-suites-calgary",
+    category: "Investor Tips",
+  },
+  {
     title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning",
     excerpt: "The 2024 blanket rezoning changed thousands of Calgary lots to R-CG. Learn what it means for investors — and whether the 2026 repeal will affect you.",
     href: "/blog/calgary-zoning-explained",
