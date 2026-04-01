@@ -51,6 +51,9 @@ export default function Hero() {
           <Button href="/listings" size="lg">
             View Listings
           </Button>
+          <Button href="/investors" variant="outline" size="lg" className="border-accent text-white bg-accent/20 hover:bg-accent hover:border-accent">
+            Investor Hub
+          </Button>
           <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
             Get in Touch
           </Button>
