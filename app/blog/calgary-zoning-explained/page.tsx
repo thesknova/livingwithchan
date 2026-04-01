@@ -140,7 +140,7 @@ export default function CalgaryZoningPost() {
           <h3 className="text-base font-bold text-primary mt-4">The Vote and Timeline</h3>
           <div className="bg-white rounded-xl border border-neutral-mid p-5 space-y-2">
             {[
-              { date: "September 2023", event: "Council approves "Home is Here" housing strategy" },
+              { date: "September 2023", event: `Council approves "Home is Here" housing strategy` },
               { date: "April 22, 2024", event: "Rezoning for Housing proposal formally presented to Council" },
               { date: "May 14, 2024", event: "Council votes 9–6 to pass blanket rezoning" },
               { date: "June 11, 2024", event: "Final approval with 15 amendments incorporated" },
