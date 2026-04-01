@@ -162,10 +162,10 @@ export default function LuxuryPage() {
               <li className="flex items-center gap-3">
                 <span className="text-xl">✉️</span>
                 <a
-                  href="mailto:ckawaguchi88@gmail.com"
+                  href="mailto:hello@livingwithchan.com"
                   className="text-sm font-medium text-primary hover:text-accent transition-colors"
                 >
-                  ckawaguchi88@gmail.com
+                  hello@livingwithchan.com
                 </a>
               </li>
             </ul>

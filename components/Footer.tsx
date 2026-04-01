@@ -130,10 +130,10 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="mailto:ckawaguchi88@gmail.com"
+                href="mailto:hello@livingwithchan.com"
                 className="hover:text-white transition-colors break-all"
               >
-                ✉️ ckawaguchi88@gmail.com
+                ✉️ hello@livingwithchan.com
               </a>
             </li>
             <li>🏢 REMAX, Calgary, AB</li>

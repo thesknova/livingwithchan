@@ -149,8 +149,8 @@ export default function MoveUpBuyersPage() {
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-xl">✉️</span>
-                <a href="mailto:ckawaguchi88@gmail.com" className="text-sm font-medium text-primary hover:text-accent transition-colors">
-                  ckawaguchi88@gmail.com
+                <a href="mailto:hello@livingwithchan.com" className="text-sm font-medium text-primary hover:text-accent transition-colors">
+                  hello@livingwithchan.com
                 </a>
               </li>
             </ul>

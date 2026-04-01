@@ -17,8 +17,8 @@ const contactDetails = [
   {
     icon: "✉️",
     label: "Email",
-    value: "ckawaguchi88@gmail.com",
-    href: "mailto:ckawaguchi88@gmail.com",
+    value: "hello@livingwithchan.com",
+    href: "mailto:hello@livingwithchan.com",
   },
   {
     icon: "🏢",

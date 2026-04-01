@@ -134,10 +134,10 @@ export default async function ListingDetailPage({ params }: Props) {
                   <span className="text-xl">📞</span> 403-681-0107
                 </a>
                 <a
-                  href="mailto:ckawaguchi88@gmail.com"
+                  href="mailto:hello@livingwithchan.com"
                   className="flex items-center gap-3 text-sm font-medium text-primary hover:text-accent transition-colors"
                 >
-                  <span className="text-xl">✉️</span> ckawaguchi88@gmail.com
+                  <span className="text-xl">✉️</span> hello@livingwithchan.com
                 </a>
               </div>
             </div>

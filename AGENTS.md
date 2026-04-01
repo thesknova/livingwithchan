@@ -13,7 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **Title:** REMAX Real Estate Agent
 - **Market:** Calgary, Alberta
 - **Phone:** 403-681-0107
-- **Email:** ckawaguchi88@gmail.com
+- **Email:** hello@livingwithchan.com
 - **Headshot:** `/public/chan-headshot.png`
 
 ## Tech Stack
