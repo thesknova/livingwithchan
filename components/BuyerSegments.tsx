@@ -40,7 +40,7 @@ const segments: Segment[] = [
     description:
       "Discerning buyers deserve a discerning agent. Chan specializes in Calgary's finest estates, from Aspen Woods to Elbow Park and beyond.",
     href: "/buyers/luxury",
-    image: "/segments/luxury-living-room.jpg",
+    image: "/segments/luxury-homes.jpg",
   },
   {
     icon: "📈",
@@ -48,7 +48,7 @@ const segments: Segment[] = [
     description:
       "From cash-flow rentals to multi-family properties, Chan identifies the Calgary neighbourhoods and property types that deliver real returns.",
     href: "/buyers/investors",
-    image: "/segments/basement-living.jpg",
+    image: "/segments/investors.png",
   },
   {
     icon: "✈️",
@@ -56,7 +56,7 @@ const segments: Segment[] = [
     description:
       "Relocating from out of province or abroad? Chan helps newcomers understand Calgary's communities, schools, and market so you land in the right neighbourhood.",
     href: "/buyers/new-to-calgary",
-    image: "/segments/dining-room.jpg",
+    image: "/segments/new-to-calgary.png",
   },
   {
     icon: "🌾",
@@ -72,7 +72,7 @@ const segments: Segment[] = [
     description:
       "Buy direct from the builder with confidence. Chan negotiates upgrades, reviews contracts, and represents your interests throughout the build.",
     href: "/buyers/new-construction",
-    image: "/segments/spiral-staircase.jpg",
+    image: "/segments/new-construction.png",
   },
 ];
 
