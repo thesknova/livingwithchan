@@ -1,6 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const segments = [
+type Segment = {
+  icon: string;
+  title: string;
+  description: string;
+  href: string;
+  image?: string;
+};
+
+const segments: Segment[] = [
   {
     icon: "🏡",
     title: "First-Time Buyers",
@@ -14,6 +23,7 @@ const segments = [
     description:
       "Growing family, growing needs. Chan coordinates your sale and purchase so you never miss a beat and always land in the right home.",
     href: "/buyers/move-up",
+    image: "/segments/dining-room.jpg",
   },
   {
     icon: "🔑",
@@ -23,18 +33,20 @@ const segments = [
     href: "/buyers/downsizing",
   },
   {
-    icon: "📈",
-    title: "Investors",
-    description:
-      "From cash-flow rentals to multi-family properties, Chan identifies the Calgary neighbourhoods and property types that deliver real returns.",
-    href: "/buyers/investors",
-  },
-  {
     icon: "✨",
     title: "Luxury Homes",
     description:
       "Discerning buyers deserve a discerning agent. Chan specializes in Calgary's finest estates, from Aspen Woods to Elbow Park and beyond.",
     href: "/buyers/luxury",
+    image: "/segments/luxury-living-room.jpg",
+  },
+  {
+    icon: "📈",
+    title: "Investors",
+    description:
+      "From cash-flow rentals to multi-family properties, Chan identifies the Calgary neighbourhoods and property types that deliver real returns.",
+    href: "/buyers/investors",
+    image: "/segments/basement-living.jpg",
   },
   {
     icon: "✈️",
@@ -56,12 +68,13 @@ const segments = [
     description:
       "Buy direct from the builder with confidence. Chan negotiates upgrades, reviews contracts, and represents your interests throughout the build.",
     href: "/buyers/new-construction",
+    image: "/segments/spiral-staircase.jpg",
   },
 ];
 
 export default function BuyerSegments() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-neutral-light py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
@@ -76,23 +89,44 @@ export default function BuyerSegments() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {segments.map((seg) => (
             <Link
               key={seg.title}
               href={seg.href}
-              className="group bg-neutral-light hover:bg-accent hover:text-white rounded-2xl p-6 border border-neutral-mid hover:border-accent transition-all duration-300 flex flex-col"
+              className="group relative overflow-hidden rounded-2xl min-h-[300px] flex flex-col justify-end"
             >
-              <span className="text-3xl mb-4">{seg.icon}</span>
-              <h3 className="text-base font-semibold text-primary group-hover:text-white mb-2 transition-colors duration-300">
-                {seg.title}
-              </h3>
-              <p className="text-sm text-gray-500 group-hover:text-white/85 leading-relaxed flex-1 transition-colors duration-300">
-                {seg.description}
-              </p>
-              <span className="mt-4 text-xs font-semibold text-accent group-hover:text-white uppercase tracking-wide transition-colors duration-300">
-                Learn More →
-              </span>
+              {seg.image ? (
+                <>
+                  <Image
+                    src={seg.image}
+                    alt={seg.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                </>
+              ) : (
+                <div className="absolute inset-0 bg-[#1C1A18]">
+                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent" />
+                  <span className="absolute top-6 right-6 text-6xl opacity-[0.06] select-none leading-none">
+                    {seg.icon}
+                  </span>
+                </div>
+              )}
+
+              <div className="relative z-10 p-6">
+                <h3 className="text-base font-bold text-white mb-2">
+                  {seg.title}
+                </h3>
+                <p className="text-sm text-white/70 leading-relaxed mb-4 line-clamp-3">
+                  {seg.description}
+                </p>
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-accent uppercase tracking-wide group-hover:gap-2 transition-all duration-200">
+                  Learn More <span>→</span>
+                </span>
+              </div>
             </Link>
           ))}
         </div>
