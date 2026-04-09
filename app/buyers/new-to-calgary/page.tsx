@@ -11,7 +11,7 @@ const tips = [
   {
     icon: "🗺️",
     title: "Understanding Calgary's Quadrants",
-    body: "Calgary is divided into NW, NE, SW, and SE — each with distinct communities, price points, and lifestyles. Chan maps this out clearly so you can narrow your search quickly.",
+    body: "Calgary is divided into NW, NE, SW, and SE, each with distinct communities, price points, and lifestyles. Chan maps this out clearly so you can narrow your search quickly.",
   },
   {
     icon: "🏫",
@@ -54,7 +54,7 @@ export default function NewToCalgaryPage() {
             New to Calgary? Welcome.
           </h1>
           <p className="text-stone-400 text-lg max-w-2xl">
-            Relocating to a new city is exciting — and overwhelming. Chan helps
+            Relocating to a new city is exciting and can be overwhelming. Chan helps
             newcomers from across Canada and around the world find the right
             Calgary community to call home.
           </p>
@@ -66,7 +66,7 @@ export default function NewToCalgaryPage() {
         {/* Intro */}
         <div className="max-w-3xl mb-14">
           <h2 className="text-2xl font-bold text-primary mb-4">
-            Calgary Is Growing — And For Good Reason
+            Calgary Is Growing, and For Good Reason
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             Calgary is one of Canada&apos;s fastest-growing cities, attracting
@@ -76,7 +76,7 @@ export default function NewToCalgaryPage() {
             destination for families, young professionals, and retirees alike.
           </p>
           <p className="text-gray-600 leading-relaxed mb-4">
-            But Calgary is a big city with a huge range of communities —
+            But Calgary is a big city with a huge range of communities,
             from brand-new suburban builds in the north to established
             inner-city neighbourhoods with century-old character homes. Without
             local knowledge, it&apos;s easy to end up in the wrong area for
@@ -86,7 +86,7 @@ export default function NewToCalgaryPage() {
             Chan has helped dozens of families relocate to Calgary from other
             provinces and abroad. He offers virtual tours, video walkthroughs,
             and community orientation sessions so you can make a confident
-            decision — even before you arrive.
+            decision even before you arrive.
           </p>
         </div>
 
@@ -181,7 +181,7 @@ export default function NewToCalgaryPage() {
               Send a Message
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan where you&apos;re moving from and what you&apos;re looking for — he&apos;ll get back to you within 24 hours.
+              Tell Chan where you&apos;re moving from and what you&apos;re looking for. He&apos;ll get back to you within 24 hours.
             </p>
             <ContactForm />
           </div>

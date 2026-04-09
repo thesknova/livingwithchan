@@ -73,7 +73,7 @@ export default function InvestorsPage() {
           </p>
           <p className="text-gray-600 leading-relaxed">
             Chan works exclusively with investors who want a clear-eyed view of
-            the numbers — cap rates, cash-on-cash returns, and realistic
+            the numbers: cap rates, cash-on-cash returns, and realistic
             appreciation forecasts. No hype, just honest guidance backed by
             local market data.
           </p>

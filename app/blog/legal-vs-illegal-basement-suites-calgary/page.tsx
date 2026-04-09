@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Legal vs. Illegal Basement Suites in Calgary | Chan Kawaguchi",
   description:
-    "What separates a legal secondary suite from an illegal one in Calgary? Permits, egress windows, fire separation, smoke alarms — and the real risks to landlords and tenants.",
+    "What separates a legal secondary suite from an illegal one in Calgary? Permits, egress windows, fire separation, smoke alarms, and the real risks to landlords and tenants.",
 };
 
 export default function BasementSuitesPost() {
@@ -34,7 +34,7 @@ export default function BasementSuitesPost() {
             Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know
           </h1>
           <p className="text-stone-400 text-lg leading-relaxed">
-            Calgary has over 20,000 registered secondary suites — but estimates suggest many more exist without permits. Here&apos;s exactly what makes a suite legal, what the risks of an illegal suite are, and how to bring one into compliance.
+            Calgary has over 20,000 registered secondary suites, but estimates suggest many more exist without permits. Here&apos;s exactly what makes a suite legal, what the risks of an illegal suite are, and how to bring one into compliance.
           </p>
         </div>
       </div>
@@ -45,10 +45,10 @@ export default function BasementSuitesPost() {
         {/* Intro */}
         <section className="space-y-4">
           <p>
-            A basement suite is one of the most powerful tools for building wealth through Calgary real estate — it can offset thousands of dollars in monthly carrying costs or generate meaningful positive cash flow. But there&apos;s a stark difference between a suite that adds value and one that creates serious legal, financial, and safety exposure.
+            A basement suite is one of the most powerful tools for building wealth through Calgary real estate. It can offset thousands of dollars in monthly carrying costs or generate meaningful positive cash flow. But there&apos;s a stark difference between a suite that adds value and one that creates serious legal, financial, and safety exposure.
           </p>
           <p>
-            An <strong>illegal suite</strong> is not just a paperwork problem. It&apos;s a building that has never been inspected against Alberta&apos;s life safety standards. The consequences of a fire, a carbon monoxide leak, or a tenant injury in an uninspected suite can be catastrophic — financially and personally — for a landlord. For tenants, an illegal suite may have no safe means of escape in an emergency.
+            An <strong>illegal suite</strong> is not just a paperwork problem. It&apos;s a building that has never been inspected against Alberta&apos;s life safety standards. The consequences of a fire, a carbon monoxide leak, or a tenant injury in an uninspected suite can be catastrophic, financially and personally, for a landlord. For tenants, an illegal suite may have no safe means of escape in an emergency.
           </p>
           <p>
             This article walks through what Calgary requires to make a secondary suite legal, the risks on both sides of the lease, the process to legalize an existing suite, and where to find official City of Calgary resources.
@@ -59,10 +59,10 @@ export default function BasementSuitesPost() {
         <section className="space-y-5">
           <h2 className="text-2xl font-bold text-primary">What Makes a Basement Suite Legal in Calgary</h2>
           <p>
-            The City of Calgary defines a <strong>secondary suite</strong> as a self-contained residence with at minimum two rooms — including kitchen, living, sleeping, and bathroom facilities — with an entrance accessible from outside without passing through the main dwelling. A shared stairwell with separate private doors to each unit meets this requirement.
+            The City of Calgary defines a <strong>secondary suite</strong> as a self-contained residence with at minimum two rooms (including kitchen, living, sleeping, and bathroom facilities) with an entrance accessible from outside without passing through the main dwelling. A shared stairwell with separate private doors to each unit meets this requirement.
           </p>
           <p>
-            To be legal, a suite must have obtained permits and passed mandatory city inspections. No permit means the suite has never been verified as meeting the Alberta Building Code — regardless of how well it may appear to be built.
+            To be legal, a suite must have obtained permits and passed mandatory city inspections. No permit means the suite has never been verified as meeting the Alberta Building Code, regardless of how well it may appear to be built.
           </p>
 
           <h3 className="text-base font-bold text-primary">Permits Required</h3>
@@ -89,15 +89,15 @@ export default function BasementSuitesPost() {
           <p className="text-xs text-gray-500">
             Source:{" "}
             <a href="https://www.calgary.ca/development/home-building/suites-permit-costs-timelines.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              City of Calgary — Suite Permit Costs and Timelines
+              City of Calgary: Suite Permit Costs and Timelines
             </a>
           </p>
 
           <h3 className="text-base font-bold text-primary mt-4">Mandatory Inspections</h3>
           <p>Two inspections are required before a suite can be legally occupied:</p>
           <ol className="list-decimal list-inside space-y-2 pl-2">
-            <li><strong>Framing / Rough-In Inspection</strong> — walls, ceiling framing, windows, doors, HVAC, and plumbing/electrical rough-in must all be complete and exposed (before drywall is closed)</li>
-            <li><strong>Final Inspection</strong> — construction fully complete, suite ready for occupancy</li>
+            <li><strong>Framing / Rough-In Inspection</strong>: walls, ceiling framing, windows, doors, HVAC, and plumbing/electrical rough-in must all be complete and exposed (before drywall is closed)</li>
+            <li><strong>Final Inspection</strong>: construction fully complete, suite ready for occupancy</li>
           </ol>
           <p>
             After passing the final inspection, the City mails a <strong>registration sticker</strong> within 2–3 weeks. The suite then appears on the public{" "}
@@ -120,7 +120,7 @@ export default function BasementSuitesPost() {
         <section className="space-y-5">
           <h2 className="text-2xl font-bold text-primary">Alberta Building Code Requirements for Secondary Suites</h2>
           <p>
-            Even a beautifully finished basement can be non-compliant if it misses specific code requirements. These are the standards a suite must meet — and the areas most commonly cited in enforcement actions.
+            Even a beautifully finished basement can be non-compliant if it misses specific code requirements. These are the standards a suite must meet, and the areas most commonly cited in enforcement actions.
           </p>
 
           {[
@@ -136,7 +136,7 @@ export default function BasementSuitesPost() {
                 "Casement windows must swing fully 90 degrees",
                 "Window well clearance: 550 mm (21.5\") for existing windows; 760 mm (30\") for new installations",
               ],
-              note: "Missing or undersized egress windows are the single most common violation found in illegal suites — and the most dangerous in a fire.",
+              note: "Missing or undersized egress windows are the single most common violation found in illegal suites and the most dangerous in a fire.",
             },
             {
               title: "Ceiling Height",
@@ -169,10 +169,10 @@ export default function BasementSuitesPost() {
               items: [
                 "Smoke alarms required at every floor level, in all bedrooms, common spaces, and mechanical rooms",
                 "Carbon monoxide alarms must be centrally located within 5 m of all bedrooms",
-                "All alarms must be permanently hardwired to the electrical panel — battery-only alarms do not comply",
+                "All alarms must be permanently hardwired to the electrical panel; battery-only alarms do not comply",
                 "All alarms must be interconnected: when one activates, every alarm in both units sounds simultaneously",
               ],
-              note: "Plug-in or battery-operated alarms — even if new — do not meet the legal standard. They must be hardwired and interconnected.",
+              note: "Plug-in or battery-operated alarms, even if new, do not meet the legal standard. They must be hardwired and interconnected.",
             },
             {
               title: "Sound Separation",
@@ -190,7 +190,7 @@ export default function BasementSuitesPost() {
               color: "bg-purple-50 border-purple-200",
               titleColor: "text-purple-700",
               items: [
-                "Separate electrical sub-panel or load calculation — no shared branch circuits between units",
+                "Separate electrical sub-panel or load calculation; no shared branch circuits between units",
                 "All wiring supported and terminated properly into outlet boxes",
                 "Suite must have hot water supply, kitchen sink, bathroom sink, toilet, and bathtub or shower",
                 "A back-flow prevention device must be installed on the branch drains of the sanitary sewer line",
@@ -217,7 +217,7 @@ export default function BasementSuitesPost() {
           <p className="text-xs text-gray-500">
             Full permit checklist:{" "}
             <a href="https://www.calgary.ca/content/dam/www/pda/pd/documents/permit-checklists/existing-secondary-suite-permit-checklist.pdf" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              Existing Secondary Suite Permit Checklist (PDF) — City of Calgary
+              Existing Secondary Suite Permit Checklist (PDF), City of Calgary
             </a>
           </p>
         </section>
@@ -245,12 +245,12 @@ export default function BasementSuitesPost() {
             ))}
           </div>
           <p>
-            Registered suites receive a city-issued sticker displayed inside the unit. On RentFaster Calgary, registered listings carry a &quot;Legal Suite&quot; badge — a significant trust signal for prospective tenants.
+            Registered suites receive a city-issued sticker displayed inside the unit. On RentFaster Calgary, registered listings carry a &quot;Legal Suite&quot; badge, a significant trust signal for prospective tenants.
           </p>
           <p className="text-xs text-gray-500">
             Source:{" "}
             <a href="https://newsroom.calgary.ca/calgarys-secondary-suite-registry-surpasses-20000-a-milestone-for-safer-housing/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              Calgary Newsroom — Secondary Suite Registry Surpasses 20,000
+              Calgary Newsroom: Secondary Suite Registry Surpasses 20,000
             </a>
           </p>
         </section>
@@ -264,27 +264,27 @@ export default function BasementSuitesPost() {
               {
                 icon: "💸",
                 title: "Fines and Enforcement Orders",
-                body: "Fire code violations can result in fines up to $40,000 — plus surcharges. One documented Calgary case resulted in a $40,000 fine and a $6,000 surcharge for a single illegal suite. Ongoing violations can add penalties of up to $500 per day. Even minor issues — a missing egress window or non-interconnected smoke alarms — can trigger substantial fines after a 311 complaint.",
+                body: "Fire code violations can result in fines up to $40,000, plus surcharges. One documented Calgary case resulted in a $40,000 fine and a $6,000 surcharge for a single illegal suite. Ongoing violations can add penalties of up to $500 per day. Even minor issues, like a missing egress window or non-interconnected smoke alarms, can trigger substantial fines after a 311 complaint.",
               },
               {
                 icon: "🔥",
                 title: "Insurance Voids Your Policy",
-                body: "Most homeowner's insurance policies contain clauses that void coverage for unpermitted rental use. If a fire, flood, or injury occurs in an illegal suite, the insurer may deny the entire claim — leaving you personally liable for structural damage and tenant injury lawsuits. This is not a theoretical risk: insurers do investigate claims and permit status is discoverable.",
+                body: "Most homeowner's insurance policies contain clauses that void coverage for unpermitted rental use. If a fire, flood, or injury occurs in an illegal suite, the insurer may deny the entire claim, leaving you personally liable for structural damage and tenant injury lawsuits. This is not a theoretical risk: insurers do investigate claims and permit status is discoverable.",
               },
               {
                 icon: "🏠",
                 title: "Forced Suite Removal and Tenant Displacement",
-                body: "A 311 complaint triggers a peace officer investigation. If violations are confirmed, you receive a Remedial Order with 21 days to correct the issue. Non-compliance allows the City to carry out the work and invoice you. In serious cases, you may be ordered to stop renting immediately and remove the suite entirely — leaving you without rental income and potentially having displaced a tenant.",
+                body: "A 311 complaint triggers a peace officer investigation. If violations are confirmed, you receive a Remedial Order with 21 days to correct the issue. Non-compliance allows the City to carry out the work and invoice you. In serious cases, you may be ordered to stop renting immediately and remove the suite entirely, leaving you without rental income and potentially having displaced a tenant.",
               },
               {
                 icon: "📉",
                 title: "Resale and Mortgage Complications",
-                body: "An illegal suite cannot be counted as income for mortgage qualification — by you or by a future buyer. When selling, you typically must disclose permit status. Buyers will often demand a price concession or insist on legalization before closing. A legal suite adds real, bankable value; an illegal suite is a liability that skilled buyers will use against you.",
+                body: "An illegal suite cannot be counted as income for mortgage qualification, by you or by a future buyer. When selling, you typically must disclose permit status. Buyers will often demand a price concession or insist on legalization before closing. A legal suite adds real, bankable value; an illegal suite is a liability that skilled buyers will use against you.",
               },
               {
                 icon: "⚖️",
                 title: "Criminal Liability",
-                body: "In cases of serious tenant injury or death caused by a non-compliant suite — a fire where a bedroom had no egress window, or carbon monoxide poisoning in a suite without a proper CO alarm — landlords have faced criminal negligence charges. The absence of a permit is direct evidence that no inspection ever verified life-safety compliance.",
+                body: "In cases of serious tenant injury or death caused by a non-compliant suite (a fire where a bedroom had no egress window, or carbon monoxide poisoning in a suite without a proper CO alarm), landlords have faced criminal negligence charges. The absence of a permit is direct evidence that no inspection ever verified life-safety compliance.",
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-xl border border-neutral-mid p-5 flex gap-4">
@@ -298,7 +298,7 @@ export default function BasementSuitesPost() {
           </div>
 
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-900">
-            <strong>How are illegal suites found?</strong> Most enforcement actions are triggered by tenant complaints to 311. Unhappy tenants — in disputes over maintenance, rent increases, or eviction — commonly report an illegal suite. Neighbour complaints are also common. The enforcement process begins the moment a complaint is filed.
+            <strong>How are illegal suites found?</strong> Most enforcement actions are triggered by tenant complaints to 311. Unhappy tenants, in disputes over maintenance, rent increases, or eviction, commonly report an illegal suite. Neighbour complaints are also common. The enforcement process begins the moment a complaint is filed.
           </div>
         </section>
 
@@ -306,7 +306,7 @@ export default function BasementSuitesPost() {
         <section className="space-y-5">
           <h2 className="text-2xl font-bold text-primary">Risks to Tenants: What to Check Before Signing</h2>
           <p>
-            Tenants in illegal suites face their own serious risks — and limited protections.
+            Tenants in illegal suites face their own serious risks, with limited protections.
           </p>
 
           <div className="space-y-3">
@@ -348,14 +348,14 @@ export default function BasementSuitesPost() {
               </li>
               <li>Look for the City-issued registration sticker inside the unit</li>
               <li>Look for RentFaster listings with the &quot;Legal Suite&quot; badge</li>
-              <li>Ask the landlord directly for the building permit number — a legitimate landlord will have it readily available</li>
+              <li>Ask the landlord directly for the building permit number. A legitimate landlord will have it readily available</li>
             </ol>
           </div>
 
           <p className="text-xs text-gray-500">
             Official tenant resource:{" "}
             <a href="https://www.calgary.ca/property-renters/secondary-suites.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              Renting a Secondary Suite — City of Calgary
+              Renting a Secondary Suite: City of Calgary
             </a>
           </p>
         </section>
@@ -397,7 +397,7 @@ export default function BasementSuitesPost() {
               {
                 step: "6",
                 title: "Receive Your Registration Sticker",
-                body: "Within 2–3 weeks of passing the final inspection, the City mails your registration sticker. Your suite appears on the public registry — and you can legally rent it.",
+                body: "Within 2–3 weeks of passing the final inspection, the City mails your registration sticker. Your suite appears on the public registry, and you can legally rent it.",
               },
             ].map((item) => (
               <div key={item.step} className="bg-white rounded-xl border border-neutral-mid p-5 flex gap-4">
@@ -411,7 +411,7 @@ export default function BasementSuitesPost() {
           </div>
 
           <div className="bg-green-50 border border-green-200 rounded-xl p-5 space-y-2">
-            <p className="text-sm font-bold text-green-800">Secondary Suite Incentive Program — Up to $10,000</p>
+            <p className="text-sm font-bold text-green-800">Secondary Suite Incentive Program: Up to $10,000</p>
             <p className="text-sm text-green-900 leading-relaxed">
               The City offers incentives for specific upgrades required during legalization:
             </p>
@@ -432,7 +432,7 @@ export default function BasementSuitesPost() {
             <p className="text-xs text-green-800 mt-2">
               Apply at:{" "}
               <a href="https://www.calgary.ca/development/home-building/secondary-suite-incentive-program.html" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">
-                City of Calgary — Secondary Suite Incentive Program
+                City of Calgary: Secondary Suite Incentive Program
               </a>
             </p>
           </div>
@@ -445,7 +445,7 @@ export default function BasementSuitesPost() {
             The August 2024 blanket rezoning (which changed most established Calgary residential lots to R-CG zoning) had a significant impact on secondary suite rules. Under R-CG, a property <em>without</em> a rowhouse or townhouse can now have both a <strong>secondary suite</strong> (basement) and a <strong>backyard suite</strong> (carriage suite above a detached garage, or a garden suite) at the same time.
           </p>
           <p>
-            This means a single home could legally house three separate households: the main unit, a basement suite, and a carriage suite — each requiring their own set of permits and inspections, but potentially generating substantial rental income.
+            This means a single home could legally house three separate households: the main unit, a basement suite, and a carriage suite, each requiring their own set of permits and inspections, but potentially generating substantial rental income.
           </p>
           <p>
             However, as of April 2026, the City is considering repealing the blanket rezoning following a December 2025 council vote. The outcome of the March 2026 public hearing will determine whether these expanded permissions remain in place. Always verify current zoning for your specific property before making development decisions.
@@ -453,7 +453,7 @@ export default function BasementSuitesPost() {
           <p className="text-xs text-gray-500">
             Follow the latest:{" "}
             <a href="https://www.calgary.ca/planning/projects/rezoning-for-housing.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-              Rezoning for Housing — City of Calgary
+              Rezoning for Housing: City of Calgary
             </a>
           </p>
         </section>
@@ -470,7 +470,7 @@ export default function BasementSuitesPost() {
               { label: "Secondary Suite Incentive Program", url: "https://www.calgary.ca/development/home-building/secondary-suite-incentive-program.html" },
               { label: "Backyard suites (carriage / garden suites)", url: "https://www.calgary.ca/development/home-building/new-backyard-suite.html" },
               { label: "Secondary Suite Registry (verify any address)", url: "https://secondarysuites.calgary.ca/" },
-              { label: "Renting a secondary suite — tenant info", url: "https://www.calgary.ca/property-renters/secondary-suites.html" },
+              { label: "Renting a secondary suite: tenant info", url: "https://www.calgary.ca/property-renters/secondary-suites.html" },
               { label: "Report a bylaw violation (311)", url: "https://www.calgary.ca/bylaws/complaints.html" },
               { label: "Apply for permits online", url: "https://apply.calgary.ca" },
             ].map((link) => (
@@ -534,7 +534,7 @@ export default function BasementSuitesPost() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan what you&apos;re working on — he&apos;ll get back to you within 24 hours.
+              Tell Chan what you&apos;re working on. He&apos;ll get back to you within 24 hours.
             </p>
             <ContactForm />
           </div>

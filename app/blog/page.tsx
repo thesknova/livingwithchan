@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Calgary Real Estate Blog | Chan Kawaguchi",
   description:
-    "Practical Calgary real estate advice from REMAX agent Chan Kawaguchi — market insights, buyer and seller tips, neighbourhood guides, and more.",
+    "Practical Calgary real estate advice from REMAX agent Chan Kawaguchi: market insights, buyer and seller tips, neighbourhood guides, and more.",
 };
 
 const posts = [
@@ -21,7 +21,7 @@ const posts = [
     slug: "legal-vs-illegal-basement-suites-calgary",
     title: "Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know",
     excerpt:
-      "Calgary has 20,000+ registered suites — but many more aren't. Chan breaks down what makes a suite legal, the real risks of an illegal one, and how to legalize yours.",
+      "Calgary has 20,000+ registered suites, but many more aren't. Chan breaks down what makes a suite legal, the real risks of an illegal one, and how to legalize yours.",
     date: "April 1, 2026",
     category: "Investor Tips",
     readTime: "11 min read",
@@ -30,7 +30,7 @@ const posts = [
     slug: "calgary-zoning-explained",
     title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
     excerpt:
-      "The 2024 blanket rezoning automatically converted thousands of Calgary lots to R-CG. Here's what that means — and what the potential 2026 repeal could change again.",
+      "The 2024 blanket rezoning automatically converted thousands of Calgary lots to R-CG. Here's what that means and what the potential 2026 repeal could change again.",
     date: "April 1, 2026",
     category: "Investor Tips",
     readTime: "10 min read",
@@ -39,7 +39,7 @@ const posts = [
     slug: "renting-vs-buying",
     title: "Renting vs. Buying in Calgary: A Honest Comparison",
     excerpt:
-      "Not sure whether to rent or buy? Chan breaks down the real pros and cons of each — including what most people get wrong about the math.",
+      "Not sure whether to rent or buy? Chan breaks down the real pros and cons of each, including what most people get wrong about the math.",
     date: "March 31, 2026",
     category: "Buyer Tips",
     readTime: "8 min read",
@@ -57,7 +57,7 @@ export default function BlogPage() {
           </span>
           <h1 className="text-4xl font-bold mt-2 mb-3">The Blog</h1>
           <p className="text-stone-400 text-lg max-w-2xl">
-            Practical Calgary real estate advice — no fluff, no clickbait. Just
+            Practical Calgary real estate advice. No fluff, no clickbait. Just
             honest guidance to help you make better decisions.
           </p>
         </div>

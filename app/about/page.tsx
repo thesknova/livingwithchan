@@ -75,7 +75,7 @@ export default function AboutPage() {
               {
                 icon: "🏙️",
                 title: "Deep Calgary Knowledge",
-                body: "Born and raised in Calgary, Chan knows every community from Airdrie to Okotoks — and everything in between.",
+                body: "Born and raised in Calgary, Chan knows every community from Airdrie to Okotoks and everything in between.",
               },
               {
                 icon: "🤝",
@@ -90,7 +90,7 @@ export default function AboutPage() {
               {
                 icon: "📱",
                 title: "Always Accessible",
-                body: "Real estate doesn't stop at 5pm. Chan is reachable when it matters most — mornings, evenings, and weekends.",
+                body: "Real estate doesn't stop at 5pm. Chan is reachable when it matters most: mornings, evenings, and weekends.",
               },
             ].map((item) => (
               <div

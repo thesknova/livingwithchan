@@ -11,7 +11,7 @@ const considerations = [
   {
     icon: "🔄",
     title: "Sell First or Buy First?",
-    body: "The order matters — and the right answer depends on current market conditions. Chan assesses both sides and recommends the approach that protects you from carrying two mortgages or being caught without a home.",
+    body: "The order matters, and the right answer depends on current market conditions. Chan assesses both sides and recommends the approach that protects you from carrying two mortgages or being caught without a home.",
   },
   {
     icon: "📅",
@@ -43,7 +43,7 @@ export default function MoveUpBuyersPage() {
           </h1>
           <p className="text-stone-400 text-lg max-w-2xl">
             Whether your family is growing, your lifestyle has changed, or
-            you&apos;ve simply outgrown your current home — Chan manages both
+            you&apos;ve simply outgrown your current home. Chan manages both
             sides of your move so nothing falls through the cracks.
           </p>
         </div>
@@ -69,8 +69,8 @@ export default function MoveUpBuyersPage() {
           </p>
           <p className="text-gray-600 leading-relaxed">
             Chan handles both your sale and your purchase, meaning he has full
-            visibility into both timelines. That coordination — rarely available
-            when you use separate agents — is what makes the difference between
+            visibility into both timelines. That coordination, rarely available
+            when you use separate agents, is what makes the difference between
             a smooth transition and a chaotic one.
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function MoveUpBuyersPage() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan about your current home and where you want to go next — he&apos;ll be in touch within 24 hours.
+              Tell Chan about your current home and where you want to go next. He&apos;ll be in touch within 24 hours.
             </p>
             <ContactForm />
           </div>

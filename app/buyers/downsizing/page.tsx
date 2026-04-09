@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Downsizing in Calgary | Chan Kawaguchi",
   description:
-    "Ready to downsize in Calgary? Chan Kawaguchi helps empty nesters and retirees find the perfect right-sized home — lock-and-leave condos, bungalows, and adult communities.",
+    "Ready to downsize in Calgary? Chan Kawaguchi helps empty nesters and retirees find the perfect right-sized home: lock-and-leave condos, bungalows, and adult communities.",
 };
 
 const highlights = [
@@ -52,7 +52,7 @@ export default function DownsizingPage() {
           </h1>
           <p className="text-stone-400 text-lg max-w-2xl">
             The kids have moved out. The big house served you well. Now
-            it&apos;s time for a home that fits your life today — less
+            it&apos;s time for a home that fits your life today: less
             maintenance, more freedom, and exactly what you need.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function DownsizingPage() {
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             For most empty nesters and retirees, downsizing isn&apos;t just
-            about finding a smaller home — it&apos;s about finding the right
+            about finding a smaller home. It&apos;s about finding the right
             lifestyle. Maybe that&apos;s a condo in the Beltline so you can
             walk to restaurants and the river pathway. Maybe it&apos;s a
             bungalow close to grandchildren in Tuscany. Maybe it&apos;s a
@@ -74,14 +74,14 @@ export default function DownsizingPage() {
           <p className="text-gray-600 leading-relaxed mb-4">
             Chan takes time to understand what the next phase of your life
             looks like before recommending a single property. The goal
-            isn&apos;t just to sell your home and buy a smaller one — it&apos;s
+            isn&apos;t just to sell your home and buy a smaller one. It&apos;s
             to position you for a genuinely better quality of life.
           </p>
           <p className="text-gray-600 leading-relaxed">
             Selling a family home after many years is also an emotional
             process. Chan has helped many long-term homeowners through this
             transition with patience, sensitivity, and zero pressure. There
-            is no rush — only the right move at the right time.
+            is no rush. Only the right move at the right time.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function DownsizingPage() {
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               No timeline pressure. Chan is happy to have an exploratory
-              conversation about your options — even if you&apos;re a year or
+              conversation about your options, even if you&apos;re a year or
               two away from making a move.
             </p>
             <ul className="space-y-3">
@@ -159,7 +159,7 @@ export default function DownsizingPage() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan about your current situation and what you&apos;re hoping for — he&apos;ll be in touch within 24 hours.
+              Tell Chan about your current situation and what you&apos;re hoping for. He&apos;ll be in touch within 24 hours.
             </p>
             <ContactForm />
           </div>

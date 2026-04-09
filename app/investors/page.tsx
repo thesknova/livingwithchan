@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "3.2%", label: "Average cap rate, Calgary rentals" },
-  { value: "1.8%", label: "Vacancy rate — near record low" },
+  { value: "1.8%", label: "Vacancy rate, near record low" },
   { value: "$2,400+", label: "Average 2BR rent, Calgary" },
   { value: "No PST", label: "Alberta tax advantage" },
 ];
@@ -19,25 +19,25 @@ const stats = [
 const blogPosts = [
   {
     title: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
-    excerpt: "How to buy or sell a Calgary property with Bitcoin — the process, CRA tax rules, and a live BTC/CAD calculator.",
+    excerpt: "How to buy or sell a Calgary property with Bitcoin: the process, CRA tax rules, and a live BTC/CAD calculator.",
     href: "/blog/bitcoin-real-estate-calgary",
     category: "Investor Tips",
   },
   {
     title: "Legal vs. Illegal Basement Suites in Calgary",
-    excerpt: "Permits, egress windows, fire separation, fines up to $40,000 — what makes a suite legal and why it matters for landlords and tenants.",
+    excerpt: "Permits, egress windows, fire separation, fines up to $40,000: what makes a suite legal and why it matters for landlords and tenants.",
     href: "/blog/legal-vs-illegal-basement-suites-calgary",
     category: "Investor Tips",
   },
   {
     title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning",
-    excerpt: "The 2024 blanket rezoning changed thousands of Calgary lots to R-CG. Learn what it means for investors — and whether the 2026 repeal will affect you.",
+    excerpt: "The 2024 blanket rezoning changed thousands of Calgary lots to R-CG. Learn what it means for investors and whether the 2026 repeal will affect you.",
     href: "/blog/calgary-zoning-explained",
     category: "Investor Tips",
   },
   {
     title: "Renting vs. Buying in Calgary: An Honest Comparison",
-    excerpt: "Understand the financial math behind owning vs. renting — essential reading before your first investment.",
+    excerpt: "Understand the financial math behind owning vs. renting, essential reading before your first investment.",
     href: "/blog/renting-vs-buying",
     category: "Buyer Tips",
   },
@@ -105,7 +105,7 @@ export default function InvestorsPage() {
                 Calgary&apos;s rental vacancy rate sits near historic lows while
                 the city&apos;s population continues growing from strong
                 interprovincial and international migration. Demand for rental
-                housing is outpacing new supply — a fundamental driver of both
+                housing is outpacing new supply, a fundamental driver of both
                 rent growth and property appreciation.
               </p>
               <p>
@@ -117,7 +117,7 @@ export default function InvestorsPage() {
               <p>
                 Entry price points remain well below Vancouver and Toronto,
                 giving investors higher cap rates and better cash-on-cash
-                returns — especially in the NE and SE quadrants where rental
+                returns, especially in the NE and SE quadrants where rental
                 demand from young families and newcomers is strongest.
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function InvestorsPage() {
           </h2>
           <p className="text-stone-400 max-w-xl mx-auto text-sm leading-relaxed mb-8">
             Finding a true investment property requires more than a standard MLS
-            search — it takes local knowledge of rental yields, tenant demand,
+            search. It takes local knowledge of rental yields, tenant demand,
             and neighbourhood trajectories. Chan curates opportunities
             specifically matched to your budget and return targets.
           </p>
@@ -246,7 +246,7 @@ export default function InvestorsPage() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan your budget, target return, and preferred area — he&apos;ll get back to you within 24 hours.
+              Tell Chan your budget, target return, and preferred area. He&apos;ll get back to you within 24 hours.
             </p>
             <ContactForm />
           </div>

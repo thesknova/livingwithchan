@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Renting vs. Buying in Calgary | Chan Kawaguchi",
   description:
-    "Should you rent or buy in Calgary? Chan Kawaguchi breaks down the real pros and cons of each option — including what most people get wrong about the math.",
+    "Should you rent or buy in Calgary? Chan Kawaguchi breaks down the real pros and cons of each option, including what most people get wrong about the math.",
 };
 
 export default function RentingVsBuyingPost() {
@@ -44,10 +44,10 @@ export default function RentingVsBuyingPost() {
 
           {/* Intro */}
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            &ldquo;Should I rent or buy?&rdquo; It&apos;s the most common question I get from people who are new to Calgary, early in their careers, or simply unsure about the market. And honestly, there&apos;s no single right answer — it depends on your life stage, your finances, and your goals.
+            &ldquo;Should I rent or buy?&rdquo; It&apos;s the most common question I get from people who are new to Calgary, early in their careers, or simply unsure about the market. And honestly, there&apos;s no single right answer. It depends on your life stage, your finances, and your goals.
           </p>
           <p className="text-gray-600 leading-relaxed mb-10">
-            What I can do is cut through the noise and give you the real picture. I&apos;ve helped hundreds of Calgary families make this decision, and I&apos;ve seen what works — and what people regret. Here&apos;s what you actually need to know.
+            What I can do is cut through the noise and give you the real picture. I&apos;ve helped hundreds of Calgary families make this decision, and I&apos;ve seen what works and what people regret. Here&apos;s what you actually need to know.
           </p>
 
           {/* The case for buying */}
@@ -60,7 +60,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">You Build Equity with Every Payment</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    When you pay rent, that money is gone. When you pay a mortgage, a portion of every payment reduces your loan balance and builds ownership. Over time — especially in a market like Calgary where prices have historically trended upward — that equity becomes real wealth. A homeowner who bought a detached home in Calgary ten years ago has typically seen their net worth grow significantly just from appreciation alone.
+                    When you pay rent, that money is gone. When you pay a mortgage, a portion of every payment reduces your loan balance and builds ownership. Over time, especially in a market like Calgary where prices have historically trended upward, that equity becomes real wealth. A homeowner who bought a detached home in Calgary ten years ago has typically seen their net worth grow significantly just from appreciation alone.
                   </p>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Alberta&apos;s Tax Advantage</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Alberta has no provincial income tax on capital gains from a principal residence sale — the same federal exemption that applies everywhere. But Alberta also has no land transfer tax (unlike BC or Ontario, where buyers can pay tens of thousands at closing). This makes the cost of buying and selling in Calgary significantly lower, which means more of your equity stays in your pocket.
+                    Alberta has no provincial income tax on capital gains from a principal residence sale, the same federal exemption that applies everywhere. But Alberta also has no land transfer tax (unlike BC or Ontario, where buyers can pay tens of thousands at closing). This makes the cost of buying and selling in Calgary significantly lower, which means more of your equity stays in your pocket.
                   </p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Stability and Control</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Owning means nobody can raise your rent, renovict you, or sell the property out from under you. Your monthly payment is predictable (especially on a fixed mortgage), and you can renovate, paint, or get a dog without asking permission. That stability has real value — especially for families with kids in school or people who want to put down roots in a community.
+                    Owning means nobody can raise your rent, renovict you, or sell the property out from under you. Your monthly payment is predictable (especially on a fixed mortgage), and you can renovate, paint, or get a dog without asking permission. That stability has real value, especially for families with kids in school or people who want to put down roots in a community.
                   </p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <p className="text-sm font-semibold text-primary mb-1">You Own the Problems Too</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Furnace breaks in January? That&apos;s your bill. Roof needs replacing after 20 years? Also yours. Homeownership carries ongoing maintenance costs that renters never think about — a common rule of thumb is budgeting 1–2% of your home&apos;s value per year for maintenance and repairs.
+                    Furnace breaks in January? That&apos;s your bill. Roof needs replacing after 20 years? Also yours. Homeownership carries ongoing maintenance costs that renters never think about. A common rule of thumb is budgeting 1–2% of your home&apos;s value per year for maintenance and repairs.
                   </p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <p className="text-sm font-semibold text-primary mb-1">Reduced Flexibility</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Selling a home takes time and costs money — typically 3–5% of the sale price in commissions plus closing costs. If your job situation changes or you want to move cities within two or three years, buying may not make financial sense. Generally, you need to stay in a home for at least three to five years for ownership to outperform renting financially.
+                    Selling a home takes time and costs money, typically 3–5% of the sale price in commissions plus closing costs. If your job situation changes or you want to move cities within two or three years, buying may not make financial sense. Generally, you need to stay in a home for at least three to five years for ownership to outperform renting financially.
                   </p>
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Maximum Flexibility</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Renting gives you the ability to move quickly — for a new job, a new relationship, a new city, or simply because you want a different neighbourhood. For people in their 20s and early 30s who are still figuring out their career and life path, this flexibility has enormous value that&apos;s hard to put a number on.
+                    Renting gives you the ability to move quickly, whether for a new job, a new relationship, a new city, or simply because you want a different neighbourhood. For people in their 20s and early 30s who are still figuring out their career and life path, this flexibility has enormous value that&apos;s hard to put a number on.
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Lower Upfront Cost</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    A damage deposit and first month&apos;s rent is all you need to move into a rental. That cash you haven&apos;t tied up in a down payment can be invested elsewhere — the stock market, your business, or your education.
+                    A damage deposit and first month&apos;s rent is all you need to move into a rental. That cash you haven&apos;t tied up in a down payment can be invested elsewhere: the stock market, your business, or your education.
                   </p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">No Maintenance Responsibility</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    When something breaks, you call the landlord. That simplicity has real value — especially if you travel frequently, work long hours, or simply don&apos;t want to spend your weekends on home repairs.
+                    When something breaks, you call the landlord. That simplicity has real value, especially if you travel frequently, work long hours, or simply don&apos;t want to spend your weekends on home repairs.
                   </p>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Try Before You Commit to a Neighbourhood</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    New to Calgary? Renting in a neighbourhood for a year before buying is a smart move. You&apos;ll learn which communities actually suit your commute, your lifestyle, and your personality — information that&apos;s worth a lot when you make a $500,000+ decision.
+                    New to Calgary? Renting in a neighbourhood for a year before buying is a smart move. You&apos;ll learn which communities actually suit your commute, your lifestyle, and your personality. That&apos;s information worth a lot when you make a $500,000+ decision.
                   </p>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <p className="text-sm font-semibold text-primary mb-1">You&apos;re Building Someone Else&apos;s Equity</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Every rent payment goes entirely to your landlord. Over 25 years, the difference between rent paid and mortgage paid — with zero equity to show for the rent — is massive. This is the biggest long-term financial disadvantage of renting.
+                    Every rent payment goes entirely to your landlord. Over 25 years, the difference between rent paid and mortgage paid (with zero equity to show for the rent) is massive. This is the biggest long-term financial disadvantage of renting.
                   </p>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function RentingVsBuyingPost() {
                 <div>
                   <p className="text-sm font-semibold text-primary mb-1">Insecurity of Tenure</p>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    A landlord can decide to sell, move in family members, or simply not renew your lease. No matter how good a tenant you are, you can be asked to leave with proper notice. That instability is stressful — particularly for families with children in schools and established routines.
+                    A landlord can decide to sell, move in family members, or simply not renew your lease. No matter how good a tenant you are, you can be asked to leave with proper notice. That instability is stressful, particularly for families with children in schools and established routines.
                   </p>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function RentingVsBuyingPost() {
               At the same time, the rental market has tightened considerably. Calgary&apos;s rental vacancy rate has dropped sharply, and average rents for a two-bedroom apartment in desirable inner-city communities have risen to $2,200–$2,800/month. That&apos;s not far off what a mortgage payment looks like on an entry-level condo purchase with 10% down.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              The practical implication: for many Calgarians, the monthly cost difference between renting and owning has narrowed — which means the equity-building advantage of owning is now more compelling than it has been in the past.
+              The practical implication: for many Calgarians, the monthly cost difference between renting and owning has narrowed, which means the equity-building advantage of owning is now more compelling than it has been in the past.
             </p>
           </div>
 
@@ -316,7 +316,7 @@ export default function RentingVsBuyingPost() {
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               Chan offers a no-obligation conversation to help you figure out
-              whether buying makes sense for your situation right now — or what
+              whether buying makes sense for your situation right now, or what
               you need to do to get there.
             </p>
             <ul className="space-y-3">
@@ -345,7 +345,7 @@ export default function RentingVsBuyingPost() {
               Send a Message
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Whether you&apos;re ready to buy or just starting to think about it, Chan is happy to chat — no pressure, no obligation.
+              Whether you&apos;re ready to buy or just starting to think about it, Chan is happy to chat. No pressure, no obligation.
             </p>
             <ContactForm />
           </div>

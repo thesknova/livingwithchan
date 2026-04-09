@@ -104,7 +104,7 @@ export default function BitcoinCalculator() {
             </svg>
             <h2 className="text-xl font-bold text-white">BTC ↔ CAD Calculator</h2>
           </div>
-          <p className="text-gray-400 text-xs">Live Bitcoin price — updates every 60 seconds</p>
+          <p className="text-gray-400 text-xs">Live Bitcoin price, updates every 60 seconds</p>
         </div>
         <div className="text-right">
           {btcPrice ? (
@@ -212,7 +212,7 @@ export default function BitcoinCalculator() {
           )}
 
           <p className="text-xs text-gray-400 leading-relaxed">
-            * Price sourced from CoinGecko. For informational purposes only — not a quote. Actual transaction rates may differ. Always confirm the BTC/CAD rate with your broker at time of closing.
+            * Price sourced from CoinGecko. For informational purposes only, not a quote. Actual transaction rates may differ. Always confirm the BTC/CAD rate with your broker at time of closing.
           </p>
         </div>
       )}

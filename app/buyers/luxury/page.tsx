@@ -21,7 +21,7 @@ const highlights = [
   {
     icon: "📐",
     title: "Expert Eye for Quality",
-    body: "From custom millwork to mechanical systems, Chan knows what separates a truly premium home from an overpriced one — and will tell you the difference.",
+    body: "From custom millwork to mechanical systems, Chan knows what separates a truly premium home from an overpriced one and will tell you the difference.",
   },
   {
     icon: "💼",
@@ -60,7 +60,7 @@ export default function LuxuryPage() {
           <p className="text-gray-600 leading-relaxed mb-4">
             Buying a luxury home is about far more than square footage and
             finishes. It&apos;s about finding a property that fits your
-            lifestyle — the right neighbourhood, the right orientation, the
+            lifestyle: the right neighbourhood, the right orientation, the
             right privacy. Chan understands that at this price point,
             every detail matters.
           </p>
@@ -70,12 +70,12 @@ export default function LuxuryPage() {
             Britannia, the executive estates of Aspen Woods and West Springs,
             the historic prestige of Mount Royal, and the river valley views of
             Roxboro and Erlton. Each community has its own character, pricing
-            dynamics, and buyer profile — and Chan knows them all.
+            dynamics, and buyer profile. Chan knows them all.
           </p>
           <p className="text-gray-600 leading-relaxed">
             Chan also works with luxury sellers, bringing professional
             marketing, high-quality photography, and a targeted approach to
-            reaching qualified buyers — locally, nationally, and
+            reaching qualified buyers locally, nationally, and
             internationally.
           </p>
         </div>

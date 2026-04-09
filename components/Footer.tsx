@@ -136,7 +136,7 @@ export default function Footer() {
                 ✉️ hello@livingwithchan.com
               </a>
             </li>
-            <li>🏢 REMAX, Calgary, AB</li>
+            <li>🏢 #180 234-5149 Country Hills Blvd NW<br />Calgary, AB T3A 5K8</li>
           </ul>
         </div>
       </div>

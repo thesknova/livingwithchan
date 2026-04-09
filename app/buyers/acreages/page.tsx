@@ -26,7 +26,7 @@ const considerations = [
   {
     icon: "🔌",
     title: "Utilities & Connectivity",
-    body: "Power, natural gas, and internet access vary widely across rural properties. Chan helps you understand what's available — and what it costs to get connected.",
+    body: "Power, natural gas, and internet access vary widely across rural properties. Chan helps you understand what's available and what it costs to get connected.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function AcreagesPage() {
           <p className="text-stone-400 text-lg max-w-2xl">
             Just beyond Calgary&apos;s city limits lies a world of acreages,
             hobby farms, and rural retreats. Chan helps buyers find the right
-            property — with the right land, the right infrastructure, and no
+            property with the right land, the right infrastructure, and no
             hidden surprises.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function AcreagesPage() {
           </h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             For many Calgarians, the dream isn&apos;t a bigger house in a
-            suburb — it&apos;s a few acres of land, a detached shop, room for
+            suburb. It&apos;s a few acres of land, a detached shop, room for
             horses or a garden, and the sound of nothing but the wind. Rocky
             View County and the Municipal District of Foothills make that dream
             surprisingly attainable, often within a 30–45 minute drive from
@@ -87,8 +87,8 @@ export default function AcreagesPage() {
           <p className="text-gray-600 leading-relaxed">
             Buying an acreage requires a different kind of due diligence than
             urban or suburban real estate. Chan has specific experience in rural
-            transactions — from well water testing to septic inspections,
-            right-of-way issues, and county zoning — so you can buy with
+            transactions, from well water testing to septic inspections,
+            right-of-way issues, and county zoning, so you can buy with
             confidence.
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function AcreagesPage() {
             Popular Acreage Areas Around Calgary
           </h2>
           <p className="text-sm text-gray-500 mb-6">
-            Each area has a distinct character and price range — Chan helps you
+            Each area has a distinct character and price range. Chan helps you
             find the one that fits your lifestyle and budget.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

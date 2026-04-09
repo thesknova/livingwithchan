@@ -4,14 +4,14 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "New Construction Homes Calgary | Chan Kawaguchi",
   description:
-    "Buying a brand-new build in Calgary? Chan Kawaguchi represents your interests with the builder — from choosing upgrades to reviewing contracts and protecting your deposit.",
+    "Buying a brand-new build in Calgary? Chan Kawaguchi represents your interests with the builder, from choosing upgrades to reviewing contracts and protecting your deposit.",
 };
 
 const tips = [
   {
     icon: "🤝",
     title: "You Need Your Own Representation",
-    body: "The builder's sales rep works for the builder — not you. Having Chan on your side costs you nothing extra and ensures someone is watching out for your interests from day one.",
+    body: "The builder's sales rep works for the builder, not you. Having Chan on your side costs you nothing extra and ensures someone is watching out for your interests from day one.",
   },
   {
     icon: "📝",
@@ -54,7 +54,7 @@ export default function NewConstructionPage() {
             Buying New Construction
           </h1>
           <p className="text-stone-400 text-lg max-w-2xl">
-            A brand-new home is exciting — but the process is very different
+            A brand-new home is exciting, but the process is very different
             from buying resale. Chan guides you through every step so you get
             exactly what you paid for.
           </p>
@@ -73,13 +73,13 @@ export default function NewConstructionPage() {
             communities are constantly being developed across every quadrant.
             Whether you&apos;re drawn to a spec home you can move into quickly
             or a build-to-order where you choose every detail, buying new
-            construction comes with unique opportunities — and unique risks.
+            construction comes with unique opportunities and unique risks.
           </p>
           <p className="text-gray-600 leading-relaxed mb-4">
             Builder sales centres are professionally staffed and welcoming, but
             the people there represent the builder&apos;s interests. Prices,
             upgrades, lot premiums, and possession timelines are all
-            negotiable — but only if you know what to ask for and have someone
+            negotiable, but only if you know what to ask for and have someone
             who knows the process in your corner.
           </p>
           <p className="text-gray-600 leading-relaxed">
@@ -153,7 +153,7 @@ export default function NewConstructionPage() {
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               The best time to bring Chan in is before you walk through a
-              builder&apos;s showhome — not after. Once you&apos;ve signed with
+              builder&apos;s showhome, not after. Once you&apos;ve signed with
               a builder, your options narrow considerably.
             </p>
             <ul className="space-y-3">
@@ -182,7 +182,7 @@ export default function NewConstructionPage() {
               Contact Us
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan which communities or builders you&apos;re looking at — he&apos;ll share what he knows and set up a no-obligation consultation.
+              Tell Chan which communities or builders you&apos;re looking at. He&apos;ll share what he knows and set up a no-obligation consultation.
             </p>
             <ContactForm />
           </div>

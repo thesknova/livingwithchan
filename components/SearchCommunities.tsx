@@ -48,7 +48,7 @@ export default function SearchCommunities() {
           </h2>
           <p className="text-gray-500 mt-3 max-w-md mx-auto text-sm">
             Explore homes across Calgary&apos;s four quadrants. Every
-            neighbourhood has its own character — let Chan help you find yours.
+            neighbourhood has its own character. Let Chan help you find yours.
           </p>
         </div>
 

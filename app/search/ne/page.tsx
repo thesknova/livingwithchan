@@ -4,7 +4,7 @@ import NEListings from "@/components/NEListings";
 export const metadata: Metadata = {
   title: "NE Calgary Homes | Chan Kawaguchi",
   description:
-    "Search homes in Calgary's North East — Evanston, Nolan Hill, Redstone and more. Browse current listings with Chan Kawaguchi, REMAX.",
+    "Search homes in Calgary's North East: Evanston, Nolan Hill, Redstone and more. Browse current listings with Chan Kawaguchi, REMAX.",
 };
 
 export default function NESearchPage() {

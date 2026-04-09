@@ -5,14 +5,14 @@ const segments = [
     icon: "🏡",
     title: "First-Time Buyers",
     description:
-      "New to real estate? Chan walks you through every step — from mortgage pre-approval to possession day — so nothing catches you off guard.",
+      "New to real estate? Chan walks you through every step, from mortgage pre-approval to possession day, so nothing catches you off guard.",
     href: "/buyers/first-time",
   },
   {
     icon: "⬆️",
     title: "Move-Up Buyers",
     description:
-      "Growing family, growing needs. Chan coordinates your sale and purchase so you never miss a beat — and always land in the right home.",
+      "Growing family, growing needs. Chan coordinates your sale and purchase so you never miss a beat and always land in the right home.",
     href: "/buyers/move-up",
   },
   {
@@ -71,7 +71,7 @@ export default function BuyerSegments() {
             Real Estate For Every Stage of Life
           </h2>
           <p className="text-gray-500 mt-3 max-w-lg mx-auto text-sm">
-            Chan works with buyers and sellers at every stage — from first-time
+            Chan works with buyers and sellers at every stage, from first-time
             purchases to luxury estates and investment properties.
           </p>
         </div>

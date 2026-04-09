@@ -4,7 +4,7 @@ import NWListings from "@/components/NWListings";
 export const metadata: Metadata = {
   title: "NW Calgary Homes | Chan Kawaguchi",
   description:
-    "Search homes in Calgary's North West — Tuscany, Rocky Ridge, Scenic Acres and more. Browse current listings with Chan Kawaguchi, REMAX.",
+    "Search homes in Calgary's North West: Tuscany, Rocky Ridge, Scenic Acres and more. Browse current listings with Chan Kawaguchi, REMAX.",
 };
 
 export default function NWSearchPage() {

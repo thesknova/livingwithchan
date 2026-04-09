@@ -55,7 +55,7 @@ export default function HomePage() {
             </h2>
             <p className="text-stone-400 text-lg mb-8 leading-relaxed">
               Whether you&apos;re buying, selling, or just exploring your
-              options — Chan is here to guide you every step of the way.
+              options, Chan is here to guide you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button href="/contact" size="lg">

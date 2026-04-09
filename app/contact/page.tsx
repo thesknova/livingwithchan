@@ -23,7 +23,7 @@ const contactDetails = [
   {
     icon: "🏢",
     label: "Office",
-    value: "REMAX Real Estate, Calgary, AB",
+    value: "#180 234-5149 Country Hills Blvd NW, Calgary, AB T3A 5K8",
     href: null,
   },
   {
@@ -64,7 +64,7 @@ export default function ContactPage() {
 
           <p className="text-gray-600 text-sm leading-relaxed">
             Whether you&apos;re ready to buy, thinking about selling, or just
-            want to explore your options — Chan is here to help. Reach out any
+            want to explore your options. Chan is here to help. Reach out any
             time and expect a response within a few hours.
           </p>
 

@@ -3,7 +3,7 @@ const steps = [
     number: "01",
     title: "Let's Talk",
     description:
-      "We start with a conversation — your goals, your timeline, and what matters most to you. No pressure, just clarity.",
+      "We start with a conversation about your goals, your timeline, and what matters most to you. No pressure, just clarity.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
         <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zm-2 10H6V10h12v2zm0-4H6V6h12v2z"/>
@@ -15,7 +15,7 @@ const steps = [
     number: "02",
     title: "Make a Plan",
     description:
-      "Chan builds a customized strategy tailored to your situation — whether you're buying, selling, or both.",
+      "Chan builds a customized strategy tailored to your situation, whether you're buying, selling, or both.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
         <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
@@ -27,7 +27,7 @@ const steps = [
     number: "03",
     title: "Let's Do This",
     description:
-      "From showings to staging, listings to offers — Chan handles every detail so you can focus on what's next.",
+      "From showings to staging, listings to offers, Chan handles every detail so you can focus on what's next.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
         <path d="M3 9.5L12 4l9 5.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" opacity="0.25"/>
@@ -40,7 +40,7 @@ const steps = [
     number: "04",
     title: "Make a Deal",
     description:
-      "Patient, persistent, and creative negotiation to get you the best possible outcome — every single time.",
+      "Patient, persistent, and creative negotiation to get you the best possible outcome, every single time.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
         <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>

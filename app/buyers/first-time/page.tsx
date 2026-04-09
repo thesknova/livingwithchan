@@ -4,14 +4,14 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "First-Time Home Buyers Calgary | Chan Kawaguchi",
   description:
-    "Buying your first home in Calgary? Chan Kawaguchi guides first-time buyers through every step — from mortgage pre-approval to possession day.",
+    "Buying your first home in Calgary? Chan Kawaguchi guides first-time buyers through every step, from mortgage pre-approval to possession day.",
 };
 
 const steps = [
   {
     icon: "🏦",
     title: "Get Pre-Approved First",
-    body: "Before you fall in love with a home, know your budget. Chan connects you with trusted Calgary mortgage brokers who can get you pre-approved quickly — often within 24 hours.",
+    body: "Before you fall in love with a home, know your budget. Chan connects you with trusted Calgary mortgage brokers who can get you pre-approved quickly, often within 24 hours.",
   },
   {
     icon: "🗺️",
@@ -21,7 +21,7 @@ const steps = [
   {
     icon: "🔍",
     title: "Understand What You're Buying",
-    body: "First-time buyers often don't know what to look for in a home inspection. Chan walks you through every showing with an honest, experienced eye — flagging issues before they become your problem.",
+    body: "First-time buyers often don't know what to look for in a home inspection. Chan walks you through every showing with an honest, experienced eye, flagging issues before they become your problem.",
   },
   {
     icon: "📝",
@@ -55,7 +55,7 @@ export default function FirstTimeBuyersPage() {
           <p className="text-stone-400 text-lg max-w-2xl">
             Buying a home for the first time is one of the biggest decisions
             of your life. Chan makes sure you feel informed, confident, and
-            never pressured — from your first question to possession day.
+            never pressured, from your first question to possession day.
           </p>
         </div>
       </div>
@@ -69,20 +69,20 @@ export default function FirstTimeBuyersPage() {
             Most first-time buyers come in with questions they&apos;re
             embarrassed to ask. There&apos;s no such thing with Chan. Whether
             you&apos;re wondering how a mortgage works, what a condition means,
-            or why a house has been on the market for 60 days — Chan gives you
+            or why a house has been on the market for 60 days. Chan gives you
             straight answers.
           </p>
           <p className="text-gray-600 leading-relaxed mb-4">
             Calgary&apos;s market offers strong options for first-time buyers,
             particularly in the NE and SE quadrants where well-built detached
             homes can still be found under $600K. Townhouses and condos in NW
-            and SW communities offer even more accessible entry points —
+            and SW communities offer even more accessible entry points,
             especially for buyers who prioritize lifestyle and commute over
             square footage.
           </p>
           <p className="text-gray-600 leading-relaxed">
             Chan&apos;s business runs on referrals. That means his focus is on
-            finding you the right home at the right price — not on closing a
+            finding you the right home at the right price, not on closing a
             deal as fast as possible. First-time buyers get the same level of
             care and attention as any other client.
           </p>

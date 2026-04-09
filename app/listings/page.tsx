@@ -4,7 +4,7 @@ import OfficeListings from "@/components/OfficeListings";
 export const metadata: Metadata = {
   title: "Listings",
   description:
-    "Browse current real estate listings in Calgary, AB with Chan Kawaguchi — REMAX Real Estate Agent.",
+    "Browse current real estate listings in Calgary, AB with Chan Kawaguchi, REMAX Real Estate Agent.",
 };
 
 export default function ListingsPage() {
@@ -18,7 +18,7 @@ export default function ListingsPage() {
           </span>
           <h1 className="text-4xl font-bold mt-2 mb-2">Current Listings</h1>
           <p className="text-stone-400 text-lg">
-            Browse available properties — updated live from MLS
+            Browse available properties, updated live from MLS
           </p>
         </div>
       </div>

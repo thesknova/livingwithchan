@@ -75,7 +75,7 @@ export default function CashFlowCalculator() {
       <div className="bg-primary px-8 py-5">
         <h2 className="text-xl font-bold text-white">Cash Flow Calculator</h2>
         <p className="text-stone-400 text-sm mt-1">
-          Estimate your monthly return before talking to Chan — numbers update live.
+          Estimate your monthly return before talking to Chan. Numbers update live.
         </p>
       </div>
 
@@ -99,7 +99,7 @@ export default function CashFlowCalculator() {
           <div>
             <div className="flex justify-between mb-1">
               <label className="text-sm font-medium text-primary">Down Payment</label>
-              <span className="text-sm font-bold text-primary">{downPct}% — {currency(results.downPayment)}</span>
+              <span className="text-sm font-bold text-primary">{downPct}% ({currency(results.downPayment)})</span>
             </div>
             <input type="range" min={5} max={50} step={1}
               value={downPct} onChange={e => setDownPct(+e.target.value)}
@@ -204,7 +204,7 @@ export default function CashFlowCalculator() {
               {currency(results.cashFlow)}
             </p>
             <p className="text-xs text-gray-400 mt-2">
-              {cashFlowPositive ? "Positive cash flow — this property pays you." : "Negative cash flow — review your numbers."}
+              {cashFlowPositive ? "Positive cash flow. This property pays you." : "Negative cash flow. Review your numbers."}
             </p>
           </div>
 

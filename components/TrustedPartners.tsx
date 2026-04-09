@@ -44,7 +44,7 @@ export default function TrustedPartners() {
           </h2>
           <p className="text-gray-500 mt-3 max-w-lg mx-auto text-sm">
             When you work with Chan, you get access to a curated network of
-            Calgary professionals who make the entire process seamless — from
+            Calgary professionals who make the entire process seamless, from
             first showing to moving day and beyond.
           </p>
         </div>
