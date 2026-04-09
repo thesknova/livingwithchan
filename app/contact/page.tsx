@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Chan Kawaguchi, REMAX Real Estate Agent in Calgary, AB. Call 403-681-0107 or send a message.",
+    "Get in touch with Chan Kawaguchi, REMAX Complete Realty Agent in Calgary, AB. Call 403-681-0107 or send a message.",
 };
 
 const contactDetails = [
@@ -58,7 +58,7 @@ export default function ContactPage() {
               Chan Kawaguchi
             </h2>
             <p className="text-gray-500 text-sm">
-              REMAX Real Estate Agent · Calgary, AB
+              REMAX Complete Realty Agent · Calgary, AB
             </p>
           </div>
 
@@ -100,7 +100,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-xs font-semibold text-gray-700">
-                Licensed with REMAX
+                Licensed with REMAX Complete Realty
               </p>
               <p className="text-xs text-gray-400">Calgary, Alberta</p>
             </div>

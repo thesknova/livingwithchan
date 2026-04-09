@@ -490,7 +490,7 @@ export default function BasementSuitesPost() {
             &quot;A legal suite is one of the best ways to add income and equity to a Calgary property — but the permit process exists for real reasons. I&apos;ve seen buyers walk away from otherwise great deals because of an illegal suite that couldn&apos;t be easily legalized. Do it right from the start and it pays for itself many times over.&quot;
           </p>
           <footer className="text-sm font-semibold text-primary">
-            — Chan Kawaguchi, REMAX Real Estate Agent, Calgary
+            — Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
           </footer>
         </blockquote>
 
@@ -511,7 +511,7 @@ export default function BasementSuitesPost() {
           <div className="lg:col-span-2 space-y-4">
             <div>
               <h2 className="text-xl font-bold text-primary mb-1">Questions About a Suite?</h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               Buying a property with a suite, or wondering if a suite can be legalized? Chan will walk you through what&apos;s involved before you commit.

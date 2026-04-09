@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     template: "%s | Living With Chan",
   },
   description:
-    "Chan Kawaguchi is a trusted REMAX Real Estate Agent in Calgary, Alberta. Browse listings, learn about Chan, and get in touch today.",
+    "Chan Kawaguchi is a trusted REMAX Complete Realty Agent in Calgary, Alberta. Browse listings, learn about Chan, and get in touch today.",
   keywords: [
     "Calgary real estate",
-    "REMAX Calgary",
+    "REMAX Complete Realty, Calgary",
     "Chan Kawaguchi",
     "buy home Calgary",
     "sell home Calgary",

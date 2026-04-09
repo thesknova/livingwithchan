@@ -138,7 +138,7 @@ export default function FirstTimeBuyersPage() {
               <h2 className="text-xl font-bold text-primary mb-1">
                 Start the Conversation
               </h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               No pressure, no obligation. Just an honest conversation about

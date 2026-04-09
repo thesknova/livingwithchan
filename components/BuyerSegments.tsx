@@ -16,6 +16,7 @@ const segments: Segment[] = [
     description:
       "New to real estate? Chan walks you through every step, from mortgage pre-approval to possession day, so nothing catches you off guard.",
     href: "/buyers/first-time",
+    image: "/segments/first-time-buyers.png",
   },
   {
     icon: "⬆️",
@@ -23,7 +24,7 @@ const segments: Segment[] = [
     description:
       "Growing family, growing needs. Chan coordinates your sale and purchase so you never miss a beat and always land in the right home.",
     href: "/buyers/move-up",
-    image: "/segments/dining-room.jpg",
+    image: "/segments/move-up-buyers.png",
   },
   {
     icon: "🔑",
@@ -31,6 +32,7 @@ const segments: Segment[] = [
     description:
       "Ready to simplify? Chan helps empty nesters and retirees find the perfect lock-and-leave or right-sized home without the stress.",
     href: "/buyers/downsizing",
+    image: "/segments/downsizing.png",
   },
   {
     icon: "✨",
@@ -54,6 +56,7 @@ const segments: Segment[] = [
     description:
       "Relocating from out of province or abroad? Chan helps newcomers understand Calgary's communities, schools, and market so you land in the right neighbourhood.",
     href: "/buyers/new-to-calgary",
+    image: "/segments/dining-room.jpg",
   },
   {
     icon: "🌾",
@@ -61,6 +64,7 @@ const segments: Segment[] = [
     description:
       "Craving space and privacy just outside the city? Chan knows Rocky View County and Foothills acreage properties inside and out.",
     href: "/buyers/acreages",
+    image: "/segments/acreage.png",
   },
   {
     icon: "🏗️",
@@ -96,25 +100,14 @@ export default function BuyerSegments() {
               href={seg.href}
               className="group relative overflow-hidden rounded-2xl min-h-[300px] flex flex-col justify-end"
             >
-              {seg.image ? (
-                <>
-                  <Image
-                    src={seg.image}
-                    alt={seg.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                </>
-              ) : (
-                <div className="absolute inset-0 bg-[#1C1A18]">
-                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent" />
-                  <span className="absolute top-6 right-6 text-6xl opacity-[0.06] select-none leading-none">
-                    {seg.icon}
-                  </span>
-                </div>
-              )}
+              <Image
+                src={seg.image!}
+                alt={seg.title}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               <div className="relative z-10 p-6">
                 <h3 className="text-base font-bold text-white mb-2">

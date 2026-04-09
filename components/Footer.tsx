@@ -11,7 +11,7 @@ export default function Footer() {
             Living With Chan
           </p>
           <p className="text-sm text-accent mb-4">
-            REMAX Real Estate Agent · Calgary, AB
+            REMAX Complete Realty Agent · Calgary, AB
           </p>
           <p className="text-sm text-stone-400 leading-relaxed mb-5">
             Helping Calgary families buy, sell, and invest in real estate with
@@ -144,7 +144,7 @@ export default function Footer() {
       <div className="border-t border-stone-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone-600">
           <p>© {new Date().getFullYear()} Chan Kawaguchi. All rights reserved.</p>
-          <p>Licensed REMAX Real Estate Agent · Calgary, Alberta</p>
+          <p>Licensed REMAX Complete Realty Agent · Calgary, Alberta</p>
         </div>
       </div>
     </footer>

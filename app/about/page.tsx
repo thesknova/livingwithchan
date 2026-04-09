@@ -8,7 +8,7 @@ import Button from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "About Chan",
   description:
-    "Learn about Chan Kawaguchi, a trusted REMAX Real Estate Agent serving Calgary, Alberta with 10+ years of local expertise.",
+    "Learn about Chan Kawaguchi, a trusted REMAX Complete Realty Agent serving Calgary, Alberta with 10+ years of local expertise.",
 };
 
 const testimonials = [

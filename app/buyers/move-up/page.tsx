@@ -133,7 +133,7 @@ export default function MoveUpBuyersPage() {
               <h2 className="text-xl font-bold text-primary mb-1">
                 Let&apos;s Plan Your Move Up
               </h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               The first step is understanding what your current home is worth

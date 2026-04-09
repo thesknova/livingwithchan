@@ -15,7 +15,7 @@ export default function AgentBio({ compact = false }: AgentBioProps) {
             <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] max-w-md mx-auto lg:mx-0">
               <Image
                 src="/chan-headshot-color.jpg"
-                alt="Chan Kawaguchi, REMAX Real Estate Agent, Calgary"
+                alt="Chan Kawaguchi, REMAX Complete Realty Agent, Calgary"
                 width={600}
                 height={750}
                 className="w-full h-full object-cover object-top"
@@ -40,7 +40,7 @@ export default function AgentBio({ compact = false }: AgentBioProps) {
               Chan Kawaguchi
             </h2>
             <p className="text-base text-gray-500 font-medium mb-6">
-              REMAX Real Estate Agent · Calgary, Alberta
+              REMAX Complete Realty Agent · Calgary, Alberta
             </p>
 
             <p className="text-gray-600 leading-relaxed mb-4">

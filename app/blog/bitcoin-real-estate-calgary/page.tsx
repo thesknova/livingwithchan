@@ -521,7 +521,7 @@ export default function BitcoinRealEstatePost() {
             &quot;Bitcoin real estate is real — it&apos;s happened in Calgary and it will keep happening. The buyers and sellers who make it work are the ones who plan for the tax implications upfront and work with professionals who have actually done it before. The technology is the easy part; the legal and tax structure is where deals succeed or fall apart.&quot;
           </p>
           <footer className="text-sm font-semibold text-primary">
-            — Chan Kawaguchi, REMAX Real Estate Agent, Calgary
+            — Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
           </footer>
         </blockquote>
 
@@ -542,7 +542,7 @@ export default function BitcoinRealEstatePost() {
           <div className="lg:col-span-2 space-y-4">
             <div>
               <h2 className="text-xl font-bold text-primary mb-1">Interested in a Bitcoin Deal?</h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               Whether you&apos;re a buyer looking to use crypto or a seller open to Bitcoin offers, Chan can connect you with the right professionals to make it happen.

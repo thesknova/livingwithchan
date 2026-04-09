@@ -141,7 +141,7 @@ export default function LuxuryPage() {
                 Start Your Luxury Search
               </h2>
               <p className="text-gray-500 text-sm">
-                REMAX Real Estate Agent · Calgary, AB
+                REMAX Complete Realty Agent · Calgary, AB
               </p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Calgary Real Estate Blog | Chan Kawaguchi",
   description:
-    "Practical Calgary real estate advice from REMAX agent Chan Kawaguchi: market insights, buyer and seller tips, neighbourhood guides, and more.",
+    "Practical Calgary real estate advice from REMAX Complete Realty agent Chan Kawaguchi: market insights, buyer and seller tips, neighbourhood guides, and more.",
 };
 
 const posts = [

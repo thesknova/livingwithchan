@@ -4,7 +4,7 @@ import OfficeListings from "@/components/OfficeListings";
 export const metadata: Metadata = {
   title: "Listings",
   description:
-    "Browse current real estate listings in Calgary, AB with Chan Kawaguchi, REMAX Real Estate Agent.",
+    "Browse current real estate listings in Calgary, AB with Chan Kawaguchi, REMAX Complete Realty Agent.",
 };
 
 export default function ListingsPage() {

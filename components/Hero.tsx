@@ -43,7 +43,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg sm:text-xl text-white/85 max-w-xl mb-10 leading-relaxed">
-          Chan Kawaguchi, trusted REMAX agent helping Calgary families buy,
+          Chan Kawaguchi, trusted REMAX Complete Realty agent helping Calgary families buy,
           sell, and invest with confidence.
         </p>
 
@@ -74,7 +74,7 @@ export default function Hero() {
             <p className="text-white font-semibold text-sm leading-tight">
               Chan Kawaguchi
             </p>
-            <p className="text-white/70 text-xs">REMAX Real Estate · Calgary, AB</p>
+            <p className="text-white/70 text-xs">REMAX Complete Realty · Calgary, AB</p>
           </div>
         </div>
       </div>

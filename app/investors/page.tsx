@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Calgary Investment Properties | Chan Kawaguchi",
   description:
-    "Invest in Calgary real estate with confidence. Browse investment properties, run cash flow analysis, and work with REMAX agent Chan Kawaguchi to build your portfolio.",
+    "Invest in Calgary real estate with confidence. Browse investment properties, run cash flow analysis, and work with REMAX Complete Realty agent Chan Kawaguchi to build your portfolio.",
 };
 
 const stats = [
@@ -221,7 +221,7 @@ export default function InvestorsPage() {
               <h2 className="text-xl font-bold text-primary mb-1">
                 Talk to Chan About Investing
               </h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               Whether you&apos;re analyzing your first rental or expanding an

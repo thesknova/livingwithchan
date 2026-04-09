@@ -134,7 +134,7 @@ export default function DownsizingPage() {
               <h2 className="text-xl font-bold text-primary mb-1">
                 Talk to Chan About Downsizing
               </h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               No timeline pressure. Chan is happy to have an exploratory

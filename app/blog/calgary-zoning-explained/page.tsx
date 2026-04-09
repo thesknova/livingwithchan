@@ -277,7 +277,7 @@ export default function CalgaryZoningPost() {
             &quot;Zoning is one of the most underrated pieces of due diligence when buying in Calgary right now. With everything that changed in 2024 — and possibly changing again in 2026 — it pays to understand exactly what a property can and can&apos;t become. I walk every buyer and investor through this before we write an offer.&quot;
           </p>
           <footer className="text-sm font-semibold text-primary">
-            — Chan Kawaguchi, REMAX Real Estate Agent, Calgary
+            — Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
           </footer>
         </blockquote>
 
@@ -301,7 +301,7 @@ export default function CalgaryZoningPost() {
           <div className="lg:col-span-2 space-y-4">
             <div>
               <h2 className="text-xl font-bold text-primary mb-1">Questions About Zoning?</h2>
-              <p className="text-gray-500 text-sm">REMAX Real Estate Agent · Calgary, AB</p>
+              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               Not sure what your property&apos;s zoning means for your plans? Chan will walk you through the specifics, whether you&apos;re buying, selling, or developing.

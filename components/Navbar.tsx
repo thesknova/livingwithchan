@@ -30,7 +30,7 @@ export default function Navbar() {
             Living With Chan
           </span>
           <span className="text-xs text-text-muted font-medium tracking-wide uppercase">
-            REMAX · Calgary
+            REMAX Complete Realty · Calgary
           </span>
         </Link>
 
