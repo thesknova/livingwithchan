@@ -3,7 +3,7 @@ import { getReport, formatPrice, formatChange, marketLabel } from "@/lib/market-
 
 export const runtime = "nodejs";
 
-// 1080×1080 square — optimised for Instagram / Facebook
+// 1080x1080 square optimised for Instagram and Facebook
 const SIZE = 1080;
 
 export async function GET(
