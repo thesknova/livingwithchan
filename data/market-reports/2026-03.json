@@ -1,0 +1,49 @@
+{
+  "slug": "2026-03",
+  "month": "March",
+  "year": 2026,
+  "publishedAt": "2026-04-07",
+  "headline": "Calgary Market Softens in March as Inventory Builds",
+  "summary": "Calgary's housing market showed signs of cooling in March 2026, with sales declining 12.9% year-over-year and the overall benchmark price slipping to $565,600 — down 4.2% from March 2025. Active listings climbed 5.1% year-over-year as more supply entered the market, giving buyers improved choice across all property types. Conditions remain broadly balanced with a sales-to-new-listings ratio of 55%.",
+  "benchmarkPrice": {
+    "overall": 565600,
+    "detached": 741300,
+    "semiDetached": 686100,
+    "townhouse": 423900,
+    "condo": 300300
+  },
+  "benchmarkPriceYoy": {
+    "overall": -4.2,
+    "detached": -3.3,
+    "semiDetached": -0.9,
+    "townhouse": -6.2,
+    "condo": -9.3
+  },
+  "sales": {
+    "total": 1878,
+    "momChange": 0,
+    "yoyChange": -12.9
+  },
+  "newListings": {
+    "total": 3411,
+    "momChange": 0,
+    "yoyChange": -15.2
+  },
+  "activeListings": {
+    "total": 5453,
+    "momChange": 0,
+    "yoyChange": 5.1
+  },
+  "daysOnMarket": 35,
+  "salesToNewListingsRatio": 55.1,
+  "marketType": "balanced",
+  "priceHistory": [
+    { "label": "Mar '26", "price": 565600 }
+  ],
+  "insights": [
+    "Detached home sales fell year-over-year but the segment's benchmark of $741,300 held up better than most, declining only 3.3% — a sign of continued demand for ground-oriented housing.",
+    "Apartment and townhouse prices saw the steepest year-over-year declines (-9.3% and -6.2%), creating improved entry-level opportunities for first-time and downsizing buyers.",
+    "At 35 days on market — up from 29 in March 2025 — sellers are taking longer to find buyers, and well-priced homes in desirable neighbourhoods are standing out more than ever.",
+    "A 55% sales-to-new-listings ratio confirms balanced conditions: neither buyers nor sellers hold a strong hand, making realistic pricing and skilled negotiation critical."
+  ]
+}
