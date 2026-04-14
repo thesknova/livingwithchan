@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+import BuyerIntakeForm from "@/components/BuyerIntakeForm";
 
 export const metadata: Metadata = {
   title: "First-Time Home Buyers Calgary | Chan Kawaguchi",
@@ -132,41 +132,26 @@ export default function FirstTimeBuyersPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-2 space-y-5">
-            <div>
-              <h2 className="text-xl font-bold text-primary mb-1">
-                Start the Conversation
-              </h2>
-              <p className="text-gray-500 text-sm">REMAX Complete Realty Agent · Calgary, AB</p>
-            </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              No pressure, no obligation. Just an honest conversation about
-              what you&apos;re looking for and whether now is the right time
-              to buy.
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <span className="text-xl">📞</span>
-                <a href="tel:4036810107" className="text-sm font-medium text-primary hover:text-accent transition-colors">
-                  403-681-0107
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl">✉️</span>
-                <a href="mailto:hello@livingwithchan.com" className="text-sm font-medium text-primary hover:text-accent transition-colors">
-                  hello@livingwithchan.com
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
-            <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
-            <p className="text-sm text-gray-500 mb-6">
-              Tell Chan a bit about what you&apos;re looking for and he&apos;ll get back to you within 24 hours.
-            </p>
-            <ContactForm />
-          </div>
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-primary mb-2">
+            Tell Chan What You&apos;re Looking For
+          </h2>
+          <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mb-2">
+            Fill out this short buyer profile and Chan will get to work finding
+            homes that match your needs — no wasted viewings, no pressure. Or
+            reach out directly at{" "}
+            <a href="tel:4036810107" className="text-accent font-medium hover:underline">
+              403-681-0107
+            </a>{" "}
+            or{" "}
+            <a href="mailto:hello@livingwithchan.com" className="text-accent font-medium hover:underline">
+              hello@livingwithchan.com
+            </a>
+            .
+          </p>
+        </div>
+        <div className="bg-white rounded-2xl shadow-sm border border-neutral-mid p-8 sm:p-10">
+          <BuyerIntakeForm />
         </div>
       </div>
     </div>
