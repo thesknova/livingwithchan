@@ -199,6 +199,45 @@ export default async function ReportPage({
           </div>
         </section>
 
+        {/* Further Resources */}
+        <section>
+          <h2 className="text-lg font-bold text-primary mb-5">Further Resources</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="https://www.honestdoor.com/cities/ab/calgary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl border border-neutral-mid p-5 flex gap-4 hover:border-accent transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary group-hover:text-accent transition-colors">HonestDoor — Calgary</p>
+                <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">Neighbourhood-level price estimates, sales history, and property value trends across Calgary communities.</p>
+              </div>
+            </a>
+            <a
+              href="https://www.calgary.ca/communities/housing-in-calgary/housing-research/housing-trends.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-xl border border-neutral-mid p-5 flex gap-4 hover:border-accent transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary group-hover:text-accent transition-colors">City of Calgary — Rental Market</p>
+                <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">Official City of Calgary housing research including rental trends, vacancy rates, and long-term market data.</p>
+              </div>
+            </a>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-primary rounded-2xl p-8 text-white flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
           <div>
