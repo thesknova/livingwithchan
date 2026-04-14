@@ -26,8 +26,8 @@ export default function PriceHistoryChart({ data }: Props) {
     <div className="w-full overflow-x-auto">
       <svg
         viewBox={`0 0 ${totalW + 2} ${chartH + 48}`}
-        className="w-full"
-        style={{ minWidth: totalW + 2 }}
+        width={totalW + 2}
+        style={{ maxWidth: "100%", display: "block" }}
         aria-label="Benchmark price history chart"
       >
         {data.map((d, i) => {
