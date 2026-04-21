@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
+import SellerIntakeForm from "@/components/SellerIntakeForm";
 
 export const metadata: Metadata = {
   title: "Sell My Home in Calgary | Chan Kawaguchi",
@@ -67,7 +68,7 @@ export default function SellPage() {
             stress.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button href="/contact" size="lg">
+            <Button href="#valuation-form" size="lg">
               Get a Free Home Valuation
             </Button>
             <a
@@ -142,18 +143,27 @@ export default function SellPage() {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="bg-primary-dark rounded-2xl p-10 text-center">
-          <h2 className="text-2xl font-bold text-white mb-3">
-            Ready to Find Out What Your Home Is Worth?
+        {/* Seller intake form */}
+        <div id="valuation-form" className="mb-10">
+          <h2 className="text-2xl font-bold text-primary mb-2">
+            Request Your Free Home Valuation
           </h2>
-          <p className="text-stone-400 mb-8 max-w-xl mx-auto">
-            Get a free, no-obligation home valuation from Chan. No automated
-            estimate — a real analysis of your property and your market.
+          <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mb-8">
+            Fill out the form below and Chan will prepare a personalized market
+            analysis for your property — no obligation, no automated estimate.
+            Or reach out directly at{" "}
+            <a href="tel:4036810107" className="text-accent font-medium hover:underline">
+              403-681-0107
+            </a>{" "}
+            or{" "}
+            <a href="mailto:hello@livingwithchan.com" className="text-accent font-medium hover:underline">
+              hello@livingwithchan.com
+            </a>
+            .
           </p>
-          <Button href="/contact" size="lg">
-            Request a Free Valuation
-          </Button>
+          <div className="bg-white rounded-2xl shadow-sm border border-neutral-mid p-8 sm:p-10">
+            <SellerIntakeForm />
+          </div>
         </div>
       </div>
     </div>
