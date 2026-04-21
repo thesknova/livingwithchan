@@ -110,20 +110,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* B&W portrait break */}
-      <section className="relative h-[420px] overflow-hidden">
-        <Image
-          src="/chan-headshot-bw.jpg"
-          alt="Chan Kawaguchi"
-          fill
-          className="object-cover object-top"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent flex items-center">
-          <div className="max-w-6xl mx-auto px-6">
-            <p className="text-white text-2xl sm:text-3xl font-bold max-w-sm leading-snug">
-              Dedicated to every client, every step of the way.
-            </p>
+      {/* B&W portrait + quote */}
+      <section className="bg-primary-dark py-16 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          <div className="flex-shrink-0">
+            <Image
+              src="/chan-headshot-bw.jpg"
+              alt="Chan Kawaguchi"
+              width={280}
+              height={360}
+              className="rounded-2xl object-cover object-top w-[280px] h-[360px]"
+            />
           </div>
+          <p className="text-white text-2xl sm:text-3xl font-bold leading-snug">
+            Dedicated to every client, every step of the way.
+          </p>
         </div>
       </section>
 

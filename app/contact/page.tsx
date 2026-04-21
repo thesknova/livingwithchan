@@ -29,7 +29,7 @@ const contactDetails = [
   {
     icon: "🕐",
     label: "Hours",
-    value: "Mon–Sat 8am–8pm · Sun 10am–5pm",
+    value: "Mon–Sat 9am–7pm · Sun 10am–5pm",
     href: null,
   },
 ];
