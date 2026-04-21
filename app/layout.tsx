@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingSidebar from "@/components/FloatingSidebar";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HHE5VMPLVS"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HHE5VMPLVS');
+          `}
+        </Script>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
