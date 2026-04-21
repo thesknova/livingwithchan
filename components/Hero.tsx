@@ -23,7 +23,7 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        poster="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1600&q=85"
+        poster="/luxury-homes.jpg"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
