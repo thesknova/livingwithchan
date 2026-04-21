@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
 import SellerIntakeForm from "@/components/SellerIntakeForm";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
   title: "Sell My Home in Calgary | Chan Kawaguchi",
@@ -130,17 +131,7 @@ export default function SellPage() {
           <h2 className="text-2xl font-bold text-primary mb-8">
             Common Seller Questions
           </h2>
-          <div className="space-y-4">
-            {faqs.map((f) => (
-              <div
-                key={f.q}
-                className="bg-white rounded-xl p-6 border border-neutral-mid"
-              >
-                <p className="text-sm font-semibold text-primary mb-2">{f.q}</p>
-                <p className="text-sm text-gray-500 leading-relaxed">{f.a}</p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={faqs} />
         </div>
 
         {/* Seller intake form */}
