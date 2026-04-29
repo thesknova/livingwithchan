@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Listing } from "@/lib/types";
 
 function formatPrice(price: number) {
@@ -14,12 +15,12 @@ export default function ListingCard({ listing }: { listing: Listing }) {
     <article className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col">
       {/* Image */}
       <div className="relative h-52 overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={listing.imageUrl}
           alt={`${listing.address}, ${listing.city}`}
-          className="w-full h-full object-cover"
-          loading="lazy"
+          fill
+          sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+          className="object-cover"
         />
         <span className="absolute top-3 left-3 bg-white text-primary text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
           {listing.type}

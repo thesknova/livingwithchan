@@ -40,8 +40,18 @@ export default function Navbar() {
         setResourcesOpen(false);
       }
     }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setServicesOpen(false);
+        setResourcesOpen(false);
+      }
+    }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const isServicesActive = serviceLinks.some((l) => pathname.startsWith(l.href));
@@ -84,6 +94,8 @@ export default function Navbar() {
           <div className="relative" ref={servicesRef}>
             <button
               onClick={() => setServicesOpen((v) => !v)}
+              aria-expanded={servicesOpen}
+              aria-haspopup="menu"
               className={`flex items-center gap-1 text-sm font-medium transition-colors duration-150 ${
                 isServicesActive ? "text-accent" : "text-gray-700 hover:text-primary"
               }`}
@@ -94,17 +106,19 @@ export default function Navbar() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
             {servicesOpen && (
-              <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl border border-neutral-mid shadow-lg py-1.5 z-50">
+              <div role="menu" className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl border border-neutral-mid shadow-lg py-1.5 z-50">
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
+                    role="menuitem"
                     onClick={() => setServicesOpen(false)}
                     className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
                       pathname.startsWith(link.href)
@@ -123,6 +137,8 @@ export default function Navbar() {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setResourcesOpen((v) => !v)}
+              aria-expanded={resourcesOpen}
+              aria-haspopup="menu"
               className={`flex items-center gap-1 text-sm font-medium transition-colors duration-150 ${
                 isResourcesActive ? "text-accent" : "text-gray-700 hover:text-primary"
               }`}
@@ -133,17 +149,19 @@ export default function Navbar() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
             {resourcesOpen && (
-              <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl border border-neutral-mid shadow-lg py-1.5 z-50">
+              <div role="menu" className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl border border-neutral-mid shadow-lg py-1.5 z-50">
                 {resourceLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
+                    role="menuitem"
                     onClick={() => setResourcesOpen(false)}
                     className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
                       pathname.startsWith(link.href)
@@ -170,6 +188,7 @@ export default function Navbar() {
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
         >
           <span

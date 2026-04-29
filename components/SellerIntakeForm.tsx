@@ -96,6 +96,7 @@ function ToggleChip({
   return (
     <button
       type="button"
+      aria-pressed={selected}
       onClick={onClick}
       className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
         selected

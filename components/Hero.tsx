@@ -22,7 +22,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         poster="/luxury-homes.jpg"
       >
         <source src="/hero.mp4" type="video/mp4" />

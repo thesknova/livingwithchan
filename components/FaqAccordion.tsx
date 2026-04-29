@@ -16,6 +16,9 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
         <div key={i} className="bg-white rounded-xl border border-neutral-mid overflow-hidden">
           <button
             type="button"
+            id={`faq-btn-${i}`}
+            aria-expanded={open === i}
+            aria-controls={`faq-answer-${i}`}
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
           >
@@ -25,12 +28,18 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           {open === i && (
-            <div className="px-6 pb-5">
+            <div
+              id={`faq-answer-${i}`}
+              role="region"
+              aria-labelledby={`faq-btn-${i}`}
+              className="px-6 pb-5"
+            >
               <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
             </div>
           )}
