@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import OfficeListings from "@/components/OfficeListings";
 
 export const metadata: Metadata = {
-  title: "Listings",
+  title: "Calgary Homes for Sale | Chan Kawaguchi, REMAX",
   description:
-    "Browse current real estate listings in Calgary, AB with Chan Kawaguchi, REMAX Complete Realty Agent.",
+    "Browse current Calgary homes for sale with Chan Kawaguchi, REMAX Complete Realty. Detached homes, condos, townhouses, and investment properties across all Calgary communities.",
+  openGraph: {
+    title: "Calgary Homes for Sale | Chan Kawaguchi, REMAX",
+    description: "Browse current Calgary real estate listings — detached homes, condos, townhouses, and investment properties.",
+  },
 };
 
 export default function ListingsPage() {

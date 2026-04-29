@@ -6,9 +6,13 @@ import TrustedPartners from "@/components/TrustedPartners";
 import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "About Chan",
+  title: "Chan Kawaguchi — Calgary REMAX Real Estate Agent",
   description:
-    "Learn about Chan Kawaguchi, a trusted REMAX Complete Realty Agent serving Calgary, Alberta with 10+ years of local expertise.",
+    "Meet Chan Kawaguchi, a trusted REMAX Complete Realty Agent with 10+ years serving Calgary families. Local expertise, honest guidance, and a proven track record.",
+  openGraph: {
+    title: "Chan Kawaguchi — Calgary REMAX Real Estate Agent",
+    description: "10+ years helping Calgary families buy, sell, and invest in real estate. Meet Chan Kawaguchi, REMAX Complete Realty.",
+  },
 };
 
 const testimonials = [
@@ -116,7 +120,7 @@ export default function AboutPage() {
           <div className="flex-shrink-0">
             <Image
               src="/chan-headshot-bw.jpg"
-              alt="Chan Kawaguchi"
+              alt="Chan Kawaguchi — REMAX Complete Realty Agent, Calgary Alberta"
               width={280}
               height={360}
               className="rounded-2xl object-cover object-top w-[280px] h-[360px]"

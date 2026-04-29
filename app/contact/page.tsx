@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Chan Kawaguchi — Calgary Real Estate Agent",
   description:
-    "Get in touch with Chan Kawaguchi, REMAX Complete Realty Agent in Calgary, AB. Call 403-681-0107 or send a message.",
+    "Get in touch with Chan Kawaguchi, REMAX Complete Realty Agent in Calgary, AB. Call 403-681-0107 or send a message — expect a response within a few hours.",
+  openGraph: {
+    title: "Contact Chan Kawaguchi — Calgary Real Estate Agent",
+    description: "Call 403-681-0107 or send a message. Chan responds within a few hours.",
+  },
 };
 
 const contactDetails = [

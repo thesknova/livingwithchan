@@ -8,8 +8,22 @@ export const metadata: Metadata = {
     "Should you rent or buy in Calgary? Chan Kawaguchi breaks down the real pros and cons of each option, including what most people get wrong about the math.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Renting vs. Buying in Calgary: An Honest Comparison",
+  description: "Should you rent or buy in Calgary? Chan Kawaguchi breaks down the real pros and cons of each option, including what most people get wrong about the math.",
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  datePublished: "2026-03-31",
+  dateModified: "2026-03-31",
+  url: "https://livingwithchan.com/blog/renting-vs-buying",
+};
+
 export default function RentingVsBuyingPost() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
     <div className="bg-neutral-light min-h-screen">
       {/* Header */}
       <div className="bg-primary text-white py-14 px-6">
@@ -352,5 +366,6 @@ export default function RentingVsBuyingPost() {
         </div>
       </div>
     </div>
+    </>
   );
 }

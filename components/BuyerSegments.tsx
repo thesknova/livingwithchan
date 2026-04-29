@@ -102,7 +102,7 @@ export default function BuyerSegments() {
             >
               <Image
                 src={seg.image!}
-                alt={seg.title}
+                alt={`${seg.title} in Calgary — Chan Kawaguchi, REMAX`}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

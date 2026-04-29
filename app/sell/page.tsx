@@ -4,9 +4,13 @@ import SellerIntakeForm from "@/components/SellerIntakeForm";
 import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Sell My Home in Calgary | Chan Kawaguchi",
+  title: "Sell My Home in Calgary | Chan Kawaguchi, REMAX",
   description:
     "Thinking of selling your Calgary home? Chan Kawaguchi delivers proven pricing strategy, professional marketing, and hands-on support from listing day to close.",
+  openGraph: {
+    title: "Sell Your Calgary Home | Chan Kawaguchi, REMAX",
+    description: "Proven pricing, professional marketing, and hands-on support from list day to close. Get your free home valuation.",
+  },
 };
 
 const steps = [
@@ -51,8 +55,20 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function SellPage() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <div className="bg-neutral-light min-h-screen">
       {/* Hero */}
       <div className="bg-primary text-white py-14 px-6">
@@ -158,5 +174,6 @@ export default function SellPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -8,8 +8,22 @@ export const metadata: Metadata = {
     "Everything Calgary homeowners and investors need to know about zoning types (R-C1, R-C2, R-CG, M-C1) and the city's historic blanket rezoning that changed thousands of properties in 2024.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
+  description: "Everything Calgary homeowners and investors need to know about zoning types and the city's historic blanket rezoning that changed thousands of properties in 2024.",
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  datePublished: "2026-04-01",
+  dateModified: "2026-04-01",
+  url: "https://livingwithchan.com/blog/calgary-zoning-explained",
+};
+
 export default function CalgaryZoningPost() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
     <div className="bg-neutral-light min-h-screen">
 
       {/* Header */}
@@ -332,5 +346,6 @@ export default function CalgaryZoningPost() {
 
       </div>
     </div>
+    </>
   );
 }

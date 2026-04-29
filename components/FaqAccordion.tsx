@@ -33,16 +33,14 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
-          {open === i && (
-            <div
-              id={`faq-answer-${i}`}
-              role="region"
-              aria-labelledby={`faq-btn-${i}`}
-              className="px-6 pb-5"
-            >
-              <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
-            </div>
-          )}
+          <div
+            id={`faq-answer-${i}`}
+            role="region"
+            aria-labelledby={`faq-btn-${i}`}
+            className={`px-6 pb-5 ${open === i ? "" : "hidden"}`}
+          >
+            <p className="text-sm text-gray-500 leading-relaxed">{item.a}</p>
+          </div>
         </div>
       ))}
     </div>

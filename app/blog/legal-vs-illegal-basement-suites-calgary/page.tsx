@@ -8,8 +8,22 @@ export const metadata: Metadata = {
     "What separates a legal secondary suite from an illegal one in Calgary? Permits, egress windows, fire separation, smoke alarms, and the real risks to landlords and tenants.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know",
+  description: "What separates a legal secondary suite from an illegal one in Calgary? Permits, egress windows, fire separation, smoke alarms, and the real risks to landlords and tenants.",
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  datePublished: "2026-04-01",
+  dateModified: "2026-04-01",
+  url: "https://livingwithchan.com/blog/legal-vs-illegal-basement-suites-calgary",
+};
+
 export default function BasementSuitesPost() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
     <div className="bg-neutral-light min-h-screen">
 
       {/* Header */}
@@ -542,5 +556,6 @@ export default function BasementSuitesPost() {
 
       </div>
     </div>
+    </>
   );
 }

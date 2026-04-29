@@ -142,9 +142,13 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-stone-800">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone-600">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
           <p>© {new Date().getFullYear()} Chan Kawaguchi. All rights reserved.</p>
-          <p>Licensed REMAX Complete Realty Agent · Calgary, Alberta</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <p>Licensed REMAX Complete Realty Agent · Calgary, Alberta</p>
+            <Link href="/privacy" className="hover:text-stone-400 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-stone-400 transition-colors">Terms of Use</Link>
+          </div>
         </div>
       </div>
     </footer>

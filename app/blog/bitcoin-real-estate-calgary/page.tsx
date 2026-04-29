@@ -9,8 +9,22 @@ export const metadata: Metadata = {
     "Can you buy or sell a home in Calgary with Bitcoin? Chan breaks down how crypto real estate transactions work in Canada, covering the process, tax implications, real Calgary examples, and a live BTC/CAD calculator.",
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
+  description: "Can you buy or sell a home in Calgary with Bitcoin? Chan breaks down how crypto real estate transactions work in Canada, covering the process, tax implications, and a live BTC/CAD calculator.",
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  datePublished: "2026-04-01",
+  dateModified: "2026-04-01",
+  url: "https://livingwithchan.com/blog/bitcoin-real-estate-calgary",
+};
+
 export default function BitcoinRealEstatePost() {
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
     <div className="bg-neutral-light min-h-screen">
 
       {/* Header */}
@@ -573,5 +587,6 @@ export default function BitcoinRealEstatePost() {
 
       </div>
     </div>
+    </>
   );
 }

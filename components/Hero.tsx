@@ -64,7 +64,7 @@ export default function Hero() {
           <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/40">
             <Image
               src="/chan-headshot.png"
-              alt="Chan Kawaguchi"
+              alt="Chan Kawaguchi — REMAX Complete Realty Agent, Calgary"
               width={40}
               height={40}
               className="w-full h-full object-cover object-top"
