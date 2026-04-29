@@ -25,7 +25,7 @@ export default function AgentBio({ compact = false }: AgentBioProps) {
             {/* Floating badge */}
             <div className="absolute bottom-6 right-6 lg:right-0 bg-primary text-white rounded-xl px-5 py-3 shadow-lg text-center">
               <p className="text-2xl font-bold text-accent">10+</p>
-              <p className="text-xs text-blue-200 font-medium uppercase tracking-wide">
+              <p className="text-xs text-stone-300 font-medium uppercase tracking-wide">
                 Years in Calgary
               </p>
             </div>

@@ -98,7 +98,7 @@ function ToggleChip({
       type="button"
       aria-pressed={selected}
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+      className={`px-3 py-2.5 min-h-[44px] rounded-full text-sm font-medium border transition-colors ${
         selected
           ? "bg-accent text-white border-accent"
           : "bg-white text-gray-700 border-neutral-mid hover:border-accent hover:text-accent"

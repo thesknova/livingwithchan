@@ -58,7 +58,7 @@ export default function TestimonialsStrip() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm"
+              className="bg-white/8 border border-white/10 rounded-2xl p-6"
             >
               <StarRating count={t.stars} />
               <p className="text-white/80 text-sm leading-relaxed mb-5 italic">

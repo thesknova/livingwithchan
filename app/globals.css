@@ -66,7 +66,7 @@ html {
 
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  color: #424242;
-  background: #ffffff;
+  color: var(--color-text-dark);
+  background: var(--color-neutral-light);
   -webkit-font-smoothing: antialiased;
 }
