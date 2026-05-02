@@ -170,11 +170,11 @@ export default function BitcoinRealEstatePost() {
 
         {/* NDAX section */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-bold text-primary">NDAX: The Exchange Chan&apos;s Brokerage Is Using</h2>
+          <h2 className="text-2xl font-bold text-primary">NDAX: A Strong Canadian Exchange Option for Real Estate Deals</h2>
           <p>
-            Not all exchanges are created equal for real estate transactions. Chan&apos;s brokerage is currently evaluating{" "}
+            Not all exchanges are created equal for real estate transactions. For Calgary buyers and sellers,{" "}
             <a href="https://ndax.io" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">NDAX (National Digital Asset Exchange)</a>
-            {" "}as its preferred platform for facilitating Bitcoin real estate deals, and there are good reasons for that.
+            {" "}is worth considering as a platform for facilitating Bitcoin real estate deals, and there are good reasons why.
           </p>
           <div className="bg-white rounded-2xl border border-neutral-mid overflow-hidden shadow-sm">
             <div className="bg-[#1a1a2e] px-6 py-4 flex items-center gap-3">
@@ -460,7 +460,7 @@ export default function BitcoinRealEstatePost() {
               {
                 step: "2",
                 title: "Move Your BTC to a FINTRAC-Registered Exchange",
-                body: "Transfer from cold wallets or offshore exchanges to a registered Canadian exchange. Chan's brokerage uses NDAX (National Digital Asset Exchange), a Calgary-based, FINTRAC-registered platform that provides the full KYC/AML paper trail your lawyer will need. Compile complete acquisition records: dates, amounts paid in CAD, transaction IDs.",
+                body: "Transfer from cold wallets or offshore exchanges to a registered Canadian exchange. NDAX (National Digital Asset Exchange) is a Calgary-based, FINTRAC-registered option that provides the full KYC/AML paper trail your lawyer will need. Compile complete acquisition records: dates, amounts paid in CAD, transaction IDs.",
               },
               {
                 step: "3",
