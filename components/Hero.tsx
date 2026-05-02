@@ -58,6 +58,9 @@ export default function Hero() {
           <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
             Get in Touch
           </Button>
+          <Button href="/blog/calgary-property-tax-assessment" variant="outline" size="lg" className="border-accent text-white bg-accent/20 hover:bg-accent hover:border-accent">
+            Free Home Evaluation
+          </Button>
         </div>
 
         {/* Agent badge */}

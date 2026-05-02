@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "calgary-property-tax-assessment",
+    title: "Calgary Property Tax Assessment: How It Works and How to Challenge It",
+    excerpt:
+      "Every January, your assessment notice determines how much tax you'll pay. Chan explains how Calgary calculates your assessed value, common errors to look for, and exactly how to challenge it through the ARB.",
+    date: "May 1, 2026",
+    category: "Homeowner Tips",
+    readTime: "10 min read",
+  },
+  {
     slug: "bitcoin-real-estate-calgary",
     title: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
     excerpt:
