@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import {
   getReport,
@@ -182,9 +183,13 @@ export default async function InfographicPage({
               {/* Footer branding */}
               <div className="flex items-center justify-between pt-5 border-t border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center text-white text-xs font-extrabold">
-                    RE/MAX
-                  </div>
+                  <Image
+                    src="/remax-logo.jpg"
+                    alt="REMAX Complete Realty"
+                    width={36}
+                    height={36}
+                    className="rounded-lg object-contain"
+                  />
                   <div>
                     <p className="text-sm font-bold text-white">Chan Kawaguchi</p>
                     <p className="text-xs text-stone-500">REMAX Complete Realty</p>

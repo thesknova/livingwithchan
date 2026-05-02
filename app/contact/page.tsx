@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -99,9 +100,13 @@ export default function ContactPage() {
 
           {/* REMAX badge */}
           <div className="bg-white rounded-xl border border-neutral-mid p-4 flex items-center gap-3">
-            <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-              RE/MAX
-            </div>
+            <Image
+              src="/remax-logo.jpg"
+              alt="REMAX Complete Realty"
+              width={48}
+              height={48}
+              className="rounded-lg object-contain"
+            />
             <div>
               <p className="text-xs font-semibold text-gray-700">
                 Licensed with REMAX Complete Realty
