@@ -12,6 +12,7 @@ const navLinks = [
 ];
 
 const serviceLinks = [
+  { label: "Buying a Home", href: "/buyers" },
   { label: "Investors", href: "/investors" },
   { label: "First-Time Buyers", href: "/buyers/first-time" },
   { label: "Sell My House", href: "/sell" },

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -60,23 +61,23 @@ export default function Hero() {
         </div>
 
         {/* Agent badge */}
-        <div className="mt-14 flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/40">
+        <Link href="/about" className="mt-14 flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 hover:bg-white/20 transition-colors">
+          <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-white/40">
             <Image
-              src="/chan-headshot.png"
+              src="/chan-headshot-color-new.jpg"
               alt="Chan Kawaguchi — REMAX Complete Realty Agent, Calgary"
-              width={40}
-              height={40}
+              width={64}
+              height={64}
               className="w-full h-full object-cover object-top"
             />
           </div>
           <div className="text-left">
-            <p className="text-white font-semibold text-sm leading-tight">
+            <p className="text-white font-semibold text-base leading-tight">
               Chan Kawaguchi
             </p>
-            <p className="text-white/70 text-xs">REMAX Complete Realty · Calgary, AB</p>
+            <p className="text-white/70 text-sm">REMAX Complete Realty · Calgary, AB</p>
           </div>
-        </div>
+        </Link>
       </div>
     </section>
   );
