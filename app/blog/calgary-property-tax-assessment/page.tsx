@@ -282,7 +282,7 @@ export default function PropertyTaxAssessmentPost() {
               </p>
               <h4 className="font-semibold text-primary text-sm mb-2">How to File</h4>
               <ul className="space-y-1.5 text-sm text-gray-600 mb-4">
-                <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>Online:</strong> <a href="https://calgaryarb.ca" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">calgaryarb.ca</a> (ePortal: track status and submit evidence here)</span></li>
+                <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>Online:</strong> <a href="https://arb.calgary.ca" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">arb.calgary.ca</a> (ePortal: track status and submit evidence here)</span></li>
                 <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>In person or by mail</strong></span></li>
                 <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>By phone:</strong> 403-268-5858</span></li>
               </ul>
