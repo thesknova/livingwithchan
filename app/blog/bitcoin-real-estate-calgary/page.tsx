@@ -532,10 +532,10 @@ export default function BitcoinRealEstatePost() {
         {/* Chan quote */}
         <blockquote className="border-l-4 border-accent pl-6 py-2">
           <p className="text-base italic text-gray-700 leading-relaxed mb-3">
-            &quot;Bitcoin real estate is real — it&apos;s happened in Calgary and it will keep happening. The buyers and sellers who make it work are the ones who plan for the tax implications upfront and work with professionals who have actually done it before. The technology is the easy part; the legal and tax structure is where deals succeed or fall apart.&quot;
+            &quot;Bitcoin real estate is real. It&apos;s happened in Calgary and it will keep happening. The buyers and sellers who make it work are the ones who plan for the tax implications upfront and work with professionals who have actually done it before. The technology is the easy part; the legal and tax structure is where deals succeed or fall apart.&quot;
           </p>
           <footer className="text-sm font-semibold text-primary">
-            — Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
+            Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
           </footer>
         </blockquote>
 

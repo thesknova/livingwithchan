@@ -93,7 +93,7 @@ export default function CalgaryZoningPost() {
             },
             {
               zone: "R-CG",
-              label: "Residential — Grade-Oriented Infill",
+              label: "Residential: Grade-Oriented Infill",
               tag: "Up to 4 units · Suites · Rowhouses",
               color: "bg-amber-50 border-amber-200",
               tagColor: "text-amber-600",
@@ -101,7 +101,7 @@ export default function CalgaryZoningPost() {
             },
             {
               zone: "H-GO",
-              label: "Housing — Grade Oriented",
+              label: "Housing: Grade Oriented",
               tag: "Stacked townhouses · Near transit",
               color: "bg-teal-50 border-teal-200",
               tagColor: "text-teal-600",
@@ -109,7 +109,7 @@ export default function CalgaryZoningPost() {
             },
             {
               zone: "M-C1",
-              label: "Multi-Residential Contextual — Low Profile",
+              label: "Multi-Residential Contextual: Low Profile",
               tag: "3–4 storey apartments · Higher density",
               color: "bg-rose-50 border-rose-200",
               tagColor: "text-rose-600",
@@ -117,7 +117,7 @@ export default function CalgaryZoningPost() {
             },
             {
               zone: "M-C2",
-              label: "Multi-Residential Contextual — Medium Profile",
+              label: "Multi-Residential Contextual: Medium Profile",
               tag: "3–5 storey apartments",
               color: "bg-rose-100 border-rose-300",
               tagColor: "text-rose-700",
@@ -288,10 +288,10 @@ export default function CalgaryZoningPost() {
         {/* Chan quote */}
         <blockquote className="border-l-4 border-accent pl-6 py-2">
           <p className="text-base italic text-gray-700 leading-relaxed mb-3">
-            &quot;Zoning is one of the most underrated pieces of due diligence when buying in Calgary right now. With everything that changed in 2024 — and possibly changing again in 2026 — it pays to understand exactly what a property can and can&apos;t become. I walk every buyer and investor through this before we write an offer.&quot;
+            &quot;Zoning is one of the most underrated pieces of due diligence when buying in Calgary right now. With everything that changed in 2024, and possibly changing again in 2026, it pays to understand exactly what a property can and can&apos;t become. I walk every buyer and investor through this before we write an offer.&quot;
           </p>
           <footer className="text-sm font-semibold text-primary">
-            — Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
+            Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
           </footer>
         </blockquote>
 

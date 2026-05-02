@@ -310,9 +310,9 @@ export default function RentingVsBuyingPost() {
           {/* Final word */}
           <div className="border-l-4 border-accent pl-6 mb-14">
             <p className="text-gray-700 italic leading-relaxed">
-              &ldquo;I&apos;ve talked to many people who waited for prices to drop and ended up paying more. I&apos;ve also talked to people who bought before they were financially ready and ended up stretched. The goal is to buy at the right time for <em>you</em> — not the market.&rdquo;
+              &ldquo;I&apos;ve talked to many people who waited for prices to drop and ended up paying more. I&apos;ve also talked to people who bought before they were financially ready and ended up stretched. The goal is to buy at the right time for <em>you</em>, not the market.&rdquo;
             </p>
-            <p className="text-sm text-accent font-semibold mt-3">— Chan Kawaguchi, REMAX Complete Realty, Calgary</p>
+            <p className="text-sm text-accent font-semibold mt-3">Chan Kawaguchi, REMAX Complete Realty, Calgary</p>
           </div>
 
         </div>

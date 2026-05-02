@@ -501,10 +501,10 @@ export default function BasementSuitesPost() {
         {/* Chan quote */}
         <blockquote className="border-l-4 border-accent pl-6 py-2">
           <p className="text-base italic text-gray-700 leading-relaxed mb-3">
-            &quot;A legal suite is one of the best ways to add income and equity to a Calgary property — but the permit process exists for real reasons. I&apos;ve seen buyers walk away from otherwise great deals because of an illegal suite that couldn&apos;t be easily legalized. Do it right from the start and it pays for itself many times over.&quot;
+            &quot;A legal suite is one of the best ways to add income and equity to a Calgary property, but the permit process exists for real reasons. I&apos;ve seen buyers walk away from otherwise great deals because of an illegal suite that couldn&apos;t be easily legalized. Do it right from the start and it pays for itself many times over.&quot;
           </p>
           <footer className="text-sm font-semibold text-primary">
-            — Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
+            Chan Kawaguchi, REMAX Complete Realty Agent, Calgary
           </footer>
         </blockquote>
 

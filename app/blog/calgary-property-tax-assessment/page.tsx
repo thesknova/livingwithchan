@@ -66,13 +66,13 @@ export default function PropertyTaxAssessmentPost() {
 
             {/* Intro */}
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Every January, Calgary homeowners open an envelope that quietly determines how much property tax they'll pay for the year. Most people glance at the number, file it away, and assume it's correct. But assessment errors are more common than you'd think — and if your assessed value is too high, you're leaving money on the table. Here's everything you need to know about how Calgary assessments work and what to do if yours doesn't look right.
+              Every January, Calgary homeowners open an envelope that quietly determines how much property tax they'll pay for the year. Most people glance at the number, file it away, and assume it's correct. But assessment errors are more common than you'd think. If your assessed value is too high, you're leaving money on the table. Here's everything you need to know about how Calgary assessments work and what to do if yours doesn't look right.
             </p>
 
             {/* Section 1 */}
             <h2 className="text-2xl font-bold text-primary mt-10 mb-4">What Is a Property Assessment?</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Your property assessment is the City of Calgary's estimate of what your home would have sold for on the open market. It's not your purchase price, your insurance value, or what your neighbour thinks it's worth — it's a calculated estimate used specifically to distribute the property tax burden fairly across the city.
+              Your property assessment is the City of Calgary's estimate of what your home would have sold for on the open market. It's not your purchase price, your insurance value, or what your neighbour thinks it's worth. It's a calculated estimate used specifically to distribute the property tax burden fairly across the city.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               The City is required by Alberta's{" "}
@@ -87,7 +87,7 @@ export default function PropertyTaxAssessmentPost() {
             {/* Section 2 */}
             <h2 className="text-2xl font-bold text-primary mt-10 mb-4">How the City of Calgary Calculates Your Assessment</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Calgary uses a process called <strong>mass appraisal</strong> — the same methodology used by assessment offices across Alberta and most of North America. Here's how it works for a typical residential property:
+              Calgary uses a process called <strong>mass appraisal</strong>, the same methodology used by assessment offices across Alberta and most of North America. Here's how it works for a typical residential property:
             </p>
 
             <h3 className="text-lg font-bold text-primary mt-6 mb-3">The Two Key Dates</h3>
@@ -98,7 +98,7 @@ export default function PropertyTaxAssessmentPost() {
               </li>
               <li className="flex items-start gap-3 text-gray-700">
                 <span className="text-accent font-bold mt-0.5 flex-shrink-0">→</span>
-                <span><strong>December 31 (condition date):</strong> Your property's physical condition — including any renovations, additions, or damage — is captured as of December 31 of the prior year.</span>
+                <span><strong>December 31 (condition date):</strong> Your property's physical condition (including any renovations, additions, or damage) is captured as of December 31 of the prior year.</span>
               </li>
             </ul>
 
@@ -173,7 +173,7 @@ export default function PropertyTaxAssessmentPost() {
                 {
                   n: "4",
                   title: "Renovations recorded incorrectly",
-                  body: "A renovation permit gets pulled, but the finished value added is overstated — or a partial renovation is treated as complete.",
+                  body: "A renovation permit gets pulled, but the finished value added is overstated, or a partial renovation is treated as complete.",
                 },
                 {
                   n: "5",
@@ -206,7 +206,7 @@ export default function PropertyTaxAssessmentPost() {
                 <h3 className="text-lg font-bold text-primary">Review Your Assessment Notice and Check the Details</h3>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                When your notice arrives in January, don't just look at the dollar amount — check the property details. Log in to the City's <strong>myTax portal</strong> (the access code is on your notice) to view everything the City has on file for your property:
+                When your notice arrives in January, don't just look at the dollar amount. Check the property details. Log in to the City's <strong>myTax portal</strong> (the access code is on your notice) to view everything the City has on file for your property:
               </p>
               <ul className="space-y-1.5 text-sm text-gray-600">
                 {[
@@ -252,7 +252,7 @@ export default function PropertyTaxAssessmentPost() {
               </ul>
               <div className="mt-4 bg-neutral-light rounded-lg px-4 py-3">
                 <p className="text-sm text-gray-600">
-                  <strong>The Customer Review Period</strong> runs for 67 days after notices are mailed (typically January). For 2026 assessments, the deadline was <strong>March 23, 2026</strong>. Check your notice for the exact deadline — it appears on the front of the document.
+                  <strong>The Customer Review Period</strong> runs for 67 days after notices are mailed (typically January). For 2026 assessments, the deadline was <strong>March 23, 2026</strong>. Check your notice for the exact deadline. It appears on the front of the document.
                 </p>
               </div>
             </div>
@@ -264,13 +264,13 @@ export default function PropertyTaxAssessmentPost() {
                 <h3 className="text-lg font-bold text-primary">File a Formal Complaint with the Assessment Review Board</h3>
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                If the City won't budge and you still believe your assessment is wrong, you can file a formal complaint with the <strong>Calgary Assessment Review Board (ARB)</strong> — an independent body that reviews disputes between property owners and the City.
+                If the City won't budge and you still believe your assessment is wrong, you can file a formal complaint with the <strong>Calgary Assessment Review Board (ARB)</strong>, an independent body that reviews disputes between property owners and the City.
               </p>
               <h4 className="font-semibold text-primary text-sm mb-2">Filing Fees</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                 <div className="bg-neutral-light rounded-lg px-4 py-3 text-sm">
                   <p className="font-semibold text-primary">Residential (3 units or fewer)</p>
-                  <p className="text-gray-600 mt-0.5">$50 — or <strong>$40</strong> if filed before January 31</p>
+                  <p className="text-gray-600 mt-0.5">$50 (or <strong>$40</strong> if filed before January 31)</p>
                 </div>
                 <div className="bg-neutral-light rounded-lg px-4 py-3 text-sm">
                   <p className="font-semibold text-primary">Residential (4+ units) or Commercial</p>
@@ -282,7 +282,7 @@ export default function PropertyTaxAssessmentPost() {
               </p>
               <h4 className="font-semibold text-primary text-sm mb-2">How to File</h4>
               <ul className="space-y-1.5 text-sm text-gray-600 mb-4">
-                <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>Online:</strong> <a href="https://calgaryarb.ca" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">calgaryarb.ca</a> (ePortal — you can also track status and submit evidence here)</span></li>
+                <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>Online:</strong> <a href="https://calgaryarb.ca" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">calgaryarb.ca</a> (ePortal: track status and submit evidence here)</span></li>
                 <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>In person or by mail</strong></span></li>
                 <li className="flex items-start gap-2"><span className="text-accent mt-0.5">→</span><span><strong>By phone:</strong> 403-268-5858</span></li>
               </ul>
@@ -330,11 +330,11 @@ export default function PropertyTaxAssessmentPost() {
             <h2 className="text-2xl font-bold text-primary mt-10 mb-4">Quick Tips Before You File</h2>
             <ul className="space-y-2 mb-8">
               {[
-                "Act early — the earlier you file, the better your chance of an informal resolution.",
-                "Be specific — vague objections don't move the needle. Identify the exact error or comparable sale that supports your position.",
-                "Don't skip the 311 call — many assessments get corrected informally, saving everyone time and money.",
-                "Bring a real estate agent — a good Calgary agent knows the local market and can pull comparable sales quickly, which is often the most useful evidence.",
-                "Know your deadline — it's printed on your assessment notice. Missing it means waiting until next year.",
+                "Act early: the earlier you file, the better your chance of an informal resolution.",
+                "Be specific: vague objections don't move the needle. Identify the exact error or comparable sale that supports your position.",
+                "Don't skip the 311 call. Many assessments get corrected informally, saving everyone time and money.",
+                "Bring a real estate agent. A good Calgary agent knows the local market and can pull comparable sales quickly, which is often the most useful evidence.",
+                "Know your deadline: it's printed on your assessment notice. Missing it means waiting until next year.",
               ].map((tip) => (
                 <li key={tip} className="flex items-start gap-2 text-gray-700 text-sm">
                   <span className="text-accent font-bold mt-0.5 flex-shrink-0">→</span>
@@ -349,27 +349,27 @@ export default function PropertyTaxAssessmentPost() {
               <ul className="space-y-1">
                 <li>
                   <a href="https://www.calgary.ca/property-owners/assessment-tax.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">
-                    City of Calgary — Property Assessment and Tax
+                    City of Calgary: Property Assessment and Tax
                   </a>
                 </li>
                 <li>
                   <a href="https://www.calgary.ca/property-owners/assessment/faq.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">
-                    City of Calgary — Assessment FAQ
+                    City of Calgary: Assessment FAQ
                   </a>
                 </li>
                 <li>
                   <a href="https://www.calgary.ca/property-owners/taxes/complaints.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">
-                    City of Calgary — Before Filing a Property Assessment Complaint
+                    City of Calgary: Before Filing a Property Assessment Complaint
                   </a>
                 </li>
                 <li>
                   <a href="https://newsroom.calgary.ca/2026-property-assessment-notices-have-been-sent-customer-review-period-runs-until-march-23/" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">
-                    City of Calgary Newsroom — 2026 Assessment Notices
+                    City of Calgary Newsroom: 2026 Assessment Notices
                   </a>
                 </li>
                 <li>
                   <a href="https://www.calgary.ca/content/arb/en/home/file-complaint.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">
-                    Calgary Assessment Review Board — File a Complaint
+                    Calgary Assessment Review Board: File a Complaint
                   </a>
                 </li>
               </ul>
