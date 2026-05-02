@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/market-reports`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/mortgage-calculator`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${BASE}/buyer-intake`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${BASE}/buyers`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/buyers/first-time`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/buyers/luxury`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/buyers/investors`, changeFrequency: "monthly", priority: 0.7 },
