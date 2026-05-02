@@ -9,7 +9,8 @@
       "WebSearch",
       "WebFetch(domain:www.urbanupgrade.ca)",
       "WebFetch(domain:www.newinfills.ca)",
-      "WebFetch(domain:livewirecalgary.com)"
+      "WebFetch(domain:livewirecalgary.com)",
+      "WebFetch(domain:www.calgary.ca)"
     ]
   }
 }

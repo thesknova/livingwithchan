@@ -84,7 +84,7 @@ export default function NewConstructionPage() {
           </p>
           <p className="text-gray-600 leading-relaxed">
             Chan has guided many Calgary buyers through new construction
-            purchases across multiple builders and communities. He knows which
+            purchases across multiple builders and communities. She knows which
             builders have strong reputations, where the best value lots are, and
             how to protect your deposit if a project gets delayed or cancelled.
           </p>
@@ -182,7 +182,7 @@ export default function NewConstructionPage() {
               Contact Us
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan which communities or builders you&apos;re looking at. He&apos;ll share what he knows and set up a no-obligation consultation.
+              Tell Chan which communities or builders you&apos;re looking at. She&apos;ll share what she knows and set up a no-obligation consultation.
             </p>
             <ContactForm />
           </div>

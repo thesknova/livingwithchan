@@ -185,7 +185,7 @@ export default function AcreagesPage() {
               Send a Message
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan what you&apos;re looking for in an acreage and he&apos;ll be in touch within 24 hours.
+              Tell Chan what you&apos;re looking for in an acreage and she&apos;ll be in touch within 24 hours.
             </p>
             <ContactForm />
           </div>

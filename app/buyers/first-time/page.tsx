@@ -81,7 +81,7 @@ export default function FirstTimeBuyersPage() {
             square footage.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            Chan&apos;s business runs on referrals. That means his focus is on
+            Chan&apos;s business runs on referrals. That means her focus is on
             finding you the right home at the right price, not on closing a
             deal as fast as possible. First-time buyers get the same level of
             care and attention as any other client.

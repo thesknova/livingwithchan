@@ -84,7 +84,7 @@ export default function NewToCalgaryPage() {
           </p>
           <p className="text-gray-600 leading-relaxed">
             Chan has helped dozens of families relocate to Calgary from other
-            provinces and abroad. He offers virtual tours, video walkthroughs,
+            provinces and abroad. She offers virtual tours, video walkthroughs,
             and community orientation sessions so you can make a confident
             decision even before you arrive.
           </p>
@@ -181,7 +181,7 @@ export default function NewToCalgaryPage() {
               Send a Message
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan where you&apos;re moving from and what you&apos;re looking for. He&apos;ll get back to you within 24 hours.
+              Tell Chan where you&apos;re moving from and what you&apos;re looking for. She&apos;ll get back to you within 24 hours.
             </p>
             <ContactForm />
           </div>

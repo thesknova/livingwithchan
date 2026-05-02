@@ -180,7 +180,7 @@ export default function ContactForm() {
           rows={5}
           value={form.message}
           onChange={handleChange}
-          placeholder="Tell Chan how he can help you..."
+          placeholder="Tell Chan how she can help you..."
           className="w-full rounded-lg border border-neutral-mid px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
         />
       </div>

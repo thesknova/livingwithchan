@@ -246,7 +246,7 @@ export default function InvestorsPage() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan your budget, target return, and preferred area. He&apos;ll get back to you within 24 hours.
+              Tell Chan your budget, target return, and preferred area. She&apos;ll get back to you within 24 hours.
             </p>
             <ContactForm />
           </div>

@@ -175,7 +175,7 @@ export default function LuxuryPage() {
               Send a Message
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan about your ideal home and he&apos;ll be in touch within 24 hours.
+              Tell Chan about your ideal home and she&apos;ll be in touch within 24 hours.
             </p>
             <ContactForm />
           </div>

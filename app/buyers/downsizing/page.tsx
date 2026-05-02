@@ -159,7 +159,7 @@ export default function DownsizingPage() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan about your current situation and what you&apos;re hoping for. He&apos;ll be in touch within 24 hours.
+              Tell Chan about your current situation and what you&apos;re hoping for. She&apos;ll be in touch within 24 hours.
             </p>
             <ContactForm />
           </div>

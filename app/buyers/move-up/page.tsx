@@ -68,7 +68,7 @@ export default function MoveUpBuyersPage() {
             like, and having a clear plan before you list or make an offer.
           </p>
           <p className="text-gray-600 leading-relaxed">
-            Chan handles both your sale and your purchase, meaning he has full
+            Chan handles both your sale and your purchase, meaning she has full
             visibility into both timelines. That coordination, rarely available
             when you use separate agents, is what makes the difference between
             a smooth transition and a chaotic one.
@@ -158,7 +158,7 @@ export default function MoveUpBuyersPage() {
           <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-neutral-mid p-8">
             <h2 className="text-xl font-bold text-primary mb-1">Send a Message</h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan about your current home and where you want to go next. He&apos;ll be in touch within 24 hours.
+              Tell Chan about your current home and where you want to go next. She&apos;ll be in touch within 24 hours.
             </p>
             <ContactForm />
           </div>

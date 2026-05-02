@@ -386,7 +386,7 @@ export default function PropertyTaxAssessmentPost() {
                   Not Sure If Your Assessment Is Fair?
                 </h2>
                 <p className="text-stone-400 leading-relaxed mb-5">
-                  Chan can pull recent comparable sales in your neighbourhood and give you an honest, no-obligation opinion on whether your assessed value lines up with the market. If something looks off, he'll help you understand your options.
+                  Chan can pull recent comparable sales in your neighbourhood and give you an honest, no-obligation opinion on whether your assessed value lines up with the market. If something looks off, she'll help you understand your options.
                 </p>
                 <ul className="space-y-2 text-sm text-stone-300">
                   {[

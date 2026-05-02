@@ -123,7 +123,7 @@ export default async function ListingDetailPage({ params }: Props) {
             <div className="bg-white rounded-2xl border border-neutral-mid shadow-sm p-6 sticky top-24">
               <h2 className="text-lg font-bold text-primary mb-1">Interested in This Property?</h2>
               <p className="text-sm text-gray-500 mb-5">
-                Send Chan a message and he&apos;ll get back to you within 24 hours.
+                Send Chan a message and she&apos;ll get back to you within 24 hours.
               </p>
               <ContactForm />
               <div className="mt-5 pt-5 border-t border-neutral-mid space-y-3">

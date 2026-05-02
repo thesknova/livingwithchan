@@ -174,7 +174,7 @@ export default function InvestorsPage() {
               Send a Message
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Tell Chan about your investment goals and he&apos;ll get back to you within 24 hours.
+              Tell Chan about your investment goals and she&apos;ll get back to you within 24 hours.
             </p>
             <ContactForm />
           </div>
