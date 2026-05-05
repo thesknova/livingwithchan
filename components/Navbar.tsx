@@ -21,6 +21,7 @@ const serviceLinks = [
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Market Reports", href: "/market-reports" },
+  { label: "Things to Do in Calgary", href: "/things-to-do" },
   { label: "Mortgage Calculator", href: "/mortgage-calculator" },
 ];
 
