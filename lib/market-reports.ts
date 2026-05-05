@@ -6,6 +6,16 @@ export interface PricePoint {
   price: number;
 }
 
+export interface RegionalMarket {
+  name: string;
+  benchmarkPrice: number;
+  momChange: number;
+  yoyChange: number;
+  monthsOfSupply: number;
+  inventory?: number;
+  sales?: number;
+}
+
 export interface MarketReport {
   slug: string;
   month: string;
@@ -35,6 +45,20 @@ export interface MarketReport {
   marketType: "buyers" | "balanced" | "sellers";
   priceHistory: PricePoint[];
   insights: string[];
+  monthsOfSupply?: {
+    overall: number;
+    detached: number;
+    semiDetached: number;
+    row: number;
+    condo: number;
+  };
+  propertyTypeSNLR?: {
+    detached: number;
+    semiDetached: number;
+    row: number;
+    condo: number;
+  };
+  regionalMarkets?: RegionalMarket[];
 }
 
 const reportsDir = path.join(process.cwd(), "data", "market-reports");
@@ -71,4 +95,14 @@ export function marketLabel(type: MarketReport["marketType"]): string {
 
 export function marketColor(type: MarketReport["marketType"]): string {
   return { buyers: "text-blue-600", balanced: "text-emerald-600", sellers: "text-orange-600" }[type];
+}
+
+export function prevMonthLabel(month: string): string {
+  const months = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December",
+  ];
+  const idx = months.indexOf(month);
+  if (idx < 0) return "Prev";
+  return months[(idx - 1 + 12) % 12].slice(0, 3);
 }

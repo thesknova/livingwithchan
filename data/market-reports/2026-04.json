@@ -1,0 +1,94 @@
+{
+  "slug": "2026-04",
+  "month": "April",
+  "year": 2026,
+  "publishedAt": "2026-05-04",
+  "headline": "Balanced Conditions in the City, Except for Apartment-Style Units",
+  "summary": "Calgary's housing market maintained broadly balanced conditions in April 2026, with 2,104 sales — down 5.7% from last year but up from March's seasonal levels. The overall benchmark price reached $568,800, edging up from March but still 3.5% below April 2025. Inventory climbed to 5,973 units as new listings trended higher, holding months of supply just below three. The key divide: detached homes face limited supply in many districts while apartment condominiums are firmly in buyer's territory with over four months of supply and prices nearly 9% below last year.",
+  "benchmarkPrice": {
+    "overall": 568800,
+    "detached": 745400,
+    "semiDetached": 690000,
+    "townhouse": 426500,
+    "condo": 301400
+  },
+  "benchmarkPriceYoy": {
+    "overall": -3.5,
+    "detached": -2.8,
+    "semiDetached": -1.5,
+    "townhouse": -5.8,
+    "condo": -8.9
+  },
+  "sales": {
+    "total": 2104,
+    "momChange": 12.0,
+    "yoyChange": -5.7
+  },
+  "newListings": {
+    "total": 3829,
+    "momChange": 12.2,
+    "yoyChange": -5.2
+  },
+  "activeListings": {
+    "total": 5973,
+    "momChange": 9.5,
+    "yoyChange": 1.8
+  },
+  "daysOnMarket": 35,
+  "salesToNewListingsRatio": 55.0,
+  "marketType": "balanced",
+  "monthsOfSupply": {
+    "overall": 2.84,
+    "detached": 2.1,
+    "semiDetached": 2.5,
+    "row": 2.9,
+    "condo": 4.2
+  },
+  "propertyTypeSNLR": {
+    "detached": 58.8,
+    "semiDetached": 50.0,
+    "row": 51.0,
+    "condo": 46.0
+  },
+  "regionalMarkets": [
+    {
+      "name": "Airdrie",
+      "benchmarkPrice": 516700,
+      "momChange": 0.9,
+      "yoyChange": -5.3,
+      "monthsOfSupply": 3.1,
+      "inventory": 494,
+      "sales": 151
+    },
+    {
+      "name": "Cochrane",
+      "benchmarkPrice": 569200,
+      "momChange": 1.1,
+      "yoyChange": -3.2,
+      "monthsOfSupply": 2.8
+    },
+    {
+      "name": "Okotoks",
+      "benchmarkPrice": 627600,
+      "momChange": 1.1,
+      "yoyChange": 0.0,
+      "monthsOfSupply": 2.5,
+      "inventory": 149
+    }
+  ],
+  "priceHistory": [
+    { "label": "Nov '25", "price": 574000 },
+    { "label": "Dec '25", "price": 562000 },
+    { "label": "Jan '26", "price": 553000 },
+    { "label": "Feb '26", "price": 557000 },
+    { "label": "Mar '26", "price": 565600 },
+    { "label": "Apr '26", "price": 568800 }
+  ],
+  "insights": [
+    "Detached homes remain the most contested segment: NW, West, and South districts are in seller's territory with under two months of supply, helping the $745,400 benchmark hold up better than other types at just -2.8% year-over-year.",
+    "Apartment condominiums are firmly in buyer's territory — with 4+ months of supply and inventory 27% above long-term averages, prices have dropped nearly 9% year-over-year to $301,400, creating a strong entry-level opportunity for buyers who are comfortable with more negotiating power.",
+    "The Row segment shows Calgary's widest price variation: the North East has over 11% year-to-date declines while the West is barely off last year at under 2% — the right street matters enormously in this segment right now.",
+    "Seasonal spring momentum is real but modest: the +0.6% month-over-month lift in the overall benchmark reflects typical spring activity, not a market reversal. Sellers in balanced segments still need sharp pricing to attract the shrinking pool of buyers.",
+    "Cochrane is outperforming with a sales-to-new-listings ratio above 70% — nearly seller's market conditions — while Okotoks holds its value best at $627,600, essentially flat with last April, reflecting its tight 2.5 months of supply."
+  ]
+}

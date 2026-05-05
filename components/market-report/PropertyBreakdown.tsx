@@ -7,7 +7,7 @@ interface Props {
 const types = [
   { key: "detached", label: "Detached" },
   { key: "semiDetached", label: "Semi-Detached" },
-  { key: "townhouse", label: "Townhouse" },
+  { key: "townhouse", label: "Row / Townhouse" },
   { key: "condo", label: "Condo/Apt" },
 ] as const;
 

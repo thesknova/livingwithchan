@@ -8,10 +8,14 @@ import {
   formatChange,
   marketLabel,
   marketColor,
+  prevMonthLabel,
 } from "@/lib/market-reports";
 import PriceHistoryChart from "@/components/market-report/PriceHistoryChart";
 import PropertyBreakdown from "@/components/market-report/PropertyBreakdown";
 import MarketMeter from "@/components/market-report/MarketMeter";
+import MonthsOfSupplyChart from "@/components/market-report/MonthsOfSupplyChart";
+import PropertyTypeSNLR from "@/components/market-report/PropertyTypeSNLR";
+import RegionalMarkets from "@/components/market-report/RegionalMarkets";
 
 export async function generateStaticParams() {
   return getAllReports().map((r) => ({ slug: r.slug }));
@@ -120,7 +124,7 @@ export default async function ReportPage({
             <StatCard
               label="Sales"
               value={report.sales.total.toLocaleString()}
-              sub={`${formatChange(report.sales.momChange)} vs Feb · ${formatChange(report.sales.yoyChange)} YoY`}
+              sub={`${formatChange(report.sales.momChange)} vs ${prevMonthLabel(report.month)} · ${formatChange(report.sales.yoyChange)} YoY`}
               subColor="text-gray-500"
             />
             <StatCard
@@ -170,14 +174,53 @@ export default async function ReportPage({
           <PropertyBreakdown report={report} />
         </section>
 
+        {/* Sales-to-New-Listings Ratio by Property Type */}
+        {report.propertyTypeSNLR && (
+          <section className="bg-white rounded-2xl border border-neutral-mid p-8">
+            <h2 className="text-lg font-bold text-primary mb-1">
+              Sales-to-New-Listings Ratio by Property Type
+            </h2>
+            <p className="text-sm text-gray-500 mb-6">
+              How many new listings are selling — below 40% favours buyers, above 60% favours sellers
+            </p>
+            <PropertyTypeSNLR report={report} />
+          </section>
+        )}
+
+        {/* Months of Supply by Property Type */}
+        {report.monthsOfSupply && (
+          <section className="bg-white rounded-2xl border border-neutral-mid p-8">
+            <h2 className="text-lg font-bold text-primary mb-1">
+              Months of Supply by Property Type
+            </h2>
+            <p className="text-sm text-gray-500 mb-6">
+              How long current inventory would last at the current sales pace
+            </p>
+            <MonthsOfSupplyChart report={report} />
+          </section>
+        )}
+
         {/* Price History Chart */}
         <section className="bg-white rounded-2xl border border-neutral-mid p-8">
           <h2 className="text-lg font-bold text-primary mb-1">
-            Benchmark Price — 6-Month Trend
+            Benchmark Price History
           </h2>
-          <p className="text-sm text-gray-500 mb-6">All property types combined</p>
+          <p className="text-sm text-gray-500 mb-6">Overall benchmark, all property types combined</p>
           <PriceHistoryChart data={report.priceHistory} />
         </section>
+
+        {/* Regional Markets */}
+        {report.regionalMarkets?.length && (
+          <section>
+            <h2 className="text-lg font-bold text-primary mb-2">
+              Regional Market Snapshot
+            </h2>
+            <p className="text-sm text-gray-500 mb-5">
+              Surrounding communities — benchmark prices and supply conditions
+            </p>
+            <RegionalMarkets report={report} />
+          </section>
+        )}
 
         {/* Insights */}
         <section>
