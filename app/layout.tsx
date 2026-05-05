@@ -56,6 +56,9 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   verification: {
     google: "a6c25aa00d723201",
+    other: {
+      "impact-site-verification": "6a31597b-7bd0-47de-8cfb-feff427e7057",
+    },
   },
 };
 
