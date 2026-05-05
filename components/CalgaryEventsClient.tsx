@@ -14,7 +14,7 @@ const CATEGORIES: { value: EventCategory; label: string }[] = [
   { value: "Other", label: "Other" },
 ];
 
-const CATEGORY_BADGE: Record<EventCategory, string> = {
+const BADGE: Record<EventCategory, string> = {
   All: "bg-primary text-white",
   Concerts: "bg-purple-600 text-white",
   Sports: "bg-red-600 text-white",
@@ -36,8 +36,28 @@ const FILTER_ACTIVE: Record<EventCategory, string> = {
   Other: "bg-gray-500 text-white border-gray-500",
 };
 
-function formatDate(dateStr: string): string {
-  const [y, m, d] = dateStr.split("-").map(Number);
+function formatDateRange(date: string, endDate?: string): string {
+  const [y, m, d] = date.split("-").map(Number);
+  const start = new Date(y, m - 1, d);
+  const opts: Intl.DateTimeFormatOptions = { month: "long", day: "numeric" };
+
+  if (!endDate || endDate === date) {
+    return start.toLocaleDateString("en-CA", { ...opts, weekday: "short" });
+  }
+
+  const [ey, em, ed] = endDate.split("-").map(Number);
+  const end = new Date(ey, em - 1, ed);
+
+  if (m === em) {
+    // Same month: "May 8 – 17"
+    return `${start.toLocaleDateString("en-CA", { month: "long", day: "numeric" })} – ${ed}`;
+  }
+  // Cross-month: "May 9 – June 7"
+  return `${start.toLocaleDateString("en-CA", opts)} – ${end.toLocaleDateString("en-CA", opts)}`;
+}
+
+function formatHeadingDate(date: string): string {
+  const [y, m, d] = date.split("-").map(Number);
   return new Date(y, m - 1, d).toLocaleDateString("en-CA", {
     weekday: "long",
     month: "long",
@@ -45,55 +65,30 @@ function formatDate(dateStr: string): string {
   });
 }
 
-function formatTime(time?: string): string {
-  if (!time) return "Time TBA";
-  const [h, m] = time.split(":").map(Number);
-  const period = h >= 12 ? "PM" : "AM";
-  return `${h % 12 || 12}:${String(m).padStart(2, "0")} ${period}`;
+function monthKey(date: string) { return date.slice(0, 7); }
+function monthLabel(date: string) {
+  const [y, m] = date.split("-").map(Number);
+  return new Date(y, m - 1, 1).toLocaleDateString("en-CA", { month: "long", year: "numeric" });
 }
 
-function formatPrice(event: CalgaryEvent): string {
-  if (event.isFree || event.priceMin === 0) return "Free";
-  if (event.priceMin != null) return `From $${Math.round(event.priceMin)} CAD`;
-  return "";
-}
-
-function monthKey(dateStr: string) {
-  return dateStr.slice(0, 7);
-}
-
-function monthLabel(dateStr: string) {
-  const [y, m] = dateStr.split("-").map(Number);
-  return new Date(y, m - 1, 1).toLocaleDateString("en-CA", {
-    month: "long",
-    year: "numeric",
-  });
-}
-
-interface Props {
-  events: CalgaryEvent[];
-}
+interface Props { events: CalgaryEvent[] }
 
 export default function CalgaryEventsClient({ events }: Props) {
   const [category, setCategory] = useState<EventCategory>("All");
-  const [selectedMonth, setSelectedMonth] = useState<string>("all");
+  const [selectedMonth, setSelectedMonth] = useState("all");
 
   const months = useMemo(() => {
     const seen = new Set<string>();
-    const result: { key: string; label: string }[] = [];
-    for (const e of events) {
+    return events.reduce<{ key: string; label: string }[]>((acc, e) => {
       const k = monthKey(e.date);
-      if (!seen.has(k)) {
-        seen.add(k);
-        result.push({ key: k, label: monthLabel(e.date) });
-      }
-    }
-    return result;
+      if (!seen.has(k)) { seen.add(k); acc.push({ key: k, label: monthLabel(e.date) }); }
+      return acc;
+    }, []);
   }, [events]);
 
   const activeCategories = useMemo(() => {
-    const withEvents = new Set(events.map((e) => e.category));
-    return CATEGORIES.filter((c) => c.value === "All" || withEvents.has(c.value));
+    const present = new Set(events.map((e) => e.category));
+    return CATEGORIES.filter((c) => c.value === "All" || present.has(c.value));
   }, [events]);
 
   const grouped = useMemo(() => {
@@ -111,11 +106,9 @@ export default function CalgaryEventsClient({ events }: Props) {
     return [...map.entries()].sort(([a], [b]) => a.localeCompare(b));
   }, [events, category, selectedMonth]);
 
-  const hasEvents = events.length > 0;
-
   return (
     <div className="bg-neutral-light min-h-screen">
-      {/* Page header */}
+      {/* Header */}
       <div className="bg-primary text-white py-14 px-6">
         <div className="max-w-5xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
@@ -125,10 +118,9 @@ export default function CalgaryEventsClient({ events }: Props) {
             Things to Do in Calgary
           </h1>
           <p className="text-stone-400 max-w-xl leading-relaxed">
-            Concerts, sports, festivals, food events and more — happening across
-            Calgary over the next 60 days.
+            Concerts, sports, festivals, food events and more — curated from around the city for the next 60 days.
           </p>
-          {hasEvents && (
+          {events.length > 0 && (
             <p className="text-stone-600 text-xs mt-3">
               {events.length} events · Updated weekly
             </p>
@@ -137,13 +129,12 @@ export default function CalgaryEventsClient({ events }: Props) {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-8">
-        {!hasEvents ? (
+        {events.length === 0 ? (
           <EmptyState />
         ) : (
           <>
             {/* Filters */}
             <div className="mb-8 space-y-3">
-              {/* Category pills */}
               <div className="flex flex-wrap gap-2">
                 {activeCategories.map(({ value, label }) => (
                   <button
@@ -160,7 +151,6 @@ export default function CalgaryEventsClient({ events }: Props) {
                 ))}
               </div>
 
-              {/* Month tabs */}
               {months.length > 1 && (
                 <div className="flex flex-wrap gap-2">
                   <button
@@ -190,17 +180,12 @@ export default function CalgaryEventsClient({ events }: Props) {
               )}
             </div>
 
-            {/* Event list */}
+            {/* Events */}
             {grouped.length === 0 ? (
               <div className="text-center py-16">
-                <p className="text-sm text-gray-400">
-                  No events match the selected filters.
-                </p>
+                <p className="text-sm text-gray-400">No events match the selected filters.</p>
                 <button
-                  onClick={() => {
-                    setCategory("All");
-                    setSelectedMonth("all");
-                  }}
+                  onClick={() => { setCategory("All"); setSelectedMonth("all"); }}
                   className="mt-3 text-sm text-accent hover:underline font-medium"
                 >
                   Clear filters
@@ -210,18 +195,16 @@ export default function CalgaryEventsClient({ events }: Props) {
               <div className="space-y-10">
                 {grouped.map(([date, dayEvents]) => (
                   <div key={date}>
-                    {/* Date heading */}
                     <div className="flex items-center gap-3 mb-4">
                       <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 whitespace-nowrap">
-                        {formatDate(date)}
+                        {formatHeadingDate(date)}
                       </h2>
                       <div className="flex-1 border-b border-neutral-mid" />
                       <span className="text-xs text-gray-400 whitespace-nowrap">
-                        {dayEvents.length}{" "}
-                        {dayEvents.length === 1 ? "event" : "events"}
+                        {dayEvents.length} {dayEvents.length === 1 ? "event" : "events"}
                       </span>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       {dayEvents.map((event) => (
                         <EventCard key={event.id} event={event} />
                       ))}
@@ -231,10 +214,17 @@ export default function CalgaryEventsClient({ events }: Props) {
               </div>
             )}
 
-            {/* Data attribution */}
             <p className="text-xs text-gray-400 text-center mt-12">
-              Event data sourced from Ticketmaster. Listings are updated weekly.
-              Prices and availability may change.
+              Events curated from{" "}
+              <a
+                href="https://www.avenuecalgary.com/things-to-do/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Avenue Calgary
+              </a>
+              . Updated weekly. Dates subject to change — confirm with the event organiser.
             </p>
           </>
         )}
@@ -244,73 +234,48 @@ export default function CalgaryEventsClient({ events }: Props) {
 }
 
 function EventCard({ event }: { event: CalgaryEvent }) {
-  const price = formatPrice(event);
+  const dateRange = formatDateRange(event.date, event.endDate);
 
   return (
     <a
-      href={event.ticketUrl}
+      href={event.sourceUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex gap-4 bg-white rounded-xl border border-neutral-mid p-4 hover:border-accent hover:shadow-sm transition-all group"
+      className="flex gap-4 bg-white rounded-xl border border-neutral-mid p-5 hover:border-accent hover:shadow-sm transition-all group"
     >
-      {/* Thumbnail */}
-      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden bg-neutral-mid flex-shrink-0">
-        {event.imageUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
+      {/* Image */}
+      {event.imageUrl && (
+        <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-neutral-mid flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={event.imageUrl}
             alt=""
             className="w-full h-full object-cover"
             loading="lazy"
           />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <svg
-              className="w-6 h-6 text-gray-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Details */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-start gap-2 mb-1.5 flex-wrap">
+        <div className="flex items-start gap-2 mb-2 flex-wrap">
           <p className="text-sm font-bold text-primary group-hover:text-accent transition-colors leading-snug flex-1 min-w-0">
             {event.name}
           </p>
-          <span
-            className={`text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0 whitespace-nowrap ${CATEGORY_BADGE[event.category]}`}
-          >
+          <span className={`text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0 ${BADGE[event.category]}`}>
             {event.category}
           </span>
         </div>
-        <p className="text-xs text-gray-500 truncate">{event.venue}</p>
-        <div className="flex items-center gap-3 mt-2 flex-wrap">
-          <span className="text-xs text-gray-400">{formatTime(event.time)}</span>
-          {price && (
-            <span
-              className={`text-xs font-semibold ${
-                price === "Free" ? "text-emerald-600" : "text-gray-600"
-              }`}
-            >
-              {price}
-            </span>
-          )}
-        </div>
+        <p className="text-xs font-semibold text-accent mb-1.5">{dateRange}</p>
+        {event.description && (
+          <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
+            {event.description}
+          </p>
+        )}
       </div>
 
-      {/* CTA arrow */}
-      <div className="flex items-center flex-shrink-0">
+      {/* CTA */}
+      <div className="flex items-center flex-shrink-0 pl-2">
         <span className="text-sm text-accent font-bold group-hover:translate-x-0.5 transition-transform">
           →
         </span>
@@ -321,32 +286,22 @@ function EventCard({ event }: { event: CalgaryEvent }) {
 
 function EmptyState() {
   return (
-    <div className="py-16 flex items-center justify-center">
+    <div className="py-16 flex justify-center">
       <div className="bg-white rounded-2xl border border-neutral-mid p-10 max-w-md w-full text-center">
         <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-          <svg
-            className="w-7 h-7 text-accent"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
+          <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
         </div>
-        <h2 className="text-base font-bold text-primary mb-2">
-          Events coming soon
-        </h2>
+        <h2 className="text-base font-bold text-primary mb-2">No events found</h2>
         <p className="text-sm text-gray-500 leading-relaxed">
-          Live event data is powered by the Ticketmaster API. Add a{" "}
-          <code className="bg-neutral-light px-1.5 py-0.5 rounded text-xs font-mono">
-            TICKETMASTER_API_KEY
-          </code>{" "}
-          environment variable in Vercel to enable this page.
+          Events are pulled from Avenue Calgary&apos;s monthly guide. Check back soon or visit{" "}
+          <a href="https://www.avenuecalgary.com/things-to-do/" target="_blank" rel="noopener noreferrer"
+            className="text-accent hover:underline">
+            avenuecalgary.com
+          </a>{" "}
+          directly.
         </p>
       </div>
     </div>
