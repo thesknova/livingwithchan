@@ -5,6 +5,7 @@ import StatsBar from "@/components/StatsBar";
 import TrustedPartners from "@/components/TrustedPartners";
 import Button from "@/components/ui/Button";
 import InstagramFeed from "@/components/InstagramFeed";
+import ContactForm from "@/components/ContactForm";
 
 const INSTAGRAM_POSTS = [
   "https://www.instagram.com/p/DYC6f8WBHT6/",
@@ -200,9 +201,29 @@ export default function AboutPage() {
           <p className="text-stone-400 mb-8">
             Ready to start your real estate journey in Calgary? Chan is here to help.
           </p>
-          <Button href="/contact" size="lg">
+          <Button href="#contact" size="lg">
             Get in Touch
           </Button>
+        </div>
+      </section>
+
+      {/* Contact form */}
+      <section id="contact" className="bg-neutral-light py-20 px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+              Get in Touch
+            </span>
+            <h2 className="text-3xl font-bold text-primary mt-2">
+              Send Chan a Message
+            </h2>
+            <p className="text-gray-500 text-sm mt-3">
+              Buying, selling, or just have questions? Chan typically responds within a few hours.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl border border-neutral-mid p-8">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>
