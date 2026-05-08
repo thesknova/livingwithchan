@@ -3,9 +3,10 @@ import Button from "@/components/ui/Button";
 
 interface AgentBioProps {
   compact?: boolean;
+  workWithHref?: string;
 }
 
-export default function AgentBio({ compact = false }: AgentBioProps) {
+export default function AgentBio({ compact = false, workWithHref = "/contact" }: AgentBioProps) {
   return (
     <section className={`bg-white ${compact ? "py-16" : "py-20"}`}>
       <div className="max-w-6xl mx-auto px-6">
@@ -81,7 +82,7 @@ export default function AgentBio({ compact = false }: AgentBioProps) {
             </ul>
 
             <div className="flex flex-wrap gap-3">
-              <Button href="/contact">Work With Chan</Button>
+              <Button href={workWithHref}>Work With Chan</Button>
               {compact && (
                 <Button href="/about" variant="outline">
                   Learn More

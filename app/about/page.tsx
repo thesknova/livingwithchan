@@ -3,7 +3,6 @@ import Image from "next/image";
 import AgentBio from "@/components/AgentBio";
 import StatsBar from "@/components/StatsBar";
 import TrustedPartners from "@/components/TrustedPartners";
-import Button from "@/components/ui/Button";
 import InstagramFeed from "@/components/InstagramFeed";
 import ContactForm from "@/components/ContactForm";
 
@@ -67,7 +66,7 @@ function StarRating({ count }: { count: number }) {
 export default function AboutPage() {
   return (
     <>
-      <AgentBio />
+      <AgentBio workWithHref="#contact" />
       <StatsBar />
 
       {/* Instagram */}
@@ -191,21 +190,6 @@ export default function AboutPage() {
       </section>
 
       <TrustedPartners />
-
-      {/* CTA */}
-      <section className="bg-primary-dark py-16 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Let&apos;s Work Together
-          </h2>
-          <p className="text-stone-400 mb-8">
-            Ready to start your real estate journey in Calgary? Chan is here to help.
-          </p>
-          <Button href="#contact" size="lg">
-            Get in Touch
-          </Button>
-        </div>
-      </section>
 
       {/* Contact form */}
       <section id="contact" className="bg-neutral-light py-20 px-6">
