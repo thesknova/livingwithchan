@@ -69,6 +69,24 @@ export default function AboutPage() {
       <AgentBio />
       <StatsBar />
 
+      {/* Instagram */}
+      <section className="bg-neutral-light py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+              Follow Along
+            </span>
+            <h2 className="text-3xl font-bold text-primary mt-2">
+              Chan on Instagram
+            </h2>
+            <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
+              Market updates, neighbourhood spotlights, and behind-the-scenes looks at Calgary real estate.
+            </p>
+          </div>
+          <InstagramFeed posts={INSTAGRAM_POSTS} />
+        </div>
+      </section>
+
       {/* Credentials section */}
       <section className="bg-neutral-light py-20 px-6">
         <div className="max-w-4xl mx-auto">
@@ -136,24 +154,6 @@ export default function AboutPage() {
           <p className="text-white text-2xl sm:text-3xl font-bold leading-snug">
             Dedicated to every client, every step of the way.
           </p>
-        </div>
-      </section>
-
-      {/* Instagram */}
-      <section className="bg-neutral-light py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest text-accent">
-              Follow Along
-            </span>
-            <h2 className="text-3xl font-bold text-primary mt-2">
-              Chan on Instagram
-            </h2>
-            <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
-              Market updates, neighbourhood spotlights, and behind-the-scenes looks at Calgary real estate.
-            </p>
-          </div>
-          <InstagramFeed posts={INSTAGRAM_POSTS} />
         </div>
       </section>
 
