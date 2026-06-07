@@ -1,0 +1,60 @@
+{
+  "slug": "2026-05",
+  "month": "May",
+  "year": 2026,
+  "publishedAt": "2026-06-07",
+  "headline": "TODO: Add headline for May 2026 Calgary Market Report",
+  "summary": "TODO: Replace with a 2–3 sentence summary of this month's market conditions.",
+  "benchmarkPrice": {
+    "overall": 570500,
+    "detached": 747800,
+    "semiDetached": 691100,
+    "townhouse": 422300,
+    "condo": 300400
+  },
+  "benchmarkPriceYoy": {
+    "overall": -3,
+    "detached": -2.4,
+    "semiDetached": -1,
+    "townhouse": -6.4,
+    "condo": -9.1
+  },
+  "sales": {
+    "total": 2162,
+    "momChange": 2.8,
+    "yoyChange": -15.5
+  },
+  "newListings": {
+    "total": 4226,
+    "momChange": 10.4,
+    "yoyChange": -12.7
+  },
+  "activeListings": {
+    "total": 6760,
+    "momChange": 13.2,
+    "yoyChange": 0.1
+  },
+  "daysOnMarket": 34,
+  "salesToNewListingsRatio": 51.2,
+  "marketType": "balanced",
+  "priceHistory": [
+    {
+      "label": "Mar '26",
+      "price": 565600
+    },
+    {
+      "label": "Apr '26",
+      "price": 568800
+    },
+    {
+      "label": "May '26",
+      "price": 570500
+    }
+  ],
+  "insights": [
+    "TODO: Add key takeaway 1.",
+    "TODO: Add key takeaway 2.",
+    "TODO: Add key takeaway 3.",
+    "TODO: Add key takeaway 4."
+  ]
+}
