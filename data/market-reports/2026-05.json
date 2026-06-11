@@ -3,8 +3,8 @@
   "month": "May",
   "year": 2026,
   "publishedAt": "2026-06-07",
-  "headline": "TODO: Add headline for May 2026 Calgary Market Report",
-  "summary": "TODO: Replace with a 2–3 sentence summary of this month's market conditions.",
+  "headline": "Spring Inventory Surge Gives Calgary Buyers More Room to Negotiate",
+  "summary": "Calgary's housing market stayed balanced in May 2026, with 2,162 sales up 2.8% from April but down 15.5% from a year ago. New listings jumped 10.4% to 4,226 and active inventory climbed 13.2% to 6,760 units, the strongest spring supply in recent memory. The overall benchmark price held nearly flat at $570,500, and the sales-to-new-listings ratio eased to 51.2% from April's 55.0%, signalling a market that's loosening slightly but still favours neither side decisively.",
   "benchmarkPrice": {
     "overall": 570500,
     "detached": 747800,
@@ -52,9 +52,10 @@
     }
   ],
   "insights": [
-    "TODO: Add key takeaway 1.",
-    "TODO: Add key takeaway 2.",
-    "TODO: Add key takeaway 3.",
-    "TODO: Add key takeaway 4."
+    "Detached and semi-detached homes remain the most resilient segments, down just -2.4% and -1.0% year-over-year to $747,800 and $691,100, while townhouse (-6.4%) and condo (-9.1%) prices continue to soften.",
+    "New listings surged 10.4% month-over-month to 4,226, the busiest spring for sellers in recent years, and active inventory climbed to 6,760 units, up 13.2% from April and giving buyers significantly more selection heading into summer.",
+    "The sales-to-new-listings ratio eased to 51.2% from 55.0% in April, a sign the rapid rise in supply is starting to outpace sales growth and tilt the market gently toward buyers, even though it remains in balanced territory.",
+    "Despite more competition for sellers, well-priced homes are still moving quickly: median days on market held at 34, essentially unchanged from April's 35.",
+    "The overall benchmark price edged up 0.3% from April to $570,500, and the year-over-year decline narrowed slightly to -3.0% from -3.5%, suggesting price erosion may be stabilizing even as inventory builds."
   ]
 }
