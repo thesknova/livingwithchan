@@ -63,9 +63,7 @@ export default function BitcoinRealEstatePost() {
             In October 2021, a Calgary home in the Glendale neighbourhood sold for approximately $1 million, with $800,000 of that paid in Bitcoin. It wasn&apos;t a publicity stunt. The seller specifically sought out a brokerage capable of facilitating a Bitcoin transaction because he wanted to transact in crypto. The deal closed. Title transferred. The seller&apos;s lawyer received Canadian dollars on closing day.
           </p>
           <p>
-            That deal was facilitated by{" "}
-            <a href="https://greaterpropertygroup.com/gpg-blog-canadas-greater-property-group-celebrates-milestone-sells-first-property-entirely-in-bitcoin/" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Greater Property Group</a>,
-            a Calgary-based brokerage that had already completed the first 100%-Bitcoin property sale in Canadian history earlier that year. Calgary isn&apos;t just crypto-curious. It&apos;s been at the forefront of this in Canada.
+            That deal was facilitated by a Calgary brokerage that had already completed the first 100%-Bitcoin property sale in Canadian history earlier that year. Calgary isn&apos;t just crypto-curious. It&apos;s been at the forefront of this in Canada.
           </p>
           <p>
             So: can you buy or sell a home in Calgary with Bitcoin? Yes. Should you? That depends on your situation. This article walks through how it works, what you need to know legally and tax-wise, and where the real risks lie.
@@ -116,7 +114,7 @@ export default function BitcoinRealEstatePost() {
               label: "Method A: Intermediary Conversion",
               tag: "Most common",
               tagColor: "bg-green-100 text-green-700",
-              body: `A specialized brokerage (Greater Property Group, BTCHome.ca) acts as the bridge. The buyer sends Bitcoin to the platform, which instantly converts it to Canadian dollars and wires fiat to the seller's lawyer in trust. The seller, listing agent, and title company experience the deal as a standard real estate sale, no crypto wallet required on their end. BTCHome.ca offers a "rate freeze guarantee" that locks the BTC/CAD conversion rate the moment a payment invoice is issued, protecting both parties from price swings during the closing window.`,
+              body: `A specialized brokerage (such as BTCHome.ca) acts as the bridge. The buyer sends Bitcoin to the platform, which instantly converts it to Canadian dollars and wires fiat to the seller's lawyer in trust. The seller, listing agent, and title company experience the deal as a standard real estate sale, no crypto wallet required on their end. BTCHome.ca offers a "rate freeze guarantee" that locks the BTC/CAD conversion rate the moment a payment invoice is issued, protecting both parties from price swings during the closing window.`,
               href: "https://btchome.ca/buying-real-estate-bitcoin.htm",
               hrefLabel: "BTCHome.ca: How it works",
             },
@@ -235,16 +233,16 @@ export default function BitcoinRealEstatePost() {
               {
                 year: "2021",
                 title: "$1M Glendale Home: $800K Paid in Bitcoin",
-                body: `A Calgary home sold for approximately $1 million, with $800,000 of that paid in Bitcoin and $200,000 in Canadian dollars. Facilitated by Greater Property Group, this became one of the most widely reported Canadian crypto real estate transactions.`,
+                body: `A Calgary home sold for approximately $1 million, with $800,000 of that paid in Bitcoin and $200,000 in Canadian dollars. This became one of the most widely reported Canadian crypto real estate transactions.`,
                 href: "https://storeys.com/calgary-home-purchased-bitcoin/",
                 hrefLabel: "Storeys: Full Story",
               },
               {
                 year: "2021",
                 title: "First 100% Bitcoin Property Sale in Canada",
-                body: "Greater Property Group completed the first property sold entirely in Bitcoin with no fiat component anywhere in the transaction, a Canadian first.",
-                href: "https://greaterpropertygroup.com/gpg-blog-canadas-greater-property-group-celebrates-milestone-sells-first-property-entirely-in-bitcoin/",
-                hrefLabel: "Greater Property Group: Press Release",
+                body: "A Calgary brokerage completed the first property sold entirely in Bitcoin with no fiat component anywhere in the transaction, a Canadian first.",
+                href: "https://storeys.com/calgary-home-purchased-bitcoin/",
+                hrefLabel: "Storeys: Full Story",
               },
               {
                 year: "2019",
@@ -455,7 +453,7 @@ export default function BitcoinRealEstatePost() {
               {
                 step: "1",
                 title: "Find a Bitcoin-Friendly Listing or Agent",
-                body: "Search BTCHome.ca, contact Greater Property Group or Len T. Wong & Associates (RE/MAX Calgary), or ask Chan to reach out to sellers who may be open to a crypto offer.",
+                body: "Search BTCHome.ca or ask Chan to reach out to sellers who may be open to a crypto offer.",
               },
               {
                 step: "2",
@@ -511,8 +509,6 @@ export default function BitcoinRealEstatePost() {
             {[
               { label: "NDAX: National Digital Asset Exchange (Calgary, FINTRAC-registered)", url: "https://ndax.io" },
               { label: "BTCHome.ca: Buy real estate with Bitcoin in Canada", url: "https://btchome.ca/buying-real-estate-bitcoin.htm" },
-              { label: "Greater Property Group: Calgary crypto real estate brokerage", url: "https://greaterpropertygroup.com" },
-              { label: "Len T. Wong & Associates: Bitcoin-Friendly RE/MAX Calgary", url: "https://www.homes-calgary.ca/bitcoin-friendly-real-estate-brokerage" },
               { label: "CRA: Reporting income from crypto-asset transactions", url: "https://www.canada.ca/en/revenue-agency/programs/about-canada-revenue-agency-cra/compliance/cryptocurrency-guide/income-crypto-transactions.html" },
               { label: "Miller Thomson: New House on the Blockchain (legal analysis)", url: "https://www.millerthomson.com/en/insights/real-estate/new-house-on-the-blockchain/" },
               { label: "FINTRAC: Requirements for virtual asset service providers", url: "https://fintrac-canafe.canada.ca/businesses-entreprises/changes-changements-eng" },
