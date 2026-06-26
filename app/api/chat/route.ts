@@ -92,6 +92,45 @@ interface LeadInput {
   summary?: string;
 }
 
+// Emails Chan a notification on every captured lead, reusing the site's existing
+// Formspree endpoint (same inbox as the intake forms — hello@livingwithchan.com).
+// No new keys/infra. Override the endpoint with LEAD_NOTIFY_FORMSPREE_URL if needed.
+const FORMSPREE_URL =
+  process.env.LEAD_NOTIFY_FORMSPREE_URL || "https://formspree.io/f/xwvrdoyj";
+
+async function notifyByEmail(lead: LeadInput): Promise<boolean> {
+  const fullName = [lead.firstName, lead.lastName].filter(Boolean).join(" ") || "Website visitor";
+  try {
+    const res = await fetch(FORMSPREE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `🤖 New AI Chat Lead — ${fullName}${lead.intent ? ` (${lead.intent})` : ""}`,
+        Source: "AI Chat Assistant (livingwithchan.com)",
+        Name: fullName,
+        Email: lead.email || "—",
+        Phone: lead.phone || "—",
+        Intent: lead.intent || "—",
+        "Area / Property": lead.area || "—",
+        Budget: lead.budget || "—",
+        Timeline: lead.timeline || "—",
+        Financing: lead.preApproved || "—",
+        Summary: lead.summary || "—",
+        // lets Chan reply straight to the lead from the notification
+        _replyto: lead.email || undefined,
+      }),
+    });
+    if (!res.ok) {
+      console.warn(`[chat] Formspree notify returned ${res.status}`);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error("[chat] email notify error:", err);
+    return false;
+  }
+}
+
 async function pushLeadToCrm(lead: LeadInput): Promise<boolean> {
   const url = process.env.NEXT_PUBLIC_CRM_INGEST_URL;
   const key = process.env.NEXT_PUBLIC_CRM_INGEST_KEY;
@@ -215,7 +254,12 @@ export async function POST(req: Request): Promise<Response> {
     const leadBlock = blocks.find((b) => b.type === "tool_use" && b.name === "capture_lead");
     let captured = false;
     if (leadBlock?.input) {
-      captured = await pushLeadToCrm(leadBlock.input);
+      // Push to the CRM and email Chan in parallel; each fails independently.
+      const [crmResult] = await Promise.all([
+        pushLeadToCrm(leadBlock.input),
+        notifyByEmail(leadBlock.input),
+      ]);
+      captured = crmResult;
     }
 
     return Response.json({
