@@ -10,11 +10,13 @@
  * are allowed through — the guard never takes the widget down. The Console
  * spend limit remains the ultimate ceiling.
  *
- * Required env to activate (set once Upstash is connected):
- *   UPSTASH_REDIS_REST_URL
- *   UPSTASH_REDIS_REST_TOKEN
+ * Required env to activate (provided automatically by the Vercel Upstash/KV
+ * integration; UPSTASH_REDIS_REST_* also accepted if wired manually):
+ *   KV_REST_API_URL
+ *   KV_REST_API_TOKEN
  * Optional:
  *   CHAT_DAILY_CAP   — max chat requests per day (default 400)
+ *   CHAT_IP_LIMIT    — max chat requests per IP per 5 min (default 20)
  */
 
 const DEFAULT_CAP = 400;
@@ -28,8 +30,10 @@ function todayKey(): string {
 }
 
 function upstash(): { url: string; token: string } | null {
-  const url = process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  // Vercel's Upstash/KV integration injects KV_REST_API_*; fall back to the
+  // native UPSTASH_REDIS_REST_* names if wired manually.
+  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
   return url && token ? { url, token } : null;
 }
 
