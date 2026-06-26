@@ -1,0 +1,234 @@
+/**
+ * AI lead-responder chat endpoint.
+ *
+ * The conversational counterpart to the EmailResponder: instead of drafting
+ * email replies, it talks to website visitors in real time, answers Calgary
+ * real-estate questions, and *qualifies* them. The moment it has enough (name +
+ * a contact method + intent), Claude calls the `capture_lead` tool and we push
+ * the lead straight into Chan's CRM via the existing ingest endpoint.
+ *
+ * Stateless: the client sends the full plain-text transcript each turn, so we
+ * never have to persist a tool_use/tool_result loop across requests.
+ *
+ * Required env (server-side):
+ *   ANTHROPIC_API_KEY        — Claude API key
+ *   NEXT_PUBLIC_CRM_INGEST_URL / NEXT_PUBLIC_CRM_INGEST_KEY — already used by ContactForm
+ */
+
+export const runtime = "nodejs";
+
+import { checkDailyCap } from "@/lib/chat-rate-limit";
+
+const MODEL = "claude-sonnet-4-6";
+const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
+
+const SYSTEM_PROMPT = `You are Chan's AI assistant on livingwithchan.com — the website of Chan Kawaguchi, a REMAX Complete Realty real estate agent in Calgary, Alberta.
+
+Your job: be genuinely helpful to visitors AND naturally qualify them as potential clients so Chan can follow up with the right people fast.
+
+Voice: warm, concise, professional, local. You know Calgary neighbourhoods, the buying/selling process, and the Alberta market in general terms. Keep replies short — 2 to 4 sentences, easy to read on a phone.
+
+What to find out, woven naturally into the conversation (never interrogate, ask one or two things at a time):
+- Are they looking to buy, sell, invest, or rent?
+- Which area(s) of Calgary, or what kind of property?
+- Their budget or target price range.
+- Their timeline (now, a few months, just exploring).
+- Whether they're pre-approved / have financing sorted (for buyers).
+- Their name and the best way for Chan to reach them (email or phone).
+
+Rules:
+- Never invent specific listing details, addresses, prices, or availability. For specifics, say Chan will confirm. You can speak generally about Calgary areas, market trends, and process.
+- Don't be pushy. Be useful first; the qualification comes from a natural conversation.
+- As soon as you have a name, a contact method (email OR phone), and their intent, call the capture_lead tool — don't wait for every field. Then warmly let them know Chan will personally follow up.
+- For anything urgent, you can share Chan's direct line: 403-681-0107.
+- If asked something outside real estate, gently steer back.
+- You are an assistant, not Chan herself — don't impersonate her or promise specific outcomes.`;
+
+const TOOLS = [
+  {
+    name: "capture_lead",
+    description:
+      "Save a qualified lead to Chan's CRM. Call this as soon as you have the visitor's name, a contact method (email or phone), and their real-estate intent — don't wait to collect every optional field.",
+    input_schema: {
+      type: "object",
+      properties: {
+        firstName: { type: "string", description: "Visitor's first name" },
+        lastName: { type: "string", description: "Visitor's last name, if given" },
+        email: { type: "string", description: "Email address, if given" },
+        phone: { type: "string", description: "Phone number, if given" },
+        intent: {
+          type: "string",
+          description: "buy / sell / invest / rent, plus any detail",
+        },
+        budget: { type: "string", description: "Budget or price range, if given" },
+        timeline: { type: "string", description: "How soon they want to act, if given" },
+        area: { type: "string", description: "Calgary area(s) or property type of interest" },
+        preApproved: { type: "string", description: "Financing / pre-approval status, if given" },
+        summary: {
+          type: "string",
+          description: "One-line summary of what this person needs",
+        },
+      },
+      required: ["firstName", "intent", "summary"],
+    },
+  },
+];
+
+interface IncomingMessage {
+  role: "user" | "assistant";
+  text: string;
+}
+
+interface LeadInput {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  intent?: string;
+  budget?: string;
+  timeline?: string;
+  area?: string;
+  preApproved?: string;
+  summary?: string;
+}
+
+async function pushLeadToCrm(lead: LeadInput): Promise<boolean> {
+  const url = process.env.NEXT_PUBLIC_CRM_INGEST_URL;
+  const key = process.env.NEXT_PUBLIC_CRM_INGEST_KEY;
+  if (!url || !key) {
+    console.warn("[chat] CRM ingest env not set — skipping lead push.");
+    return false;
+  }
+
+  const detailLines = [
+    `Intent: ${lead.intent ?? "—"}`,
+    lead.area ? `Area/Type: ${lead.area}` : null,
+    lead.budget ? `Budget: ${lead.budget}` : null,
+    lead.timeline ? `Timeline: ${lead.timeline}` : null,
+    lead.preApproved ? `Financing: ${lead.preApproved}` : null,
+    "",
+    `Summary: ${lead.summary ?? ""}`,
+    "",
+    "— Captured by the website AI assistant",
+  ].filter(Boolean);
+
+  try {
+    const res = await fetch(`${url}/api/leads/ingest`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": key,
+      },
+      body: JSON.stringify({
+        firstName: lead.firstName ?? "Website",
+        lastName: lead.lastName ?? "Lead",
+        email: lead.email ?? "",
+        phone: lead.phone ?? "",
+        message: detailLines.join("\n"),
+      }),
+    });
+    if (!res.ok) {
+      console.warn(`[chat] CRM ingest returned ${res.status}`);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error("[chat] CRM ingest error:", err);
+    return false;
+  }
+}
+
+export async function POST(req: Request): Promise<Response> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    return Response.json(
+      { error: "Chat is not configured yet." },
+      { status: 503 }
+    );
+  }
+
+  let incoming: IncomingMessage[];
+  try {
+    const body = await req.json();
+    incoming = Array.isArray(body?.messages) ? body.messages : [];
+  } catch {
+    return Response.json({ error: "Bad request." }, { status: 400 });
+  }
+
+  if (incoming.length === 0) {
+    return Response.json({ error: "No messages." }, { status: 400 });
+  }
+
+  // Daily spend guard — backstop under the Anthropic Console monthly limit.
+  const cap = await checkDailyCap();
+  if (!cap.allowed) {
+    console.warn(`[chat] daily cap reached (${cap.count}/${cap.cap}) — deferring.`);
+    return Response.json({
+      reply:
+        "Thanks for reaching out! Our chat assistant is taking a quick break. Please call or text Chan directly at 403-681-0107, or use the contact form and she'll get right back to you.",
+      captured: false,
+    });
+  }
+
+  // Rebuild the Anthropic message list from the plain transcript.
+  const messages = incoming
+    .filter((m) => m && (m.role === "user" || m.role === "assistant") && m.text)
+    .slice(-20) // keep context bounded
+    .map((m) => ({ role: m.role, content: m.text }));
+
+  try {
+    const aiRes = await fetch(ANTHROPIC_URL, {
+      method: "POST",
+      headers: {
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 600,
+        system: SYSTEM_PROMPT,
+        tools: TOOLS,
+        messages,
+      }),
+    });
+
+    if (!aiRes.ok) {
+      const detail = await aiRes.text();
+      console.error("[chat] Anthropic error:", aiRes.status, detail);
+      return Response.json(
+        { error: "Sorry — I had trouble there. Please try again or call Chan at 403-681-0107." },
+        { status: 502 }
+      );
+    }
+
+    const data = await aiRes.json();
+    const blocks: Array<{ type: string; text?: string; name?: string; input?: LeadInput }> =
+      data?.content ?? [];
+
+    const reply = blocks
+      .filter((b) => b.type === "text" && b.text)
+      .map((b) => b.text)
+      .join("\n\n")
+      .trim();
+
+    const leadBlock = blocks.find((b) => b.type === "tool_use" && b.name === "capture_lead");
+    let captured = false;
+    if (leadBlock?.input) {
+      captured = await pushLeadToCrm(leadBlock.input);
+    }
+
+    return Response.json({
+      reply:
+        reply ||
+        "Thanks! Chan will follow up with you personally. For anything urgent, call 403-681-0107.",
+      captured,
+    });
+  } catch (err) {
+    console.error("[chat] Unexpected error:", err);
+    return Response.json(
+      { error: "Something went wrong. Please try again or call Chan at 403-681-0107." },
+      { status: 500 }
+    );
+  }
+}

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingSidebar from "@/components/FloatingSidebar";
+import ChatWidget from "@/components/ChatWidget";
 import Script from "next/script";
 
 const inter = Inter({
@@ -134,6 +135,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <FloatingSidebar />
+        <ChatWidget />
       </body>
     </html>
   );
