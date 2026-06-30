@@ -6,12 +6,6 @@ import Footer from "@/components/Footer";
 import FloatingSidebar from "@/components/FloatingSidebar";
 import ChatWidget from "@/components/ChatWidget";
 import Script from "next/script";
-import { BotIdClient } from "botid/client";
-
-// Routes whose server-side checkBotId() expects a BotID proof. The client script
-// below issues that proof from real browsers; without it, every request to these
-// paths is classified as a bot and rejected (the chat widget 403s for everyone).
-const protectedRoutes = [{ path: "/api/chat", method: "POST" }];
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,9 +70,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <head>
-        <BotIdClient protect={protectedRoutes} />
-      </head>
       <body className="min-h-full flex flex-col">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HHE5VMPLVS"

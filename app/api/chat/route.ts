@@ -17,7 +17,6 @@
 
 export const runtime = "nodejs";
 
-import { checkBotId } from "botid/server";
 import { checkDailyCap, checkIpRateLimit } from "@/lib/chat-rate-limit";
 
 const MODEL = "claude-sonnet-4-6";
@@ -209,17 +208,11 @@ async function pushLeadToCrm(lead: LeadInput): Promise<boolean> {
 }
 
 export async function POST(req: Request): Promise<Response> {
-  // Edge-level bot filtering (Vercel BotID). Fail-open on any unexpected error
-  // so a BotID outage can never take the chat down.
-  try {
-    const { isBot } = await checkBotId();
-    if (isBot) {
-      return Response.json({ error: "Access denied." }, { status: 403 });
-    }
-  } catch (err) {
-    console.error("[chat] BotID check error (failing open):", err);
-  }
-
+  // NOTE: Vercel BotID was removed — its client-side challenge handshake hung
+  // behind this site's Cloudflare proxy, so the fetch to /api/chat never
+  // completed and the widget stuck on the loading state. Abuse is still
+  // covered by the input caps, per-IP rate limit, daily spend cap, lead
+  // validation below, and the Anthropic Console spend limit.
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return Response.json(

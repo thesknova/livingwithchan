@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { withBotId } from "botid/next/config";
 
 const nextConfig: NextConfig = {
   images: {
@@ -12,5 +11,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-// Wrap with BotID so its bot-detection proxy rewrites are configured.
-export default withBotId(nextConfig);
+export default nextConfig;
