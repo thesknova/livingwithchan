@@ -1,0 +1,105 @@
+{
+  "slug": "2026-06",
+  "month": "June",
+  "year": 2026,
+  "publishedAt": "2026-07-06",
+  "headline": "Detached Pockets Hit Record Highs While High-Density Supply Pulls Condo Prices Lower",
+  "summary": "Calgary's housing market improved month-over-month in June 2026, with 2,197 sales up from May but still about 4% below last year and just under the long-term June average. New listings pulled back to 3,899, lifting the sales-to-new-listings ratio to 56% and slowing inventory growth, with 6,799 active listings and months of supply holding at 3.1, a balanced range citywide. The overall benchmark price rose to $572,500, up over May but 2.1% below last June. Beneath the surface, conditions split sharply by property type: detached and semi-detached prices are pushing to record highs in the City Centre and West districts, while apartment condominiums remain in a firm buyer's market with nearly five months of supply and a benchmark price of $299,000, almost 9% below last year.",
+  "benchmarkPrice": {
+    "overall": 572500,
+    "detached": 750500,
+    "semiDetached": 694600,
+    "townhouse": 424100,
+    "condo": 299000
+  },
+  "benchmarkPriceYoy": {
+    "overall": -2.1,
+    "detached": -1.4,
+    "semiDetached": 0.2,
+    "townhouse": -5.5,
+    "condo": -9.0
+  },
+  "sales": {
+    "total": 2197,
+    "momChange": 1.6,
+    "yoyChange": -3.8
+  },
+  "newListings": {
+    "total": 3899,
+    "momChange": -7.7,
+    "yoyChange": -7.7
+  },
+  "activeListings": {
+    "total": 6799,
+    "momChange": 0.6,
+    "yoyChange": -2.1
+  },
+  "daysOnMarket": 37,
+  "salesToNewListingsRatio": 56.3,
+  "marketType": "balanced",
+  "monthsOfSupply": {
+    "overall": 3.09,
+    "detached": 2.5,
+    "semiDetached": 2.5,
+    "row": 3.4,
+    "condo": 4.9
+  },
+  "propertyTypeSNLR": {
+    "detached": 60.0,
+    "semiDetached": 64.0,
+    "row": 55.0,
+    "condo": 45.0
+  },
+  "regionalMarkets": [
+    {
+      "name": "Airdrie",
+      "benchmarkPrice": 516900,
+      "momChange": 0.4,
+      "yoyChange": -3.9,
+      "monthsOfSupply": 4.1,
+      "inventory": 538
+    },
+    {
+      "name": "Cochrane",
+      "benchmarkPrice": 580200,
+      "momChange": 0.7,
+      "yoyChange": -1.8,
+      "monthsOfSupply": 3.1,
+      "inventory": 323
+    },
+    {
+      "name": "Okotoks",
+      "benchmarkPrice": 618600,
+      "momChange": 0.0,
+      "yoyChange": -1.7,
+      "monthsOfSupply": 2.2,
+      "sales": 70
+    }
+  ],
+  "priceHistory": [
+    {
+      "label": "Mar '26",
+      "price": 565600
+    },
+    {
+      "label": "Apr '26",
+      "price": 568800
+    },
+    {
+      "label": "May '26",
+      "price": 570500
+    },
+    {
+      "label": "Jun '26",
+      "price": 572500
+    }
+  ],
+  "insights": [
+    "Detached homes are Calgary's stabilizing force: 1,202 June sales matched last year's pace, and the benchmark price climbed to $750,500 (down just 1.4% YoY). The City Centre and West districts both reached record-high prices, with the West posting nearly 4% annual growth under seller's market conditions, while buyer's conditions in the North East drove declines approaching 7%.",
+    "Semi-detached is effectively back to flat year-over-year at $694,600 (+0.2%), with 234 sales against 363 new listings pushing the sales-to-new-listings ratio above 60%. The North West, West and City Centre districts all set new record highs in June, while the North East fell nearly 6%.",
+    "Row homes continue to adjust under extra supply: the benchmark eased to $424,100, 5.5% below last year, with declines in every district ranging from 2% in the South to 10% in the North East and East. At 3.4 months of supply, the segment sits at the upper end of balanced.",
+    "Apartment condominiums remain the clear buyer's market: the $299,000 benchmark is down almost 9% year-over-year, year-to-date sales have fallen 26%, and inventory of 2,076 units is more than 24% above typical June levels. With a 45% sales-to-new-listings ratio and nearly five months of supply, prices fell furthest in the North East and East districts (down over 14%).",
+    "The supply picture is finally tightening: new listings pulled back 7.7% to 3,899, lifting the citywide sales-to-new-listings ratio to 56% from 51% in May and capping active inventory at 6,799 units. Homes are taking a little longer to sell, though, with median days on market at 37 versus 34 in May.",
+    "Around the region, Cochrane is the standout with five straight months of price gains lifting its benchmark to $580,200, while Okotoks held stable at $618,600 on a tight 79% sales-to-new-listings ratio. Airdrie is the soft spot: months of supply pushed above four and its $516,900 benchmark sits nearly 4% below last year."
+  ]
+}
