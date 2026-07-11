@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NEListings from "@/components/NEListings";
+import ContentCTA from "@/components/ContentCTA";
 
 export const metadata: Metadata = {
   title: "NE Calgary Homes | Chan Kawaguchi",
@@ -24,6 +25,8 @@ export default function NESearchPage() {
         </div>
 
         <NEListings />
+
+        <ContentCTA area="North East Calgary" />
       </div>
     </section>
   );

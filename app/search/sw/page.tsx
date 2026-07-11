@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SWListings from "@/components/SWListings";
+import ContentCTA from "@/components/ContentCTA";
 
 export const metadata: Metadata = {
   title: "SW Calgary Homes | Chan Kawaguchi",
@@ -24,6 +25,8 @@ export default function SWSearchPage() {
         </div>
 
         <SWListings />
+
+        <ContentCTA area="South West Calgary" />
       </div>
     </section>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { trackLead } from "@/lib/analytics";
 
 interface FormState {
   firstName: string;
@@ -54,6 +55,7 @@ export default function ContactForm() {
       );
 
       if (res.ok) {
+        trackLead("contact_form");
         setSubmitted(true);
         setForm(initial);
       } else {

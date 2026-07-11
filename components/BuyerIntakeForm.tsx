@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { trackLead } from "@/lib/analytics";
 
 const CALGARY_AREAS = [
   "NW Calgary",
@@ -149,6 +150,7 @@ export default function BuyerIntakeForm() {
       });
 
       if (res.ok) {
+        trackLead("buyer_intake");
         setSubmitted(true);
         setForm(initial);
       } else {

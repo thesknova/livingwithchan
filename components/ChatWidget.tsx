@@ -11,6 +11,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { trackEvent, trackLead } from "@/lib/analytics";
 
 interface Msg {
   role: "user" | "assistant";
@@ -76,6 +77,9 @@ export default function ChatWidget() {
     const text = input.trim();
     if (!text || loading) return;
 
+    if (!messages.some((m) => m.role === "user")) {
+      trackEvent("chat_first_message");
+    }
     const next = [...messages, { role: "user" as const, text }];
     setMessages(next);
     setInput("");
@@ -92,7 +96,10 @@ export default function ChatWidget() {
         data?.reply ??
         "Sorry — I had trouble there. Please try again, or call Chan at 403-681-0107.";
       setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
-      if (data?.captured) setNotified(true);
+      if (data?.captured) {
+        if (!notified) trackLead("ai_chat");
+        setNotified(true);
+      }
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -201,7 +208,10 @@ export default function ChatWidget() {
 
       {/* Launcher */}
       <button
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => {
+          if (!open) trackEvent("chat_open");
+          setOpen((o) => !o);
+        }}
         aria-label={open ? "Close chat" : "Open chat assistant"}
         className="fixed bottom-5 right-4 sm:right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-accent text-white shadow-xl ring-4 ring-accent/20 transition-transform hover:scale-105 active:scale-95"
       >
