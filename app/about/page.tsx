@@ -3,16 +3,18 @@ import Image from "next/image";
 import AgentBio from "@/components/AgentBio";
 import StatsBar from "@/components/StatsBar";
 import TrustedPartners from "@/components/TrustedPartners";
-import InstagramFeed from "@/components/InstagramFeed";
+import InstagramCarousel from "@/components/InstagramCarousel";
 import ContactForm from "@/components/ContactForm";
 
+// Interview reels share one cover image, so they alternate with
+// visually distinct posts to keep the carousel varied.
 const INSTAGRAM_POSTS = [
-  "https://www.instagram.com/p/DaSxi4GlKbl/", // Canada Day — Orchid Tap Bar launch
-  "https://www.instagram.com/p/DZIzX_vSwC4/", // never judge a book by its cover
-  "https://www.instagram.com/p/DY77WPrSGlq/", // family journey
-  "https://www.instagram.com/p/DYC6f8WBHT6/", // Canada in my heart
-  "https://www.instagram.com/p/DX8hUC5ijy9/", // came from nothing
-  "https://www.instagram.com/p/C7fdpZPv5L_/", // meet Chan intro
+  "https://www.instagram.com/p/C7fdpZPv5L_/", // meet Chan intro (kitchen photo)
+  "https://www.instagram.com/p/DX8hUC5ijy9/", // came from nothing (reel)
+  "https://www.instagram.com/p/DaSxi4GlKbl/", // Canada Day — Orchid Tap Bar launch (team photo)
+  "https://www.instagram.com/p/DZIzX_vSwC4/", // never judge a book by its cover (reel)
+  "https://www.instagram.com/p/DZ12J0liMqc/", // SAT Market (poster)
+  "https://www.instagram.com/p/DYC6f8WBHT6/", // Canada in my heart (reel)
 ];
 
 export const metadata: Metadata = {
@@ -86,7 +88,7 @@ export default function AboutPage() {
               Market updates, neighbourhood spotlights, and behind-the-scenes looks at Calgary real estate.
             </p>
           </div>
-          <InstagramFeed posts={INSTAGRAM_POSTS} />
+          <InstagramCarousel posts={INSTAGRAM_POSTS} />
         </div>
       </section>
 
