@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
-import FeaturedListings from "@/components/FeaturedListings";
 import SearchCommunities from "@/components/SearchCommunities";
 import AgentBio from "@/components/AgentBio";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -14,22 +13,15 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <ScrollReveal direction="up">
-        <StatsBar />
-      </ScrollReveal>
+      {/* StatsBar and ProcessSteps orchestrate their own GSAP scroll animations */}
+      <StatsBar />
 
       {/* How it works */}
-      <ScrollReveal direction="up" delay={100}>
-        <ProcessSteps />
-      </ScrollReveal>
+      <ProcessSteps />
 
       {/* Who I Help */}
       <ScrollReveal direction="up" delay={80}>
         <BuyerSegments />
-      </ScrollReveal>
-
-      <ScrollReveal direction="up" threshold={0.05}>
-        <FeaturedListings />
       </ScrollReveal>
 
       <ScrollReveal direction="up" threshold={0.05}>
@@ -50,7 +42,7 @@ export default function HomePage() {
       <ScrollReveal direction="up">
         <section className="bg-primary-dark py-16 px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl text-white mb-5">
               Ready to Make Your Move?
             </h2>
             <p className="text-stone-400 text-lg mb-8 leading-relaxed">

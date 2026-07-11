@@ -41,16 +41,21 @@ When you reach for a Tailwind gray/stone class, use the token instead:
 
 ## Typography
 
-**Font:** Inter (Google Fonts, loaded via `next/font/google` with `display: swap`)
-**Variable:** `--font-inter` → `--font-sans`
+**Display font:** Marcellus (Google Fonts via `next/font/google`, weight 400 only — never fake-bold it)
+**Body font:** Hanken Grotesk (Google Fonts via `next/font/google`)
+**Variables:** `--font-marcellus` → `--font-display` (`font-display` utility), `--font-hanken` → `--font-sans`
+
+Major headings (hero H1, section H2s, big numerals) use `font-display` with no weight class.
+UI text, card H3s, labels, and body copy stay on the sans.
 
 ### Scale
 
 | Use | Classes | Notes |
 |---|---|---|
-| Hero heading | `text-4xl sm:text-5xl lg:text-6xl font-bold` | Max `max-w-3xl` |
-| Page H1 | `text-4xl font-bold` | |
-| Section H2 | `text-3xl font-bold` or `text-2xl font-bold` | |
+| Hero heading | `font-display text-[clamp(2.8rem,7vw,5.4rem)] leading-[1.06]` | Max `max-w-3xl` |
+| Page H1 | `font-display text-4xl sm:text-5xl` | |
+| Section H2 | `font-display text-4xl sm:text-5xl` | |
+| Display numeral | `font-display text-4xl sm:text-5xl` | Stat values, quadrant letters |
 | Card H3 | `text-base font-semibold` or `text-sm font-semibold` | |
 | Body | `text-base` or `text-sm leading-relaxed` | Cap at `max-w-prose` or `max-w-xl` |
 | Caption / label | `text-xs font-semibold uppercase tracking-widest` | Used for eyebrow labels above headings |
@@ -118,12 +123,16 @@ Uses `aria-expanded`, `aria-controls`, and `role="region"`. See component for fu
 
 ## Motion
 
-Scroll reveal system in `components/ScrollReveal.tsx` + `app/globals.css`.
+GSAP-driven system. Core: `lib/motion.ts` (registers ScrollTrigger + SplitText, exports shared `EASE = "expo.out"` and `prefersReducedMotion()`).
 
-- Classes: `reveal`, `reveal-left`, `reveal-right`, `reveal-pop`, `reveal-stagger`
-- JS adds `.is-visible` on IntersectionObserver trigger
-- `prefers-reduced-motion` disables all animations (CSS rule in globals.css)
-- Transition properties: `opacity` and `transform` only — never layout properties
+- **Smooth scroll:** `components/SmoothScroll.tsx` runs Lenis synced to GSAP's ticker; skipped under reduced motion.
+- **Scroll reveals:** `components/ScrollReveal.tsx` — same props as before (`direction`, `delay`, `stagger`, `threshold`) but powered by GSAP ScrollTrigger. Hidden initial state lives in CSS (`.reveal`, `.reveal-stagger > *`).
+- **Section choreography:** components that need scrubbed/sequenced motion (ProcessSteps, StatsBar count-up, Hero) own their GSAP code via `gsap.matchMedia()`. Prefer `gsap.set()` + `gsap.to()` over `gsap.from()` — from-tweens with once-triggers proved unreliable here.
+- **3D:** `components/three/HeroScene.tsx` — Three.js line-art house + dust particles; lazy-loaded (`next/dynamic`, `ssr: false`), pauses offscreen, DPR capped at 2, renders one static frame under reduced motion, disposes everything on unmount.
+- **Page transitions:** `app/template.tsx` fades/rises each route in.
+- `prefers-reduced-motion` must always produce a complete static page (GSAP matchMedia + CSS fallbacks).
+- Animate `opacity` and `transform` only — never layout properties.
+- Easing: exponential ease-out everywhere; no bounce, no elastic.
 
 ---
 

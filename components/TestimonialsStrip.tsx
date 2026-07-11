@@ -49,7 +49,7 @@ export default function TestimonialsStrip() {
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Client Stories
           </span>
-          <h2 className="text-3xl font-bold text-white mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl text-white mt-3">
             What Calgary Families Say
           </h2>
         </div>

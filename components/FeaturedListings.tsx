@@ -40,7 +40,7 @@ export default function FeaturedListings() {
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Browse Properties
           </span>
-          <h2 className="text-3xl font-bold text-primary mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl text-primary mt-3">
             Featured Listings
           </h2>
         </div>

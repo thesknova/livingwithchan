@@ -43,7 +43,7 @@ export default function SearchCommunities() {
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Calgary Real Estate
           </span>
-          <h2 className="text-3xl font-bold text-primary mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl text-primary mt-3">
             Search Communities
           </h2>
           <p className="text-gray-500 mt-3 max-w-md mx-auto text-sm">
@@ -80,7 +80,7 @@ export default function SearchCommunities() {
                 </span>
 
                 {/* Quadrant — always visible */}
-                <span className="text-white font-bold text-5xl sm:text-6xl leading-none tracking-tight drop-shadow-lg">
+                <span className="font-display text-white text-5xl sm:text-6xl leading-none drop-shadow-lg">
                   {community.quadrant}
                 </span>
 

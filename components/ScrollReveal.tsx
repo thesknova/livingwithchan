@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import { useLayoutEffect, useRef, ReactNode } from "react";
+import { gsap, EASE } from "@/lib/motion";
 
 type Props = {
   children: ReactNode;
@@ -11,6 +12,11 @@ type Props = {
   threshold?: number;
 };
 
+/**
+ * GSAP-powered scroll reveal. The hidden initial state lives in CSS
+ * (.reveal / .reveal-stagger in globals.css) so content never flashes
+ * before hydration; GSAP animates it in when the element scrolls into view.
+ */
 export default function ScrollReveal({
   children,
   className = "",
@@ -21,23 +27,48 @@ export default function ScrollReveal({
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => el.classList.add("is-visible"), delay);
-          observer.disconnect();
-        }
-      },
-      { threshold }
-    );
+    const mm = gsap.matchMedia();
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [delay, threshold]);
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const targets = stagger ? Array.from(el.children) : el;
+      if (stagger) {
+        // Children carry the hidden state; the wrapper itself shows immediately.
+        gsap.set(el, { opacity: 1, x: 0, y: 0, scale: 1 });
+        gsap.set(targets, { opacity: 0, y: 30 });
+      }
+      gsap.to(targets, {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 1,
+        ease: EASE,
+        delay: delay / 1000,
+        stagger: stagger ? 0.09 : 0,
+        clearProps: "transform",
+        scrollTrigger: {
+          trigger: el,
+          start: `top ${Math.round((1 - threshold) * 100)}%`,
+          once: true,
+        },
+      });
+    });
+
+    mm.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set(stagger ? [el, ...Array.from(el.children)] : el, {
+        opacity: 1,
+        x: 0,
+        y: 0,
+        scale: 1,
+      });
+    });
+
+    return () => mm.revert();
+  }, [delay, threshold, stagger]);
 
   const dirClass =
     direction === "left"  ? "reveal-left"  :

@@ -84,7 +84,7 @@ export default function BuyerSegments() {
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Who I Help
           </span>
-          <h2 className="text-3xl font-bold text-primary mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl text-primary mt-3">
             Real Estate For Every Stage of Life
           </h2>
           <p className="text-gray-500 mt-3 max-w-lg mx-auto text-sm">

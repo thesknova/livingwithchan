@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -32,6 +33,44 @@ export default function Navbar() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuOpenRef = useRef(menuOpen);
+  menuOpenRef.current = menuOpen;
+
+  // Hide on scroll down, glide back on scroll up — more canvas for the page.
+  useEffect(() => {
+    if (prefersReducedMotion() || !headerRef.current) return;
+
+    const showAnim = gsap
+      .from(headerRef.current, {
+        yPercent: -100,
+        paused: true,
+        duration: 0.35,
+        ease: "power2.out",
+      })
+      .progress(1);
+
+    const st = ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        if (menuOpenRef.current) {
+          showAnim.play();
+          return;
+        }
+        if (self.direction === -1 || self.scroll() < 140) {
+          showAnim.play();
+        } else {
+          showAnim.reverse();
+        }
+      },
+    });
+
+    return () => {
+      st.kill();
+      showAnim.kill();
+    };
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -60,7 +99,7 @@ export default function Navbar() {
   const isResourcesActive = resourceLinks.some((l) => pathname.startsWith(l.href));
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-neutral-mid shadow-sm">
+    <header ref={headerRef} className="sticky top-0 z-50 bg-white border-b border-neutral-mid shadow-sm">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -68,7 +107,7 @@ export default function Navbar() {
           className="flex flex-col leading-tight"
           onClick={() => setMenuOpen(false)}
         >
-          <span className="text-lg font-bold text-primary tracking-tight">
+          <span className="font-display text-xl text-primary">
             Living With Chan
           </span>
           <span className="text-xs text-text-muted font-medium tracking-wide uppercase">

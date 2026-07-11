@@ -1,3 +1,8 @@
+"use client";
+
+import { useLayoutEffect, useRef } from "react";
+import { gsap, EASE } from "@/lib/motion";
+
 const steps = [
   {
     number: "01",
@@ -51,33 +56,96 @@ const steps = [
 ];
 
 export default function ProcessSteps() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      const q = gsap.utils.selector(section);
+
+      // Header rises in once
+      gsap.set(q(".process-header"), { opacity: 0, y: 34 });
+      gsap.to(q(".process-header"), {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: EASE,
+        scrollTrigger: { trigger: section, start: "top 80%", once: true },
+      });
+
+      // Cards stagger in as the grid enters
+      gsap.set(q(".process-card"), { opacity: 0, y: 44 });
+      gsap.to(q(".process-card"), {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: EASE,
+        stagger: 0.12,
+        clearProps: "transform",
+        scrollTrigger: { trigger: q(".process-grid"), start: "top 82%", once: true },
+      });
+
+      // The journey line draws itself as you scroll through the section
+      gsap.fromTo(
+        q(".process-line"),
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          transformOrigin: "left center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: q(".process-grid"),
+            start: "top 85%",
+            end: "top 40%",
+            scrub: true,
+          },
+        }
+      );
+
+      gsap.set(q(".process-cta"), { opacity: 0, y: 24 });
+      gsap.to(q(".process-cta"), {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: EASE,
+        scrollTrigger: { trigger: q(".process-cta"), start: "top 92%", once: true },
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
+
   return (
-    <section className="bg-primary py-24 px-6 overflow-hidden">
+    <section ref={sectionRef} className="bg-primary py-24 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="process-header text-center mb-16">
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             How It Works
           </span>
-          <h2 className="text-3xl font-bold text-white mt-2">
+          <h2 className="font-display text-4xl sm:text-5xl text-white mt-3">
             Your Journey With Chan
           </h2>
-          <p className="text-stone-400 mt-3 max-w-md mx-auto text-sm">
+          <p className="text-stone-400 mt-4 max-w-md mx-auto text-sm">
             A simple, stress-free process from first conversation to closing day.
           </p>
         </div>
 
         {/* Steps grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <div className="process-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
 
-          {/* Connecting line — desktop only */}
-          <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent z-0" />
+          {/* Connecting line — desktop only, drawn by scroll */}
+          <div className="process-line hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent z-0" />
 
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className="group relative z-10 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/60 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
+              className="process-card group relative z-10 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/60 rounded-2xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30"
             >
               {/* Ghost number — decorative background */}
               <span className="absolute top-4 right-5 text-8xl font-black text-white/[0.04] leading-none select-none pointer-events-none">
@@ -126,7 +194,7 @@ export default function ProcessSteps() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-14 text-center">
+        <div className="process-cta mt-14 text-center">
           <a
             href="/contact"
             className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-8 py-3.5 rounded-full transition-colors duration-200 text-sm shadow-lg shadow-accent/20"

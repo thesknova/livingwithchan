@@ -25,7 +25,7 @@ export default function AgentBio({ compact = false, workWithHref = "/contact" }:
             </div>
             {/* Floating badge */}
             <div className="absolute bottom-6 right-6 lg:right-0 bg-primary text-white rounded-xl px-5 py-3 shadow-lg text-center">
-              <p className="text-2xl font-bold text-accent">10+</p>
+              <p className="font-display text-2xl text-accent">10+</p>
               <p className="text-xs text-stone-300 font-medium uppercase tracking-wide">
                 Years in Calgary
               </p>
@@ -37,7 +37,7 @@ export default function AgentBio({ compact = false, workWithHref = "/contact" }:
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-accent mb-3">
               Your Calgary Agent
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+            <h2 className="font-display text-4xl sm:text-5xl text-primary mb-2">
               Chan Kawaguchi
             </h2>
             <p className="text-base text-gray-500 font-medium mb-6">

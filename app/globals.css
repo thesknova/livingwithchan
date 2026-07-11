@@ -4,6 +4,7 @@
   /* Brand colors — warm taupe/charcoal palette */
   --color-primary: #3a3937;
   --color-primary-dark: #111111;
+  --color-primary-deep: #17140f;
   --color-accent: #a3856f;
   --color-accent-dark: #8a6e5c;
 
@@ -14,7 +15,8 @@
   --color-text-muted: #6b7280;
 
   /* Fonts */
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-hanken);
+  --font-display: var(--font-marcellus);
 }
 
 * {
@@ -27,35 +29,19 @@
   to   { opacity: 1; transform: translateY(0)   scale(1); }
 }
 
-/* ── Scroll-reveal animations ─────────────────────────────────────── */
+/* ── Scroll-reveal initial states (GSAP animates these to visible) ── */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(36px);
 }
-.reveal.reveal-left  { transform: translateX(-32px); }
-.reveal.reveal-right { transform: translateX(32px); }
-.reveal.reveal-pop   { transform: translateY(16px) scale(0.97); }
+.reveal.reveal-left  { transform: translateX(-40px); }
+.reveal.reveal-right { transform: translateX(40px); }
+.reveal.reveal-pop   { transform: translateY(20px) scale(0.97); }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Staggered children: each direct child delays by 80 ms */
 .reveal-stagger > * {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(30px);
 }
-.reveal-stagger.is-visible > *:nth-child(1)  { opacity: 1; transform: none; transition-delay: 0ms;   }
-.reveal-stagger.is-visible > *:nth-child(2)  { opacity: 1; transform: none; transition-delay: 80ms;  }
-.reveal-stagger.is-visible > *:nth-child(3)  { opacity: 1; transform: none; transition-delay: 160ms; }
-.reveal-stagger.is-visible > *:nth-child(4)  { opacity: 1; transform: none; transition-delay: 240ms; }
-.reveal-stagger.is-visible > *:nth-child(5)  { opacity: 1; transform: none; transition-delay: 320ms; }
-.reveal-stagger.is-visible > *:nth-child(6)  { opacity: 1; transform: none; transition-delay: 400ms; }
-.reveal-stagger.is-visible > *:nth-child(7)  { opacity: 1; transform: none; transition-delay: 480ms; }
-.reveal-stagger.is-visible > *:nth-child(8)  { opacity: 1; transform: none; transition-delay: 560ms; }
 
 /* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -66,8 +52,44 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+/* ── Lenis smooth scroll ──────────────────────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+/* Elements GSAP animates in on load; reduced-motion shows them as-is. */
+.hero-anim {
+  opacity: 0;
+}
+.hero-glow {
+  background: radial-gradient(
+    58% 52% at 70% 66%,
+    rgba(163, 133, 111, 0.16),
+    transparent 72%
+  );
+}
+.scroll-cue-dot {
+  animation: cue-drop 2.2s ease-in-out infinite;
+}
+@keyframes cue-drop {
+  0%   { transform: translateY(-1rem); opacity: 0; }
+  30%  { opacity: 1; }
+  100% { transform: translateY(3rem); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim { opacity: 1; transform: none; }
+  .scroll-cue-dot { animation: none; }
+}
+
+/* ── Display typography ───────────────────────────────────────────── */
+.font-display {
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: color-mix(in oklch, var(--color-accent) 30%, transparent);
 }
 
 body {
