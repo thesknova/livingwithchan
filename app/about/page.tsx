@@ -7,9 +7,12 @@ import InstagramFeed from "@/components/InstagramFeed";
 import ContactForm from "@/components/ContactForm";
 
 const INSTAGRAM_POSTS = [
-  "https://www.instagram.com/p/DYC6f8WBHT6/",
-  "https://www.instagram.com/p/DX8hUC5ijy9/",
-  "https://www.instagram.com/p/C7fdpZPv5L_/",
+  "https://www.instagram.com/p/DaSxi4GlKbl/", // Canada Day — Orchid Tap Bar launch
+  "https://www.instagram.com/p/DZIzX_vSwC4/", // never judge a book by its cover
+  "https://www.instagram.com/p/DY77WPrSGlq/", // family journey
+  "https://www.instagram.com/p/DYC6f8WBHT6/", // Canada in my heart
+  "https://www.instagram.com/p/DX8hUC5ijy9/", // came from nothing
+  "https://www.instagram.com/p/C7fdpZPv5L_/", // meet Chan intro
 ];
 
 export const metadata: Metadata = {
