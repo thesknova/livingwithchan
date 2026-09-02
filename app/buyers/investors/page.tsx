@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/investors" },
   title: "Investment Properties Calgary | Chan Kawaguchi",
   description:
     "Looking for investment properties in Calgary? Chan Kawaguchi helps investors find cash-flow rentals, multi-family homes, and high-growth neighbourhoods.",

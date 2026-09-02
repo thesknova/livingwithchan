@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/new-construction" },
   title: "New Construction Homes Calgary | Chan Kawaguchi",
   description:
     "Buying a brand-new build in Calgary? Chan Kawaguchi represents your interests with the builder, from choosing upgrades to reviewing contracts and protecting your deposit.",

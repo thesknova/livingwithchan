@@ -32,6 +32,7 @@ export async function generateMetadata({
   return {
     title: `${report.month} ${report.year} Calgary Market Report | Chan Kawaguchi`,
     description: report.summary.slice(0, 155),
+    alternates: { canonical: `/market-reports/${slug}` },
   };
 }
 

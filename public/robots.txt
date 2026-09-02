@@ -19,4 +19,4 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://livingwithchan.com/sitemap.xml
+Sitemap: https://www.livingwithchan.com/sitemap.xml

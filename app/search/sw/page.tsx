@@ -3,6 +3,7 @@ import SWListings from "@/components/SWListings";
 import ContentCTA from "@/components/ContentCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/search/sw" },
   title: "SW Calgary Homes | Chan Kawaguchi",
   description:
     "Search homes in Calgary's South West: Aspen Woods, Cougar Ridge, Signal Hill and more. Browse current listings with Chan Kawaguchi, REMAX Complete Realty.",

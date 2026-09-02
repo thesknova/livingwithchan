@@ -4,6 +4,7 @@ import CashFlowCalculator from "@/components/CashFlowCalculator";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/investors" },
   title: "Calgary Investment Properties | Chan Kawaguchi",
   description:
     "Invest in Calgary real estate with confidence. Browse investment properties, run cash flow analysis, and work with REMAX Complete Realty agent Chan Kawaguchi to build your portfolio.",

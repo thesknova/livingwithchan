@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SWListings from "@/components/SWListings";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/search/se" },
   title: "SE Calgary Homes for Sale | Chan Kawaguchi",
   description:
     "Search homes in Calgary's South East: Mahogany, McKenzie Towne, Auburn Bay, Copperfield, and more. Browse current listings with Chan Kawaguchi, REMAX Complete Realty.",

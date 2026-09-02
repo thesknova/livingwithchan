@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Use | Living With Chan",
   description:
     "Terms of use for livingwithchan.com — the website of Chan Kawaguchi, REMAX Complete Realty agent in Calgary, Alberta.",

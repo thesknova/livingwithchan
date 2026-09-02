@@ -3,6 +3,7 @@ import Link from "next/link";
 import BuyerForm from "@/components/BuyerForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers" },
   title: "Buying a Home in Calgary | Chan Kawaguchi, REMAX",
   description:
     "Whether you're a first-time buyer, moving up, or investing, Chan Kawaguchi guides Calgary home buyers through every step. Find your path to homeownership.",

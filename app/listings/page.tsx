@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/listings" },
   title: "Calgary Homes for Sale | Chan Kawaguchi, REMAX",
   description:
     "Looking for your next Calgary home? Chan Kawaguchi, REMAX Complete Realty, will hand-pick current listings that match your needs, including exclusive and off-market properties. Call 403-681-0107.",

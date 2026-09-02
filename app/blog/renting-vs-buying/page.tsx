@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import BlogCTA from "@/components/BlogCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/renting-vs-buying" },
   title: "Renting vs. Buying in Calgary | Chan Kawaguchi",
   description:
     "Should you rent or buy in Calgary? Chan Kawaguchi breaks down the real pros and cons of each option, including what most people get wrong about the math.",
@@ -13,11 +15,11 @@ const articleSchema = {
   "@type": "Article",
   headline: "Renting vs. Buying in Calgary: An Honest Comparison",
   description: "Should you rent or buy in Calgary? Chan Kawaguchi breaks down the real pros and cons of each option, including what most people get wrong about the math.",
-  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
-  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://www.livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://www.livingwithchan.com" },
   datePublished: "2026-03-31",
   dateModified: "2026-03-31",
-  url: "https://livingwithchan.com/blog/renting-vs-buying",
+  url: "https://www.livingwithchan.com/blog/renting-vs-buying",
 };
 
 export default function RentingVsBuyingPost() {
@@ -253,6 +255,14 @@ export default function RentingVsBuyingPost() {
             </div>
           </div>
 
+          <BlogCTA
+            id="renting-vs-buying-mid"
+            heading="Want to see the actual numbers for your situation?"
+            body="The rent-versus-buy math turns on your down payment, your rate, and how long you plan to stay — not on averages. Chan walks first-time buyers through their real numbers before anyone talks about looking at homes."
+            href="/buyers/first-time"
+            action="First-time buyer guide"
+          />
+
           {/* The Calgary context */}
           <div className="bg-accent/10 border border-accent/20 rounded-2xl p-8 mb-10">
             <h2 className="text-2xl font-bold text-primary mb-4">The Calgary Context</h2>
@@ -260,7 +270,11 @@ export default function RentingVsBuyingPost() {
               Calgary is a unique market. The city has grown dramatically in recent years, driven by interprovincial migration, a strong job market, and relative affordability compared to Vancouver and Toronto. Average detached home prices in Calgary are still well below both of those cities, and Alberta&apos;s no-PST, no-land-transfer-tax environment reduces transaction costs significantly.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              At the same time, the rental market has tightened considerably. Calgary&apos;s rental vacancy rate has dropped sharply, and average rents for a two-bedroom apartment in desirable inner-city communities have risen to $2,200–$2,800/month. That&apos;s not far off what a mortgage payment looks like on an entry-level condo purchase with 10% down.
+              At the same time, the rental market has tightened considerably. Calgary&apos;s rental vacancy rate has dropped sharply, and average rents for a two-bedroom apartment in desirable inner-city communities have risen to $2,200–$2,800/month. That&apos;s not far off what a mortgage payment looks like on an entry-level condo purchase with 10% down, which you can check for yourself with the{" "}
+              <Link href="/mortgage-calculator" className="font-semibold text-accent hover:underline">
+                Calgary mortgage calculator
+              </Link>
+              .
             </p>
             <p className="text-gray-600 leading-relaxed">
               The practical implication: for many Calgarians, the monthly cost difference between renting and owning has narrowed, which means the equity-building advantage of owning is now more compelling than it has been in the past.

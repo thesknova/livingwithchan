@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AssessmentCTAForm from "@/components/AssessmentCTAForm";
+import BlogCTA from "@/components/BlogCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/calgary-property-tax-assessment" },
   title: "Calgary Property Tax Assessment: How It Works and How to Challenge It | Chan Kawaguchi",
   description:
     "Your Calgary property assessment determines how much tax you pay. Chan Kawaguchi explains how assessments are calculated, what to do if yours is wrong, and how to challenge it through the ARB.",
@@ -14,11 +16,11 @@ const articleSchema = {
   headline: "Calgary Property Tax Assessment: How It Works and How to Challenge It",
   description:
     "Your Calgary property assessment determines how much tax you pay. Chan Kawaguchi explains how assessments are calculated, what to do if yours is wrong, and how to challenge it through the ARB.",
-  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
-  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://www.livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://www.livingwithchan.com" },
   datePublished: "2026-05-01",
   dateModified: "2026-05-01",
-  url: "https://livingwithchan.com/blog/calgary-property-tax-assessment",
+  url: "https://www.livingwithchan.com/blog/calgary-property-tax-assessment",
 };
 
 export default function PropertyTaxAssessmentPost() {
@@ -194,6 +196,14 @@ export default function PropertyTaxAssessmentPost() {
             </ol>
 
             {/* Section 5 */}
+            <BlogCTA
+              id="assessment-mid"
+              heading="Think one of those five applies to your place?"
+              body="You have a narrow window to file, and the case is won or lost on comparable sales. Chan will pull the comparables for your address from live MLS data and tell you whether a complaint is worth filing. No cost, no obligation."
+              href="#assessment-cta"
+              action="Get your free assessment review"
+            />
+
             <h2 className="text-2xl font-bold text-primary mt-10 mb-4">How to Challenge Your Assessment: Step by Step</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
               The City of Calgary gives every homeowner a chance to review and challenge their assessment through a formal process. Here's how it works:

@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { listings } from "@/lib/listings";
 import { getAllReports } from "@/lib/market-reports";
+import { SITE_URL } from "@/lib/site";
 
-const BASE = "https://livingwithchan.com";
+const BASE = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/market-reports`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/mortgage-calculator`, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${BASE}/things-to-do`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/buyer-intake`, changeFrequency: "yearly", priority: 0.6 },
     { url: `${BASE}/buyers`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/buyers/first-time`, changeFrequency: "monthly", priority: 0.7 },

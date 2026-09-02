@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "Calgary Real Estate Blog | Chan Kawaguchi",
   description:
     "Practical Calgary real estate advice from REMAX Complete Realty agent Chan Kawaguchi: market insights, buyer and seller tips, neighbourhood guides, and more.",

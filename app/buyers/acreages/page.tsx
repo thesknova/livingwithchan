@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/acreages" },
   title: "Calgary Acreages & Rural Properties | Chan Kawaguchi",
   description:
     "Looking for an acreage near Calgary? Chan Kawaguchi specializes in rural and semi-rural properties in Rocky View County, Foothills, and surrounding areas.",

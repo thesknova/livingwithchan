@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllReports, formatPrice, formatChange, marketLabel, marketColor } from "@/lib/market-reports";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/market-reports" },
   title: "Calgary Housing Market Reports | Chan Kawaguchi",
   description:
     "Monthly Calgary real estate market reports from Chan Kawaguchi — benchmark prices, sales data, and neighbourhood insights.",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import SearchCommunities from "@/components/SearchCommunities";
@@ -7,6 +8,12 @@ import BuyerSegments from "@/components/BuyerSegments";
 import TestimonialsStrip from "@/components/TestimonialsStrip";
 import Button from "@/components/ui/Button";
 import ScrollReveal from "@/components/ScrollReveal";
+
+// Title and description are inherited from the root layout; this exists so the
+// homepage emits its own canonical rather than none.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

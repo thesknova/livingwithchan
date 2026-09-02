@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy | Living With Chan",
   description:
     "Privacy policy for livingwithchan.com — how Chan Kawaguchi collects, uses, and protects your personal information.",

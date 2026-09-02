@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import BitcoinCalculator from "@/components/BitcoinCalculator";
+import BlogCTA from "@/components/BlogCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/bitcoin-real-estate-calgary" },
   title: "Bitcoin and Real Estate in Calgary: How It Works | Chan Kawaguchi",
   description:
     "Can you buy or sell a home in Calgary with Bitcoin? Chan breaks down how crypto real estate transactions work in Canada, covering the process, tax implications, real Calgary examples, and a live BTC/CAD calculator.",
@@ -14,11 +16,11 @@ const articleSchema = {
   "@type": "Article",
   headline: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
   description: "Can you buy or sell a home in Calgary with Bitcoin? Chan breaks down how crypto real estate transactions work in Canada, covering the process, tax implications, and a live BTC/CAD calculator.",
-  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
-  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://www.livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://www.livingwithchan.com" },
   datePublished: "2026-04-01",
   dateModified: "2026-04-01",
-  url: "https://livingwithchan.com/blog/bitcoin-real-estate-calgary",
+  url: "https://www.livingwithchan.com/blog/bitcoin-real-estate-calgary",
 };
 
 export default function BitcoinRealEstatePost() {
@@ -165,6 +167,14 @@ export default function BitcoinRealEstatePost() {
             <em>Transfer of Land</em> document at the Alberta Land Titles Office.
           </p>
         </section>
+
+        <BlogCTA
+          id="bitcoin-mid"
+          heading="Thinking about buying Calgary property with crypto?"
+          body="Very few Calgary agents have run one of these deals. Chan can tell you which conveyancers and brokerages will actually handle the transaction, and where the process tends to stall."
+          href="/investors"
+          action="Start the conversation"
+        />
 
         {/* NDAX section */}
         <section className="space-y-5">

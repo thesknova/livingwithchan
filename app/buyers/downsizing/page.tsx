@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/downsizing" },
   title: "Downsizing in Calgary | Chan Kawaguchi",
   description:
     "Ready to downsize in Calgary? Chan Kawaguchi helps empty nesters and retirees find the perfect right-sized home: lock-and-leave condos, bungalows, and adult communities.",

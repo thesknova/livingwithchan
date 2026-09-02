@@ -18,6 +18,7 @@ const INSTAGRAM_POSTS = [
 ];
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "Chan Kawaguchi — Calgary REMAX Real Estate Agent",
   description:
     "Meet Chan Kawaguchi, a trusted REMAX Complete Realty Agent with 10+ years serving Calgary families. Local expertise, honest guidance, and a proven track record.",

@@ -26,6 +26,9 @@ export async function generateMetadata({
   if (!report) return {};
   return {
     title: `${report.month} ${report.year} Market Infographic | Chan Kawaguchi`,
+    // Alternate rendering of the report itself (and deliberately absent from
+    // the sitemap), so consolidate ranking signals onto the parent report.
+    alternates: { canonical: `/market-reports/${slug}` },
   };
 }
 

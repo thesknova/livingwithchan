@@ -4,6 +4,7 @@ import SellerIntakeForm from "@/components/SellerIntakeForm";
 import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/sell" },
   title: "Sell My Home in Calgary | Chan Kawaguchi, REMAX",
   description:
     "Thinking of selling your Calgary home? Chan Kawaguchi delivers proven pricing strategy, professional marketing, and hands-on support from listing day to close.",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/new-to-calgary" },
   title: "New to Calgary Real Estate | Chan Kawaguchi",
   description:
     "Relocating to Calgary? Chan Kawaguchi helps newcomers from other provinces and countries navigate Calgary's real estate market, neighbourhoods, and buying process.",

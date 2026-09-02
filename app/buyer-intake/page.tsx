@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import BuyerIntakeForm from "@/components/BuyerIntakeForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyer-intake" },
   title: "Buyer Intake Form",
   description:
     "Tell Chan Kawaguchi about your ideal home. Fill out the buyer intake form and get a personalized home search tailored to your needs and budget.",

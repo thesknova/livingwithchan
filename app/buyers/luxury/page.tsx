@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/luxury" },
   title: "Luxury Homes Calgary | Chan Kawaguchi",
   description:
     "Searching for a luxury home in Calgary? Chan Kawaguchi specializes in premium properties in Aspen Woods, Elbow Park, Mount Royal, Britannia, and beyond.",

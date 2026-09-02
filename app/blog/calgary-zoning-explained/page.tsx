@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import BlogCTA from "@/components/BlogCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/calgary-zoning-explained" },
   title: "Calgary Zoning Explained: R-CG, R-C1, M-C1 and the Blanket Rezoning | Chan Kawaguchi",
   description:
     "Everything Calgary homeowners and investors need to know about zoning types (R-C1, R-C2, R-CG, M-C1) and the city's historic blanket rezoning that changed thousands of properties in 2024.",
@@ -13,12 +15,14 @@ const articleSchema = {
   "@type": "Article",
   headline: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
   description: "Everything Calgary homeowners and investors need to know about zoning types and the city's historic blanket rezoning that changed thousands of properties in 2024.",
-  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
-  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://www.livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://www.livingwithchan.com" },
   datePublished: "2026-04-01",
   dateModified: "2026-04-01",
-  url: "https://livingwithchan.com/blog/calgary-zoning-explained",
+  url: "https://www.livingwithchan.com/blog/calgary-zoning-explained",
 };
+
+const inlineLink = "font-semibold text-accent hover:underline";
 
 export default function CalgaryZoningPost() {
   return (
@@ -195,6 +199,15 @@ export default function CalgaryZoningPost() {
           </div>
         </section>
 
+        <BlogCTA
+          id="zoning-mid"
+          eyebrow="Before the August 4 deadline"
+          heading="Not sure what your lot is zoned right now?"
+          body="Zoning decides whether you can add a suite, build a fourplex, or sell to an infill builder — and with the repeal date approaching, the answer may be about to change. Chan will pull your property's current designation and tell you plainly what it does and doesn't allow."
+          href="/buyers/investors"
+          action="Get your zoning checked"
+        />
+
         {/* R-CG vs M-C1 */}
         <section className="space-y-5">
           <h2 className="text-2xl font-bold text-primary">R-CG vs M-C1: What&apos;s the Difference?</h2>
@@ -262,11 +275,27 @@ export default function CalgaryZoningPost() {
             {[
               {
                 title: "Thinking about adding a suite?",
-                body: "Under current R-CG zoning, you may be able to add both a secondary suite (basement) and a carriage suite (above your garage) simultaneously, potentially three households on one property. This can dramatically change the cash flow profile of a property. Confirm your current zoning designation at the City of Calgary's property portal before making plans.",
+                body: (
+                  <>
+                    Under current R-CG zoning, you may be able to add both a secondary suite (basement) and a carriage suite (above your garage) simultaneously, potentially three households on one property. This can dramatically change the cash flow profile of a property. Confirm your current zoning designation at the City of Calgary&apos;s property portal before making plans, and read{" "}
+                    <Link href="/blog/legal-vs-illegal-basement-suites-calgary" className={inlineLink}>
+                      what separates a legal suite from an illegal one
+                    </Link>{" "}
+                    before you spend a dollar on it.
+                  </>
+                ),
               },
               {
                 title: "Considering selling to a developer?",
-                body: "Your property's R-CG designation may make it more attractive and valuable to infill builders who want to develop rowhouses or a fourplex. A corner lot or oversized lot in a desirable inner-city neighbourhood is particularly in demand. Chan can help you evaluate whether your property has development potential and how to price it accordingly.",
+                body: (
+                  <>
+                    Your property&apos;s R-CG designation may make it more attractive and valuable to infill builders who want to develop rowhouses or a fourplex. A corner lot or oversized lot in a desirable inner-city neighbourhood is particularly in demand.{" "}
+                    <Link href="/sell" className={inlineLink}>
+                      Chan can evaluate whether your property has development potential
+                    </Link>{" "}
+                    and how to price it accordingly.
+                  </>
+                ),
               },
               {
                 title: "Buying in an R-CG neighbourhood?",
@@ -274,7 +303,15 @@ export default function CalgaryZoningPost() {
               },
               {
                 title: "Evaluating an investment property?",
-                body: "R-CG zoning is a green light to explore secondary suites, carriage suites, or rowhouse development as part of your return strategy. Always verify the current zoning and confirm your intended use with the City before purchasing. Zoning does not guarantee a development permit. Site-specific factors (lot size, setbacks, neighbourhood context) also apply.",
+                body: (
+                  <>
+                    R-CG zoning is a green light to explore secondary suites, carriage suites, or rowhouse development as part of your return strategy. Always verify the current zoning and confirm your intended use with the City before purchasing. Zoning does not guarantee a development permit. Site-specific factors (lot size, setbacks, neighbourhood context) also apply.{" "}
+                    <Link href="/buyers/investors" className={inlineLink}>
+                      See how Chan works with Calgary investors
+                    </Link>
+                    .
+                  </>
+                ),
               },
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-xl border border-neutral-mid p-5">

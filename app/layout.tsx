@@ -10,6 +10,7 @@ import ConversionTracking from "@/components/ConversionTracking";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_URL } from "@/lib/site";
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -25,7 +26,7 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://livingwithchan.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Calgary Real Estate Agent | Chan Kawaguchi, REMAX",
     template: "%s | Living With Chan",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     title: "Calgary Real Estate Agent | Chan Kawaguchi, REMAX",
     description:
       "Chan Kawaguchi is your trusted Calgary REMAX agent — buy, sell, or invest with local expertise and honest guidance. Call 403-681-0107.",
-    url: "https://livingwithchan.com",
+    url: SITE_URL,
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Chan Kawaguchi — REMAX Complete Realty Agent, Calgary" }],
   },
   twitter: {
@@ -110,8 +111,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["RealEstateAgent", "LocalBusiness"],
               name: "Chan Kawaguchi — Living With Chan",
-              image: "https://livingwithchan.com/chan-headshot-color.jpg",
-              url: "https://livingwithchan.com",
+              image: `${SITE_URL}/chan-headshot-color.jpg`,
+              url: SITE_URL,
               telephone: "+14036810107",
               email: "hello@livingwithchan.com",
               address: {

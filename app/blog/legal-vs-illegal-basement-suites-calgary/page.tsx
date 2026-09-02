@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import BlogCTA from "@/components/BlogCTA";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/legal-vs-illegal-basement-suites-calgary" },
   title: "Legal vs. Illegal Basement Suites in Calgary | Chan Kawaguchi",
   description:
     "What separates a legal secondary suite from an illegal one in Calgary? Permits, egress windows, fire separation, smoke alarms, and the real risks to landlords and tenants.",
@@ -13,11 +15,11 @@ const articleSchema = {
   "@type": "Article",
   headline: "Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know",
   description: "What separates a legal secondary suite from an illegal one in Calgary? Permits, egress windows, fire separation, smoke alarms, and the real risks to landlords and tenants.",
-  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://livingwithchan.com/about" },
-  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://livingwithchan.com" },
+  author: { "@type": "Person", name: "Chan Kawaguchi", url: "https://www.livingwithchan.com/about" },
+  publisher: { "@type": "Organization", name: "Living With Chan", url: "https://www.livingwithchan.com" },
   datePublished: "2026-04-01",
   dateModified: "2026-04-01",
-  url: "https://livingwithchan.com/blog/legal-vs-illegal-basement-suites-calgary",
+  url: "https://www.livingwithchan.com/blog/legal-vs-illegal-basement-suites-calgary",
 };
 
 export default function BasementSuitesPost() {
@@ -268,6 +270,14 @@ export default function BasementSuitesPost() {
             </a>
           </p>
         </section>
+
+        <BlogCTA
+          id="basement-suites-mid"
+          heading="Buying a property that already has a suite?"
+          body="A suite that isn't on the registry is a liability you inherit at closing, not a bonus. Chan checks permit and registry status as part of due diligence on every income property, before an offer goes in."
+          href="/buyers/investors"
+          action="Talk to Chan about income properties"
+        />
 
         {/* Risks to landlords */}
         <section className="space-y-5">

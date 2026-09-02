@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import BuyerIntakeForm from "@/components/BuyerIntakeForm";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/buyers/first-time" },
   title: "First-Time Home Buyers Calgary | Chan Kawaguchi",
   description:
     "Buying your first home in Calgary? Chan Kawaguchi guides first-time buyers through every step, from mortgage pre-approval to possession day.",
