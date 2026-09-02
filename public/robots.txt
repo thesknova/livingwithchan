@@ -1,22 +1,108 @@
+# robots.txt for www.livingwithchan.com
+#
+# Managed here, in the repo. Cloudflare's "manage robots.txt" injection is
+# deliberately left OFF: two systems writing one file produced contradictory
+# Allow/Disallow pairs for the same crawler (GPTBot was both at once).
+#
+# Policy: allow anything that can send a reader back here, which means classic
+# search plus AI search and user-initiated fetches. Disallow bulk training
+# crawlers that ingest content with no referral path.
+#
+# Note that these are requests, not enforcement. The matching allow/block
+# rules live in Cloudflare AI Crawl Control and are what actually gate access.
+# Keep the two in agreement.
+
 User-agent: *
 Allow: /
 
+# Classic search engines
 User-agent: Googlebot
 Allow: /
 
-User-agent: GPTBot
+User-agent: bingbot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Applebot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: DuckDuckBot
+Allow: /
+
+# AI search and user-initiated fetches. These cite sources and link back,
+# so they are a referral channel, not just consumption.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Amazonbot
+User-agent: Perplexity-User
 Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Gemini grounding and AI Overviews. This does not affect classic Google
+# ranking, which is governed by Googlebot above.
+User-agent: Google-Extended
+Allow: /
+
+# Model training and bulk scraping: no path back to the site.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: Webzio-Extended
+Disallow: /
 
 Sitemap: https://www.livingwithchan.com/sitemap.xml
