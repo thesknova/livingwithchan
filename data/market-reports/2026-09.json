@@ -91,12 +91,30 @@
     }
   ],
   "priceHistory": [
-    { "label": "Mar '26", "price": 565600 },
-    { "label": "Apr '26", "price": 568800 },
-    { "label": "May '26", "price": 570500 },
-    { "label": "Jun '26", "price": 572500 },
-    { "label": "Jul '26", "price": 569200 },
-    { "label": "Aug '26", "price": 569800 }
+    {
+      "label": "Mar '26",
+      "price": 565600
+    },
+    {
+      "label": "Apr '26",
+      "price": 568800
+    },
+    {
+      "label": "May '26",
+      "price": 570500
+    },
+    {
+      "label": "Jun '26",
+      "price": 572500
+    },
+    {
+      "label": "Jul '26",
+      "price": 569200
+    },
+    {
+      "label": "Aug '26",
+      "price": 569800
+    }
   ],
   "insights": [
     "Detached homes remain the market's anchor, but the pullback reached them too: 875 sales in August, down 12%, with the decline concentrated below $1,000,000 while sales above that line grew. New listings eased 6% to 1,635, holding months of supply to 3.39 and the benchmark at $744,300, barely changed from July and down just 1.1% on the year. Location decided everything: supply stayed under three months in the North West, West, South and South East, but ran above four months in the North and North East, and prices followed, up more than 2% in the West and City Centre while the North East fell over 6%.",
@@ -105,5 +123,267 @@
     "Apartment condominiums are the clearest buyer's market in the city, with 5.68 months of resale supply and a 48% sales-to-new-listings ratio. The benchmark fell to $295,400, down 8.2% year-over-year and roughly 13% below the August 2024 peak of $341,300. August sales of 333 were down 26%, matching the year-to-date decline. New listings dropped 20%, enough to stop inventory climbing further but not enough to shift the segment out of buyer's conditions after two years of supply outrunning demand.",
     "The reason prices held while sales fell is that both sides of the market stepped back at once. New listings dropped 9.7% year-over-year to 3,141, and inventory finished August at 6,509 units, actually 2.3% below last August. Months of supply still rose to 3.92, up almost 17% on the year, so conditions are genuinely softer than 2025, but nowhere near the level that forces broad price cuts. Homes are taking longer to sell, with median days on market at 41, up 7% from last August.",
     "Around the region the spread is wider than inside the city. Okotoks is the tightest market at 2.42 months of supply on an 81% sales-to-new-listings ratio, with a benchmark of $608,400. Chestermere is the loosest at 8.72 months after its ratio fell below 30%, leaving its $697,400 benchmark 1.6% below last year. Cochrane was the one bright spot for activity, with August sales up 34% year-over-year and year-to-date sales up more than 5%, though its benchmark still eased to $570,200. Airdrie remains the softest on price at $508,800, down 4.5% year-over-year, with the steepest declines in apartment-style homes."
-  ]
+  ],
+  "districts": {
+    "Detached": {
+      "City Centre": {
+        "price": 995700,
+        "yoy": 2.24,
+        "mom": 0.37,
+        "mos": 3.84,
+        "inv": 376
+      },
+      "North": {
+        "price": 647400,
+        "yoy": -3.89,
+        "mom": -0.05,
+        "mos": 4.1,
+        "inv": 459
+      },
+      "North East": {
+        "price": 560500,
+        "yoy": -6.44,
+        "mom": -0.6,
+        "mos": 5.36,
+        "inv": 509
+      },
+      "North West": {
+        "price": 781500,
+        "yoy": -1.3,
+        "mom": 1.41,
+        "mos": 2.62,
+        "inv": 341
+      },
+      "West": {
+        "price": 992500,
+        "yoy": 2.78,
+        "mom": -1.13,
+        "mos": 2.34,
+        "inv": 218
+      },
+      "East": {
+        "price": 489500,
+        "yoy": -3.11,
+        "mom": -0.14,
+        "mos": 3.7,
+        "inv": 122
+      },
+      "South": {
+        "price": 715200,
+        "yoy": -1.69,
+        "mom": -0.6,
+        "mos": 2.97,
+        "inv": 529
+      },
+      "South East": {
+        "price": 703600,
+        "yoy": -1.7,
+        "mom": 0.67,
+        "mos": 2.99,
+        "inv": 404
+      },
+      "TOTAL CITY": {
+        "price": 744300,
+        "yoy": -1.09,
+        "mom": 0.05,
+        "mos": 3.39,
+        "inv": 2969
+      }
+    },
+    "Semi-detached": {
+      "City Centre": {
+        "price": 965700,
+        "yoy": 2.09,
+        "mom": -0.25,
+        "mos": 3.56,
+        "inv": 146
+      },
+      "North": {
+        "price": 492300,
+        "yoy": -2.19,
+        "mom": -0.08,
+        "mos": 3.15,
+        "inv": 63
+      },
+      "North East": {
+        "price": 423300,
+        "yoy": -6.02,
+        "mom": -1.01,
+        "mos": 4.1,
+        "inv": 82
+      },
+      "North West": {
+        "price": 680600,
+        "yoy": 2.12,
+        "mom": -0.16,
+        "mos": 3.53,
+        "inv": 53
+      },
+      "West": {
+        "price": 824000,
+        "yoy": 1.43,
+        "mom": -1.83,
+        "mos": 2.42,
+        "inv": 46
+      },
+      "East": {
+        "price": 377400,
+        "yoy": -4.48,
+        "mom": -1.18,
+        "mos": 10.67,
+        "inv": 32
+      },
+      "South": {
+        "price": 529400,
+        "yoy": -2.41,
+        "mom": -0.08,
+        "mos": 3.7,
+        "inv": 74
+      },
+      "South East": {
+        "price": 509400,
+        "yoy": -2.0,
+        "mom": 0.69,
+        "mos": 1.83,
+        "inv": 53
+      },
+      "TOTAL CITY": {
+        "price": 690500,
+        "yoy": 0.98,
+        "mom": -0.07,
+        "mos": 3.3,
+        "inv": 555
+      }
+    },
+    "Row": {
+      "City Centre": {
+        "price": 574100,
+        "yoy": -3.29,
+        "mom": -0.52,
+        "mos": 4.72,
+        "inv": 151
+      },
+      "North": {
+        "price": 373900,
+        "yoy": -9.2,
+        "mom": -1.79,
+        "mos": 4.98,
+        "inv": 199
+      },
+      "North East": {
+        "price": 331100,
+        "yoy": -12.22,
+        "mom": -0.99,
+        "mos": 4.33,
+        "inv": 156
+      },
+      "North West": {
+        "price": 436800,
+        "yoy": -1.2,
+        "mom": -0.02,
+        "mos": 3.62,
+        "inv": 105
+      },
+      "West": {
+        "price": 434700,
+        "yoy": -4.63,
+        "mom": -0.75,
+        "mos": 3.03,
+        "inv": 115
+      },
+      "East": {
+        "price": 259400,
+        "yoy": -12.34,
+        "mom": -0.69,
+        "mos": 3.11,
+        "inv": 28
+      },
+      "South": {
+        "price": 376400,
+        "yoy": -4.54,
+        "mom": -1.83,
+        "mos": 3.53,
+        "inv": 173
+      },
+      "South East": {
+        "price": 423700,
+        "yoy": -6.24,
+        "mom": 0.09,
+        "mos": 3.16,
+        "inv": 161
+      },
+      "TOTAL CITY": {
+        "price": 415200,
+        "yoy": -5.44,
+        "mom": -0.79,
+        "mos": 3.85,
+        "inv": 1094
+      }
+    },
+    "Apartment": {
+      "City Centre": {
+        "price": 303500,
+        "yoy": -7.53,
+        "mom": -0.3,
+        "mos": 7.58,
+        "inv": 834
+      },
+      "North": {
+        "price": 300900,
+        "yoy": -9.31,
+        "mom": -0.03,
+        "mos": 3.89,
+        "inv": 148
+      },
+      "North East": {
+        "price": 251900,
+        "yoy": -12.11,
+        "mom": -0.59,
+        "mos": 9.69,
+        "inv": 126
+      },
+      "North West": {
+        "price": 283300,
+        "yoy": -8.29,
+        "mom": -2.88,
+        "mos": 4.59,
+        "inv": 156
+      },
+      "West": {
+        "price": 322500,
+        "yoy": -7.78,
+        "mom": -1.23,
+        "mos": 3.39,
+        "inv": 149
+      },
+      "East": {
+        "price": 211100,
+        "yoy": -12.77,
+        "mom": -0.94,
+        "mos": 5.4,
+        "inv": 54
+      },
+      "South": {
+        "price": 274700,
+        "yoy": -9.55,
+        "mom": -0.83,
+        "mos": 4.54,
+        "inv": 227
+      },
+      "South East": {
+        "price": 311600,
+        "yoy": -7.97,
+        "mom": -1.27,
+        "mos": 5.74,
+        "inv": 195
+      },
+      "TOTAL CITY": {
+        "price": 295400,
+        "yoy": -8.18,
+        "mom": -0.74,
+        "mos": 5.68,
+        "inv": 1891
+      }
+    }
+  }
 }

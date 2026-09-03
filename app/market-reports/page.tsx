@@ -1,107 +1,238 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllReports, formatPrice, formatChange, marketLabel, marketColor } from "@/lib/market-reports";
+import {
+  getAllReports,
+  getLatestDistrictReport,
+  formatPrice,
+  formatChange,
+  marketLabel,
+  marketColor,
+} from "@/lib/market-reports";
+import DistrictMap from "@/components/market-report/DistrictMap";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/market-reports" },
   title: "Calgary Housing Market Reports | Chan Kawaguchi",
   description:
-    "Monthly Calgary real estate market reports from Chan Kawaguchi — benchmark prices, sales data, and neighbourhood insights.",
+    "Monthly Calgary real estate market reports from Chan Kawaguchi — an interactive district map, benchmark prices, sales data, and neighbourhood insights.",
 };
 
 export default function MarketReportsPage() {
   const reports = getAllReports();
+  const [latest, ...older] = reports;
+  const mapReport = getLatestDistrictReport();
 
   return (
     <div className="bg-neutral-light min-h-screen">
+      {/* ── Header ─────────────────────────────────────────────────── */}
       <div className="bg-primary text-white py-14 px-6">
         <div className="max-w-6xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-accent">
             Market Data
           </span>
-          <h1 className="text-4xl font-bold mt-2 mb-3">
+          <h1 className="font-display text-4xl sm:text-5xl mt-3 mb-3 leading-tight">
             Calgary Housing Market Reports
           </h1>
           <p className="text-stone-400 text-lg max-w-2xl">
-            Monthly breakdowns of benchmark prices, sales activity, and market
-            conditions across Calgary and surrounding communities.
+            Updated every month with benchmark prices, sales activity, and market
+            conditions across Calgary and the surrounding communities.
           </p>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        {reports.length === 0 ? (
-          <p className="text-gray-500 text-sm">No reports published yet.</p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reports.map((r) => {
-              const mColor = marketColor(r.marketType);
-              return (
+      <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16 flex flex-col gap-14">
+        {/* ── The map, front and centre ───────────────────────────── */}
+        {mapReport && <DistrictMap report={mapReport} />}
+
+        {/* ── This month's report ─────────────────────────────────── */}
+        {latest && (
+          <section>
+            <div className="flex items-baseline justify-between gap-4 mb-5">
+              <h2 className="font-display text-2xl text-primary">This month&rsquo;s report</h2>
+              <span className="text-xs text-text-muted whitespace-nowrap">
+                {new Date(latest.publishedAt).toLocaleDateString("en-CA", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </span>
+            </div>
+
+            <Link
+              href={`/market-reports/${latest.slug}`}
+              className="group block bg-white rounded-2xl border border-neutral-mid shadow-sm hover:shadow-md hover:border-accent/40 transition-all overflow-hidden"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr]">
+                <div className="p-7 sm:p-9 flex flex-col">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-2">
+                    {latest.month} {latest.year} · {latest.dataMonth} data
+                  </p>
+                  <h3 className="font-display text-2xl sm:text-3xl text-primary leading-snug group-hover:text-accent transition-colors">
+                    {latest.headline}
+                  </h3>
+                  <p className="text-sm text-text-dark leading-relaxed mt-3 line-clamp-4">
+                    {latest.summary}
+                  </p>
+                  <div className="mt-auto pt-6 flex items-center gap-4">
+                    <span className="text-sm font-semibold text-white bg-accent px-5 py-2.5 rounded-full group-hover:bg-accent-dark transition-colors">
+                      Read the full report
+                    </span>
+                    <span className={`text-xs font-semibold ${marketColor(latest.marketType)}`}>
+                      {marketLabel(latest.marketType)}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Headline figures */}
+                <div className="bg-neutral-light border-t lg:border-t-0 lg:border-l border-neutral-mid p-7 sm:p-9 grid grid-cols-2 gap-x-6 gap-y-7 content-center">
+                  {[
+                    {
+                      label: "Benchmark price",
+                      value: formatPrice(latest.benchmarkPrice.overall),
+                      sub: `${formatChange(latest.benchmarkPriceYoy.overall)} YoY`,
+                      up: latest.benchmarkPriceYoy.overall >= 0,
+                    },
+                    {
+                      label: "Sales",
+                      value: latest.sales.total.toLocaleString(),
+                      sub: `${formatChange(latest.sales.yoyChange)} YoY`,
+                      up: latest.sales.yoyChange >= 0,
+                    },
+                    {
+                      label: "Active listings",
+                      value: latest.activeListings.total.toLocaleString(),
+                      sub: `${formatChange(latest.activeListings.yoyChange)} YoY`,
+                      up: latest.activeListings.yoyChange >= 0,
+                    },
+                    {
+                      label: "Days on market",
+                      value: String(latest.daysOnMarket),
+                      sub: "median",
+                      up: null,
+                    },
+                  ].map((s) => (
+                    <div key={s.label}>
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-text-muted">
+                        {s.label}
+                      </p>
+                      <p
+                        className="font-display text-2xl sm:text-3xl text-primary mt-1 leading-none"
+                        style={{ fontVariantNumeric: "tabular-nums" }}
+                      >
+                        {s.value}
+                      </p>
+                      <p
+                        className={`text-xs mt-1.5 font-semibold ${
+                          s.up === null
+                            ? "text-text-muted"
+                            : s.up
+                              ? "text-emerald-700"
+                              : "text-red-600"
+                        }`}
+                        style={{ fontVariantNumeric: "tabular-nums" }}
+                      >
+                        {s.sub}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          </section>
+        )}
+
+        {/* ── Archive ─────────────────────────────────────────────── */}
+        {older.length > 0 && (
+          <section>
+            <div className="flex items-baseline justify-between gap-4 mb-5">
+              <h2 className="font-display text-2xl text-primary">Past reports</h2>
+              <span className="text-xs text-text-muted">{older.length} in the archive</span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {older.map((r) => (
                 <Link
                   key={r.slug}
                   href={`/market-reports/${r.slug}`}
                   className="group bg-white rounded-2xl border border-neutral-mid shadow-sm hover:shadow-md hover:border-accent/40 transition-all p-6 flex flex-col"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-1">
-                        {r.month} {r.year}
-                      </p>
-                      <h2 className="text-base font-bold text-primary leading-snug group-hover:text-accent transition-colors">
-                        {r.headline}
-                      </h2>
-                    </div>
-                  </div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-1.5">
+                    {r.month} {r.year}
+                  </p>
+                  <h3 className="text-base font-semibold text-primary leading-snug group-hover:text-accent transition-colors">
+                    {r.headline}
+                  </h3>
 
-                  <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="grid grid-cols-2 gap-3 mt-5 mb-4">
                     <div className="bg-neutral-light rounded-lg p-3">
-                      <p className="text-xs text-gray-500 mb-0.5">Benchmark Price</p>
-                      <p className="text-sm font-bold text-primary">
+                      <p className="text-[10px] uppercase tracking-widest text-text-muted mb-1">
+                        Benchmark
+                      </p>
+                      <p
+                        className="text-sm font-bold text-primary"
+                        style={{ fontVariantNumeric: "tabular-nums" }}
+                      >
                         {formatPrice(r.benchmarkPrice.overall)}
                       </p>
-                      <p className="text-xs text-gray-400">
+                      <p
+                        className="text-xs text-text-muted"
+                        style={{ fontVariantNumeric: "tabular-nums" }}
+                      >
                         {formatChange(r.benchmarkPriceYoy.overall)} YoY
                       </p>
                     </div>
                     <div className="bg-neutral-light rounded-lg p-3">
-                      <p className="text-xs text-gray-500 mb-0.5">Sales</p>
-                      <p className="text-sm font-bold text-primary">
+                      <p className="text-[10px] uppercase tracking-widest text-text-muted mb-1">
+                        Sales
+                      </p>
+                      <p
+                        className="text-sm font-bold text-primary"
+                        style={{ fontVariantNumeric: "tabular-nums" }}
+                      >
                         {r.sales.total.toLocaleString()}
                       </p>
-                      <p className="text-xs text-gray-400">
+                      <p
+                        className="text-xs text-text-muted"
+                        style={{ fontVariantNumeric: "tabular-nums" }}
+                      >
                         {formatChange(r.sales.yoyChange)} YoY
                       </p>
                     </div>
                   </div>
 
                   <div className="mt-auto flex items-center justify-between">
-                    <span className={`text-xs font-semibold ${mColor}`}>
+                    <span className={`text-xs font-semibold ${marketColor(r.marketType)}`}>
                       {marketLabel(r.marketType)}
                     </span>
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-text-muted">
                       {new Date(r.publishedAt).toLocaleDateString("en-CA", {
                         month: "short",
-                        day: "numeric",
                         year: "numeric",
                       })}
                     </span>
                   </div>
                 </Link>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          </section>
         )}
 
-        <div className="mt-16 bg-primary rounded-2xl p-8 text-white flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+        {reports.length === 0 && (
+          <p className="text-text-muted text-sm">No reports published yet.</p>
+        )}
+
+        {/* ── CTA ─────────────────────────────────────────────────── */}
+        <div className="bg-primary rounded-2xl p-8 sm:p-10 text-white flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
           <div>
-            <h2 className="text-xl font-bold mb-1">Want a Personal Market Analysis?</h2>
-            <p className="text-stone-400 text-sm">
-              Chan can dig into the data for your specific neighbourhood, price range, or property type.
+            <h2 className="font-display text-2xl mb-1.5">Want a personal market analysis?</h2>
+            <p className="text-stone-400 text-sm max-w-lg">
+              Chan can dig into the data for your specific neighbourhood, price range, or
+              property type.
             </p>
           </div>
           <Link
             href="/contact"
-            className="flex-shrink-0 bg-accent text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-accent/90 transition-colors"
+            className="flex-shrink-0 bg-accent text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-accent-dark transition-colors"
           >
             Talk to Chan
           </Link>

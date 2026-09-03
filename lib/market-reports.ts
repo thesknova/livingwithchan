@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import type { DistrictData } from "@/lib/districts";
 
 export interface PricePoint {
   label: string;
@@ -69,6 +70,7 @@ export interface MarketReport {
     condo: number;
   };
   regionalMarkets?: RegionalMarket[];
+  districts?: DistrictData;
 }
 
 const reportsDir = path.join(process.cwd(), "data", "market-reports");
@@ -80,6 +82,15 @@ export function getAllReports(): MarketReport[] {
     .filter((f) => f.endsWith(".json"))
     .map((f) => JSON.parse(fs.readFileSync(path.join(reportsDir, f), "utf-8")) as MarketReport)
     .sort((a, b) => b.slug.localeCompare(a.slug));
+}
+
+/**
+ * Newest report that carries district figures. The map on the index page reads
+ * from this, so a month whose district table hasn't been added yet falls back to
+ * the last one that has rather than blanking the map.
+ */
+export function getLatestDistrictReport(): MarketReport | null {
+  return getAllReports().find((r) => r.districts) ?? null;
 }
 
 export function getReport(slug: string): MarketReport | null {
