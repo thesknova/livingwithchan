@@ -5,6 +5,15 @@ import { SITE_URL } from "@/lib/site";
 
 const BASE = SITE_URL;
 
+/**
+ * `lastmod` is the one hint in this file Google actually reads — it ignores
+ * `changefreq` and `priority` outright. It only trusts `lastmod` while the
+ * dates stay honest, and stamping every URL with the build time would make
+ * the whole sitemap look like it changes on each deploy. So a date is emitted
+ * only where the content itself carries one (market reports, from their
+ * publication date) and omitted everywhere else.
+ */
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: BASE, changeFrequency: "weekly", priority: 1.0 },
@@ -48,16 +57,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   let reportRoutes: MetadataRoute.Sitemap = [];
+  let latestReportDate: Date | undefined;
   try {
     const reports = getAllReports();
     reportRoutes = reports.map((r) => ({
       url: `${BASE}/market-reports/${r.slug}`,
+      lastModified: new Date(r.publishedAt),
       changeFrequency: "yearly" as const,
       priority: 0.6,
     }));
+    // The index carries the newest report's data and its district map, so it is
+    // genuinely as fresh as that report.
+    if (reports[0]) latestReportDate = new Date(reports[0].publishedAt);
   } catch {
     // data dir may not exist in all environments
   }
 
-  return [...staticRoutes, ...listingRoutes, ...reportRoutes];
+  const dated = staticRoutes.map((route) =>
+    route.url === `${BASE}/market-reports` && latestReportDate
+      ? { ...route, lastModified: latestReportDate }
+      : route
+  );
+
+  return [...dated, ...listingRoutes, ...reportRoutes];
 }

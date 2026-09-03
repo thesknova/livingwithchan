@@ -33,15 +33,9 @@ export const metadata: Metadata = {
   },
   description:
     "Chan Kawaguchi is your trusted Calgary REMAX agent — buy, sell, or invest with local expertise and honest guidance. Browse listings or call 403-681-0107 today.",
-  keywords: [
-    "Calgary real estate agent",
-    "Calgary realtor",
-    "REMAX Complete Realty Calgary",
-    "Chan Kawaguchi",
-    "buy home Calgary",
-    "sell home Calgary",
-    "Calgary homes for sale",
-  ],
+  // No `keywords`: Google stopped using the meta keywords tag in 2009 and it
+  // carries no weight with Bing either. Ranking terms belong in the title,
+  // headings, and body copy.
   openGraph: {
     type: "website",
     siteName: "Living With Chan",

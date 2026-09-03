@@ -9,12 +9,48 @@ import {
   marketColor,
 } from "@/lib/market-reports";
 import DistrictMap from "@/components/market-report/DistrictMap";
+import { DISTRICT_NAMES } from "@/lib/districts";
+import { SITE_URL } from "@/lib/site";
+
+const MONTHS = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+const TITLE = "Calgary Housing Market Reports by District";
+const DESCRIPTION =
+  "Interactive map of Calgary house prices across all eight CREB districts — City Centre, North, North East, North West, West, East, South and South East. Monthly benchmark prices, months of supply, and market conditions for detached, semi-detached, row and apartment homes.";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/market-reports" },
-  title: "Calgary Housing Market Reports | Chan Kawaguchi",
-  description:
-    "Monthly Calgary real estate market reports from Chan Kawaguchi — an interactive district map, benchmark prices, sales data, and neighbourhood insights.",
+  title: TITLE,
+  description: DESCRIPTION,
+  // Without these the page inherits the site-wide card, which advertises the
+  // homepage (og:url included) on every share of this page. Next.js replaces
+  // the parent `openGraph`/`twitter` objects wholesale rather than merging
+  // them, so siteName, the image, and the card type have to be restated here
+  // or they vanish from this page.
+  openGraph: {
+    type: "article",
+    siteName: "Living With Chan",
+    url: "/market-reports",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Chan Kawaguchi — REMAX Complete Realty Agent, Calgary",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function MarketReportsPage() {
@@ -22,8 +58,69 @@ export default function MarketReportsPage() {
   const [latest, ...older] = reports;
   const mapReport = getLatestDistrictReport();
 
+  // A monthly statistics page is a Dataset; the breadcrumb earns the
+  // "Home › Market Reports" trail in the result rather than a bare URL.
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Dataset",
+        name: "Calgary Housing Market Benchmark Prices by District",
+        description:
+          "Monthly MLS® Home Price Index benchmark prices, months of supply, and active inventory for each of CREB's eight Calgary reporting districts, broken down by detached, semi-detached, row and apartment property types.",
+        url: `${SITE_URL}/market-reports`,
+        license: "https://www.creb.com/",
+        isAccessibleForFree: true,
+        creator: {
+          "@type": "RealEstateAgent",
+          name: "Chan Kawaguchi",
+          url: SITE_URL,
+        },
+        spatialCoverage: {
+          "@type": "Place",
+          name: "Calgary, Alberta, Canada",
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 51.0447,
+            longitude: -114.0719,
+          },
+        },
+        ...(mapReport && {
+          temporalCoverage: `${mapReport.dataYear}-${String(
+            MONTHS.indexOf(mapReport.dataMonth) + 1
+          ).padStart(2, "0")}`,
+          dateModified: mapReport.publishedAt,
+          variableMeasured: [
+            "Benchmark price",
+            "Year-over-year price change",
+            "Month-over-month price change",
+            "Months of supply",
+            "Active listings",
+          ],
+        }),
+        keywords: DISTRICT_NAMES.map((d) => `${d} Calgary house prices`),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Market Reports",
+            item: `${SITE_URL}/market-reports`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="bg-neutral-light min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       {/* ── Header ─────────────────────────────────────────────────── */}
       <div className="bg-primary text-white py-14 px-6">
         <div className="max-w-6xl mx-auto">
@@ -43,6 +140,73 @@ export default function MarketReportsPage() {
       <div className="max-w-6xl mx-auto px-6 py-12 sm:py-16 flex flex-col gap-14">
         {/* ── The map, front and centre ───────────────────────────── */}
         {mapReport && <DistrictMap report={mapReport} />}
+
+        {/* Summary in prose. The map carries these figures as SVG text and
+            table cells; naming each district in a sentence gives search
+            engines something to match for "<district> Calgary house prices". */}
+        {mapReport?.districts && (() => {
+          const d = mapReport.districts.Detached;
+          const ranked = [...DISTRICT_NAMES].sort((a, b) => d[b].price - d[a].price);
+          const [top, bottom] = [ranked[0], ranked[ranked.length - 1]];
+          const rising = ranked.filter((n) => d[n].yoy > 0);
+          const steepest = [...DISTRICT_NAMES].sort((a, b) => d[a].yoy - d[b].yoy)[0];
+          const money = (n: number) => `$${n.toLocaleString()}`;
+          const pct = (n: number) => `${n > 0 ? "+" : ""}${n.toFixed(1)}%`;
+
+          return (
+            <section className="bg-white rounded-2xl border border-neutral-mid shadow-sm p-7 sm:p-9">
+              <h2 className="font-display text-2xl text-primary mb-4">
+                What Calgary&rsquo;s eight districts show this month
+              </h2>
+              <div className="text-[15px] leading-relaxed text-text-dark max-w-3xl flex flex-col gap-3">
+                <p>
+                  Across {mapReport.dataMonth} {mapReport.dataYear}, the detached benchmark
+                  price ranged from {money(d[top].price)} in {top} down to{" "}
+                  {money(d[bottom].price)} in {bottom} — a spread of{" "}
+                  {money(d[top].price - d[bottom].price)}
+                  {" between Calgary’s most and least expensive districts. "}
+                  {rising.length > 0 ? (
+                    <>
+                      Only {rising.map((n, i) =>
+                        `${i > 0 ? (i === rising.length - 1 ? " and " : ", ") : ""}${n} (${pct(d[n].yoy)})`
+                      ).join("")}{" "}
+                      {rising.length === 1 ? "is" : "are"} up against last year.
+                    </>
+                  ) : (
+                    <>Every district is below last year&rsquo;s prices.</>
+                  )}{" "}
+                  The steepest decline is in {steepest} at {pct(d[steepest].yoy)}.
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 mt-1">
+                  {ranked.map((name) => {
+                    const s = d[name];
+                    const cond = s.mos < 2 ? "seller's market" : s.mos <= 4 ? "balanced" : "buyer's market";
+                    return (
+                      <li key={name} className="text-sm">
+                        <strong className="text-primary font-semibold">{name}</strong>
+                        <span className="text-text-muted">
+                          {" "}— detached homes {money(s.price)}, {pct(s.yoy)} year over year,{" "}
+                          {s.mos.toFixed(1)} months of supply ({cond})
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <p className="text-text-muted text-sm mt-1">
+                  Switch the map above to semi-detached, row or apartment homes to see how
+                  each district differs by property type, or open{" "}
+                  <Link
+                    href={`/market-reports/${latest.slug}`}
+                    className="text-accent underline underline-offset-2 hover:text-accent-dark"
+                  >
+                    the full {latest.month} {latest.year} report
+                  </Link>{" "}
+                  for citywide sales, new listings, and the surrounding communities.
+                </p>
+              </div>
+            </section>
+          );
+        })()}
 
         {/* ── This month's report ─────────────────────────────────── */}
         {latest && (
