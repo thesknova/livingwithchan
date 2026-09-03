@@ -38,6 +38,23 @@ function parseNum(s: string): number {
 }
 
 /**
+ * Match a CREB column header for a given month and year.
+ *
+ * CREB writes these headers in AP style, so seven of the twelve months are
+ * abbreviated with a trailing period and five are spelled out:
+ *
+ *   Jan. 2026   Feb. 2026   March 2026   April 2026   May 2026   June 2026
+ *   July 2026   Aug. 2026   Sept. 2026   Oct. 2026    Nov. 2026  Dec. 2026
+ *
+ * Matching on the full month name therefore only ever worked from March to
+ * July. Match on the (unique) three-letter stem instead, and require the year
+ * so the weekly "Aug 27-2, 2026" column can't be mistaken for a monthly one.
+ */
+function monthHeaderPattern(month: string, year: number): RegExp {
+  return new RegExp(`\\b${month.slice(0, 3)}[a-z]*\\.?\\s+${year}\\b`, "i");
+}
+
+/**
  * Fetch one CREB tab and extract stats for the given month label.
  * monthLabel should be e.g. "March 2026".
  * Also fetches the prior-year column (e.g. "March 2025") to compute YoY %.
@@ -62,9 +79,11 @@ async function fetchTabStats(
 
   const root = parse(html);
 
-  // Derive the prior year label (e.g. "March 2025" from "March 2026")
+  // Derive the prior year column (e.g. "March 2025" from "March 2026")
   const [month, yearStr] = monthLabel.split(" ");
-  const priorLabel = `${month} ${parseInt(yearStr) - 1}`;
+  const year = parseInt(yearStr);
+  const currentPattern = monthHeaderPattern(month, year);
+  const priorPattern = monthHeaderPattern(month, year - 1);
 
   for (const table of root.querySelectorAll("table")) {
     const rows = table.querySelectorAll("tr");
@@ -79,8 +98,8 @@ async function fetchTabStats(
       const cells = rows[r].querySelectorAll("th, td");
       for (let c = 0; c < cells.length; c++) {
         const text = cells[c].text.trim();
-        if (text.includes(monthLabel)) { currentCol = c; headerRow = r; }
-        if (text.includes(priorLabel)) priorCol = c;
+        if (currentPattern.test(text)) { currentCol = c; headerRow = r; }
+        if (priorPattern.test(text)) priorCol = c;
       }
       if (currentCol !== -1) break;
     }
@@ -140,14 +159,29 @@ export async function scrapeAllTabs(monthLabel: string): Promise<Record<Property
   return Object.fromEntries(results) as Record<PropertyKey, TabResult>;
 }
 
+/**
+ * The month a report covers versus the month it is published under. Reports are
+ * titled and slugged by publication month (a report built in September carries
+ * August's figures), so both have to travel together.
+ */
+export interface ReportPeriod {
+  /** Month the statistics cover, e.g. "August". */
+  dataMonth: string;
+  dataYear: number;
+  /** Month the report is published and titled under, e.g. "September". */
+  month: string;
+  year: number;
+  /** Slug derived from the publication month, e.g. "2026-09". */
+  slug: string;
+}
+
 /** Build the full MarketReport JSON from scraped data + previous reports for price history. */
 export function buildReport(
-  month: string,
-  year: number,
-  slug: string,
+  period: ReportPeriod,
   tabs: Record<PropertyKey, TabResult>,
   previousReports: MarketReport[]
 ): MarketReport {
+  const { dataMonth, dataYear, month, year, slug } = period;
   const t = tabs.total.current;
   const d = tabs.detached.current;
   const s = tabs.semiDetached.current;
@@ -175,13 +209,13 @@ export function buildReport(
     .slice(0, 5)
     .reverse()
     .map((r) => ({
-      label: `${r.month.slice(0, 3)} '${String(r.year).slice(2)}`,
+      label: `${r.dataMonth.slice(0, 3)} '${String(r.dataYear).slice(2)}`,
       price: r.benchmarkPrice.overall,
     }));
 
   if (t?.benchmarkPrice) {
     priceHistory.push({
-      label: `${month.slice(0, 3)} '${String(year).slice(2)}`,
+      label: `${dataMonth.slice(0, 3)} '${String(dataYear).slice(2)}`,
       price: t.benchmarkPrice,
     });
   }
@@ -195,8 +229,10 @@ export function buildReport(
     slug,
     month,
     year,
+    dataMonth,
+    dataYear,
     publishedAt: new Date().toISOString().slice(0, 10),
-    headline: `TODO: Add headline for ${month} ${year} Calgary Market Report`,
+    headline: `TODO: Add headline for the ${month} ${year} report (${dataMonth} ${dataYear} data)`,
     summary: "TODO: Replace with a 2–3 sentence summary of this month's market conditions.",
     benchmarkPrice: {
       overall:     t?.benchmarkPrice  ?? 0,

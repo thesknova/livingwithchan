@@ -92,6 +92,10 @@ export default async function ReportPage({
           <p className="text-stone-400 max-w-2xl leading-relaxed">
             {report.summary}
           </p>
+          <p className="text-xs text-stone-500 mt-4">
+            All figures cover {report.dataMonth} {report.dataYear}, the most
+            recent complete month reported by CREB.
+          </p>
           <div className="flex flex-wrap gap-4 mt-6">
             <Link
               href={`/market-reports/${slug}/infographic`}
@@ -112,9 +116,12 @@ export default async function ReportPage({
       <div className="max-w-6xl mx-auto px-6 py-14 space-y-14">
         {/* Key Stats */}
         <section>
-          <h2 className="text-lg font-bold text-primary mb-5">
+          <h2 className="text-lg font-bold text-primary mb-1">
             Market Snapshot
           </h2>
+          <p className="text-sm text-gray-500 mb-5">
+            {report.dataMonth} {report.dataYear}, City of Calgary
+          </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             <StatCard
               label="Benchmark Price"
@@ -125,7 +132,7 @@ export default async function ReportPage({
             <StatCard
               label="Sales"
               value={report.sales.total.toLocaleString()}
-              sub={`${formatChange(report.sales.momChange)} vs ${prevMonthLabel(report.month)} · ${formatChange(report.sales.yoyChange)} YoY`}
+              sub={`${formatChange(report.sales.momChange)} vs ${prevMonthLabel(report.dataMonth)} · ${formatChange(report.sales.yoyChange)} YoY`}
               subColor="text-gray-500"
             />
             <StatCard
@@ -303,9 +310,9 @@ export default async function ReportPage({
         </section>
 
         <p className="text-xs text-gray-400 text-center">
-          Data sourced from CREB monthly statistics. Benchmark prices reflect
+          Data sourced from CREB monthly statistics for {`${report.dataMonth} ${report.dataYear}`}. Benchmark prices reflect
           the Calgary CMA. Published{" "}
-          {new Date(report.publishedAt).toLocaleDateString("en-CA", {
+          {new Date(`${report.publishedAt}T12:00:00`).toLocaleDateString("en-CA", {
             month: "long",
             day: "numeric",
             year: "numeric",

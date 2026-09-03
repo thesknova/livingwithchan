@@ -1,0 +1,109 @@
+{
+  "slug": "2026-09",
+  "month": "September",
+  "year": 2026,
+  "dataMonth": "August",
+  "dataYear": 2026,
+  "publishedAt": "2026-09-03",
+  "headline": "Sales and Listings Retreat Together, Holding Calgary Prices Nearly Flat",
+  "summary": "Calgary sales fell to 1,660 units in August 2026, down 16% from last August and nearly 13% from July, while new listings pulled back almost 10% to 3,141. Because buyers and sellers stepped back at the same time, inventory finished lower than a year ago at 6,509 units and the total residential benchmark price held at $569,800, only 1.1% below August 2025. Months of supply rose to 3.92, comfortably balanced citywide, but that average hides a widening split: homes priced over $1,000,000 posted year-over-year sales gains and semi-detached prices are up 1%, while apartment condominiums carry nearly six months of supply at a benchmark 8.2% below last year and roughly 13% below their August 2024 peak.",
+  "benchmarkPrice": {
+    "overall": 569800,
+    "detached": 744300,
+    "semiDetached": 690500,
+    "townhouse": 415200,
+    "condo": 295400
+  },
+  "benchmarkPriceYoy": {
+    "overall": -1.1,
+    "detached": -1.1,
+    "semiDetached": 1.0,
+    "townhouse": -5.4,
+    "condo": -8.2
+  },
+  "sales": {
+    "total": 1660,
+    "momChange": -12.8,
+    "yoyChange": -16.4
+  },
+  "newListings": {
+    "total": 3141,
+    "momChange": -5.5,
+    "yoyChange": -9.7
+  },
+  "activeListings": {
+    "total": 6509,
+    "momChange": -1.8,
+    "yoyChange": -2.3
+  },
+  "daysOnMarket": 41,
+  "salesToNewListingsRatio": 52.9,
+  "marketType": "balanced",
+  "monthsOfSupply": {
+    "overall": 3.92,
+    "detached": 3.39,
+    "semiDetached": 3.3,
+    "row": 3.85,
+    "condo": 5.68
+  },
+  "propertyTypeSNLR": {
+    "detached": 54,
+    "semiDetached": 56,
+    "row": 56,
+    "condo": 48
+  },
+  "regionalMarkets": [
+    {
+      "name": "Airdrie",
+      "benchmarkPrice": 508800,
+      "momChange": -0.9,
+      "yoyChange": -4.5,
+      "monthsOfSupply": 3.77,
+      "inventory": 517,
+      "sales": 137
+    },
+    {
+      "name": "Cochrane",
+      "benchmarkPrice": 570200,
+      "momChange": -1.0,
+      "yoyChange": -2.3,
+      "monthsOfSupply": 3.41,
+      "inventory": 321,
+      "sales": 94
+    },
+    {
+      "name": "Okotoks",
+      "benchmarkPrice": 608400,
+      "momChange": -1.5,
+      "yoyChange": -1.8,
+      "monthsOfSupply": 2.42,
+      "inventory": 133,
+      "sales": 55
+    },
+    {
+      "name": "Chestermere",
+      "benchmarkPrice": 697400,
+      "momChange": -1.2,
+      "yoyChange": -1.6,
+      "monthsOfSupply": 8.72,
+      "inventory": 314,
+      "sales": 36
+    }
+  ],
+  "priceHistory": [
+    { "label": "Mar '26", "price": 565600 },
+    { "label": "Apr '26", "price": 568800 },
+    { "label": "May '26", "price": 570500 },
+    { "label": "Jun '26", "price": 572500 },
+    { "label": "Jul '26", "price": 569200 },
+    { "label": "Aug '26", "price": 569800 }
+  ],
+  "insights": [
+    "Detached homes remain the market's anchor, but the pullback reached them too: 875 sales in August, down 12%, with the decline concentrated below $1,000,000 while sales above that line grew. New listings eased 6% to 1,635, holding months of supply to 3.39 and the benchmark at $744,300, barely changed from July and down just 1.1% on the year. Location decided everything: supply stayed under three months in the North West, West, South and South East, but ran above four months in the North and North East, and prices followed, up more than 2% in the West and City Centre while the North East fell over 6%.",
+    "Semi-detached is the only property type in Calgary still showing a year-over-year price gain, at $690,500, up 1.0%. August sales of 168 were down 18%, and with new listings off only 3% the sales-to-new-listings ratio slipped to 56%, pushing months of supply above three for the first time since January. Inventory sits nearly 5% above last year. Price gains in the City Centre, North West and West districts are carrying the annual increase against pullbacks elsewhere.",
+    "Row prices continue to adjust under competition the resale market cannot control: additional new-home supply and more rental product available have both pulled buyers away. The benchmark eased to $415,200, down nearly 1% from July and 5.4% below last year, with year-to-date sales off 15%. Months of supply held near four for a second straight month at 3.85, rising above four in the City Centre, North East and North while the West district stayed near three. Declines ranged from just over 1% in the North West to more than 12% in the North East.",
+    "Apartment condominiums are the clearest buyer's market in the city, with 5.68 months of resale supply and a 48% sales-to-new-listings ratio. The benchmark fell to $295,400, down 8.2% year-over-year and roughly 13% below the August 2024 peak of $341,300. August sales of 333 were down 26%, matching the year-to-date decline. New listings dropped 20%, enough to stop inventory climbing further but not enough to shift the segment out of buyer's conditions after two years of supply outrunning demand.",
+    "The reason prices held while sales fell is that both sides of the market stepped back at once. New listings dropped 9.7% year-over-year to 3,141, and inventory finished August at 6,509 units, actually 2.3% below last August. Months of supply still rose to 3.92, up almost 17% on the year, so conditions are genuinely softer than 2025, but nowhere near the level that forces broad price cuts. Homes are taking longer to sell, with median days on market at 41, up 7% from last August.",
+    "Around the region the spread is wider than inside the city. Okotoks is the tightest market at 2.42 months of supply on an 81% sales-to-new-listings ratio, with a benchmark of $608,400. Chestermere is the loosest at 8.72 months after its ratio fell below 30%, leaving its $697,400 benchmark 1.6% below last year. Cochrane was the one bright spot for activity, with August sales up 34% year-over-year and year-to-date sales up more than 5%, though its benchmark still eased to $570,200. Airdrie remains the softest on price at $508,800, down 4.5% year-over-year, with the steepest declines in apartment-style homes."
+  ]
+}

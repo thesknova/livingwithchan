@@ -18,8 +18,18 @@ export interface RegionalMarket {
 
 export interface MarketReport {
   slug: string;
+  /**
+   * The month the report is *published*, which is what the title and URL use.
+   * Readers look for the current month when they arrive, so the report that
+   * lands in September is the "September 2026" report even though the figures
+   * in it cover August. Use `dataMonth`/`dataYear` for anything describing the
+   * statistics themselves (chart labels, month-over-month comparisons).
+   */
   month: string;
   year: number;
+  /** The month the statistics actually cover, always one month before `month`. */
+  dataMonth: string;
+  dataYear: number;
   publishedAt: string;
   headline: string;
   summary: string;
