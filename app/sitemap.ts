@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/search/nw`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/search/sw`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/search/se`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE}/blog/calgary-housing-market-august-2026`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/blog/calgary-property-tax-assessment`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${BASE}/blog/renting-vs-buying`, changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE}/blog/bitcoin-real-estate-calgary`, changeFrequency: "yearly", priority: 0.7 },

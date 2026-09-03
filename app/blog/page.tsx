@@ -10,6 +10,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "calgary-housing-market-august-2026",
+    title: "Calgary Housing Market, August 2026: Slower Sales, Steadier Prices",
+    excerpt:
+      "Sales fell 16% and new listings fell 10%, yet the benchmark barely moved. Chan breaks down CREB's August numbers, why the condo segment keeps sliding, and how the market has split in two.",
+    date: "September 3, 2026",
+    category: "Market Insights",
+    readTime: "11 min read",
+  },
+  {
     slug: "calgary-property-tax-assessment",
     title: "Calgary Property Tax Assessment: How It Works and How to Challenge It",
     excerpt:
