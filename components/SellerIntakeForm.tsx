@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitLead, detailsToNotes, LEAD_ERROR_MESSAGE } from "@/lib/crm";
+import { trackLead } from "@/lib/analytics";
 
 const PROPERTY_TYPES = [
   "Detached Home",
@@ -131,36 +133,38 @@ export default function SellerIntakeForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/xwvrdoyj", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          _subject: `Seller Inquiry — ${form.address || form.firstName + " " + form.lastName}`,
-          "First Name": form.firstName,
-          "Last Name": form.lastName,
-          Email: form.email,
-          Phone: form.phone || "Not provided",
+      const ok = await submitLead({
+        source: "seller_intake",
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        propertyInterest: form.address
+          ? `Selling: ${form.address}`
+          : "Selling a property",
+        message: detailsToNotes({
           "Property Address": form.address,
           "Property Type": form.propertyType,
           Bedrooms: form.bedrooms,
           Bathrooms: form.bathrooms,
-          "Square Footage": form.sqft || "Not provided",
-          "Year Built": form.yearBuilt || "Not provided",
+          "Square Footage": form.sqft,
+          "Year Built": form.yearBuilt,
           "Selling Timeline": form.timeline,
-          "Reason for Selling": form.reason || "Not provided",
-          "Recent Updates": form.updates.length ? form.updates.join(", ") : "None selected",
-          "Price Expectation": form.priceExpectation || "Not provided",
-          "Additional Notes": form.additionalNotes || "None",
+          "Reason for Selling": form.reason,
+          "Recent Updates": form.updates,
+          "Price Expectation": form.priceExpectation,
+          "Additional Notes": form.additionalNotes,
         }),
       });
-      if (res.ok) {
+      if (ok) {
+        trackLead("seller_intake");
         setSubmitted(true);
         setForm(initial);
       } else {
-        alert("Something went wrong. Please try again or call 403-681-0107.");
+        alert(LEAD_ERROR_MESSAGE);
       }
     } catch {
-      alert("Something went wrong. Please try again or call 403-681-0107.");
+      alert(LEAD_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }

@@ -8,7 +8,14 @@ declare global {
   }
 }
 
-export type LeadMethod = "contact_form" | "buyer_intake" | "ai_chat";
+export type LeadMethod =
+  | "contact_form"
+  | "buyer_intake"
+  | "seller_intake"
+  | "buyer_segment"
+  | "assessment"
+  | "market_report"
+  | "ai_chat";
 
 export function trackEvent(
   name: string,

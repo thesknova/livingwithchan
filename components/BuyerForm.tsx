@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitLead, detailsToNotes, LEAD_ERROR_MESSAGE } from "@/lib/crm";
+import { trackLead } from "@/lib/analytics";
 
 interface FormState {
   firstName: string;
@@ -43,28 +45,31 @@ export default function BuyerForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/xwvrdoyj", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          "First Name": form.firstName,
-          "Last Name": form.lastName,
-          Email: form.email,
-          Phone: form.phone || "—",
+      const ok = await submitLead({
+        source: "buyer_segment",
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        propertyInterest: [form.buyerType, form.budget]
+          .filter(Boolean)
+          .join(" · "),
+        message: detailsToNotes({
           "Buyer Type": form.buyerType,
           "Budget Range": form.budget,
           Timeline: form.timeline,
-          Message: form.message || "—",
+          Message: form.message,
         }),
       });
-      if (res.ok) {
+      if (ok) {
+        trackLead("buyer_segment");
         setSubmitted(true);
         setForm(initial);
       } else {
-        alert("Something went wrong. Please try again or call 403-681-0107.");
+        alert(LEAD_ERROR_MESSAGE);
       }
     } catch {
-      alert("Something went wrong. Please try again or call 403-681-0107.");
+      alert(LEAD_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }

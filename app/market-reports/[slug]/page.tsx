@@ -10,6 +10,7 @@ import {
   marketColor,
   prevMonthLabel,
 } from "@/lib/market-reports";
+import MarketReportCTA from "@/components/market-report/MarketReportCTA";
 import PriceHistoryChart from "@/components/market-report/PriceHistoryChart";
 import PropertyBreakdown from "@/components/market-report/PropertyBreakdown";
 import MarketMeter from "@/components/market-report/MarketMeter";
@@ -290,6 +291,11 @@ export default async function ReportPage({
         </section>
 
         {/* CTA */}
+        {/* Subscribe first — these month pages are the search entry point, and
+            a reader who found one via "Calgary house prices" is far likelier
+            to leave an email than to start a home search on the spot. */}
+        <MarketReportCTA reportLabel={`${report.month} ${report.year}`} />
+
         <section className="bg-primary rounded-2xl p-8 text-white flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
           <div>
             <h2 className="text-xl font-bold mb-1">

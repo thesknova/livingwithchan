@@ -9,6 +9,7 @@ import {
   marketColor,
 } from "@/lib/market-reports";
 import DistrictMap from "@/components/market-report/DistrictMap";
+import MarketReportCTA from "@/components/market-report/MarketReportCTA";
 import { DISTRICT_NAMES } from "@/lib/districts";
 import { SITE_URL } from "@/lib/site";
 
@@ -386,6 +387,13 @@ export default function MarketReportsPage() {
         )}
 
         {/* ── CTA ─────────────────────────────────────────────────── */}
+        {/* Email capture first: it is the low-friction ask for someone who
+            came here to read price data. The "talk to Chan" banner stays
+            below it for the smaller group already ready to speak to an agent. */}
+        <MarketReportCTA
+          reportLabel={latest ? `${latest.month} ${latest.year}` : undefined}
+        />
+
         <div className="bg-primary rounded-2xl p-8 sm:p-10 text-white flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
           <div>
             <h2 className="font-display text-2xl mb-1.5">Want a personal market analysis?</h2>

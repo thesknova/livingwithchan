@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import { trackLead } from "@/lib/analytics";
+import { submitLead, LEAD_ERROR_MESSAGE } from "@/lib/crm";
 
 interface FormState {
   firstName: string;
@@ -36,33 +37,24 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_CRM_INGEST_URL}/api/leads/ingest`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": process.env.NEXT_PUBLIC_CRM_INGEST_KEY ?? "",
-          },
-          body: JSON.stringify({
-            firstName: form.firstName,
-            lastName: form.lastName,
-            email: form.email,
-            phone: form.phone,
-            message: form.message,
-          }),
-        }
-      );
+      const ok = await submitLead({
+        source: "contact_form",
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      });
 
-      if (res.ok) {
+      if (ok) {
         trackLead("contact_form");
         setSubmitted(true);
         setForm(initial);
       } else {
-        alert("Something went wrong. Please try again or call 403-681-0107.");
+        alert(LEAD_ERROR_MESSAGE);
       }
     } catch {
-      alert("Something went wrong. Please try again or call 403-681-0107.");
+      alert(LEAD_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }

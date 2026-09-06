@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import { trackLead } from "@/lib/analytics";
+import { submitLead, detailsToNotes, LEAD_ERROR_MESSAGE } from "@/lib/crm";
 
 const CALGARY_AREAS = [
   "NW Calgary",
@@ -122,42 +123,41 @@ export default function BuyerIntakeForm() {
     e.preventDefault();
     setLoading(true);
 
-    const payload = {
-      _subject: `New Buyer Intake — ${form.firstName} ${form.lastName}`,
-      "First Name": form.firstName,
-      "Last Name": form.lastName,
-      Email: form.email,
-      Phone: form.phone || "Not provided",
-      "Budget (Min)": form.budgetMin || "Not specified",
-      "Budget (Max)": form.budgetMax || "Not specified",
-      "Target Areas": form.areas.length ? form.areas.join(", ") : "Not specified",
-      Bedrooms: form.bedrooms || "Not specified",
-      Bathrooms: form.bathrooms || "Not specified",
-      "Property Type": form.propertyType || "Not specified",
-      "Must-Have Features": form.mustHaves.length
-        ? form.mustHaves.join(", ")
-        : "None selected",
-      Timeline: form.timeline || "Not specified",
-      "Financing Status": form.financing || "Not specified",
-      "Additional Notes": form.additionalNotes || "None",
-    };
+    const budget = [form.budgetMin, form.budgetMax].filter(Boolean).join("–");
 
     try {
-      const res = await fetch("https://formspree.io/f/mwvwnrga", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
+      const ok = await submitLead({
+        source: "buyer_intake",
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        propertyInterest: [form.propertyType, budget]
+          .filter(Boolean)
+          .join(" · "),
+        message: detailsToNotes({
+          "Budget (Min)": form.budgetMin,
+          "Budget (Max)": form.budgetMax,
+          "Target Areas": form.areas,
+          Bedrooms: form.bedrooms,
+          Bathrooms: form.bathrooms,
+          "Property Type": form.propertyType,
+          "Must-Have Features": form.mustHaves,
+          Timeline: form.timeline,
+          "Financing Status": form.financing,
+          "Additional Notes": form.additionalNotes,
+        }),
       });
 
-      if (res.ok) {
+      if (ok) {
         trackLead("buyer_intake");
         setSubmitted(true);
         setForm(initial);
       } else {
-        alert("Something went wrong. Please try again or call 403-681-0107.");
+        alert(LEAD_ERROR_MESSAGE);
       }
     } catch {
-      alert("Something went wrong. Please try again or call 403-681-0107.");
+      alert(LEAD_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }

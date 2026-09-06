@@ -61,7 +61,8 @@ export default function PrivacyPage() {
 
         <h2 className="text-xl font-bold text-primary mt-10 mb-4">Third-Party Services</h2>
         <ul className="list-disc pl-6 space-y-2 text-gray-600 text-sm mb-6">
-          <li><strong>Formspree</strong> — processes contact and intake form submissions. See their privacy policy at formspree.io.</li>
+          <li><strong>Supabase</strong> — stores contact and intake form submissions in Chan&apos;s client management system. See their privacy policy at supabase.com.</li>
+          <li><strong>Formspree</strong> — emails Chan a notification when the site&apos;s AI assistant captures an inquiry. See their privacy policy at formspree.io.</li>
           <li><strong>Google Analytics</strong> — provides anonymous site usage statistics. See Google&apos;s privacy policy at policies.google.com.</li>
           <li><strong>Cloudflare</strong> — provides security and performance services. See Cloudflare&apos;s privacy policy at cloudflare.com.</li>
         </ul>

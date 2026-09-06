@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitLead, detailsToNotes, LEAD_ERROR_MESSAGE } from "@/lib/crm";
+import { trackLead } from "@/lib/analytics";
 
 interface FormState {
   name: string;
@@ -28,25 +30,26 @@ export default function AssessmentCTAForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/xwvrdoyj", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          Subject: "Free Property Assessment Request",
-          Name: form.name,
-          Email: form.email,
-          Phone: form.phone || "—",
-          "Property Address": form.address || "—",
+      const ok = await submitLead({
+        source: "assessment",
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        propertyInterest: "Free property assessment",
+        message: detailsToNotes({
+          "Property Address": form.address,
+          Request: "Free property assessment (from the tax assessment article)",
         }),
       });
-      if (res.ok) {
+      if (ok) {
+        trackLead("assessment");
         setSubmitted(true);
         setForm(initial);
       } else {
-        alert("Something went wrong. Please try again or call 403-681-0107.");
+        alert(LEAD_ERROR_MESSAGE);
       }
     } catch {
-      alert("Something went wrong. Please try again or call 403-681-0107.");
+      alert(LEAD_ERROR_MESSAGE);
     } finally {
       setLoading(false);
     }

@@ -189,10 +189,14 @@ async function pushLeadToCrm(lead: LeadInput): Promise<boolean> {
         "x-api-key": key,
       },
       body: JSON.stringify({
+        source: "ai_chat",
         firstName: lead.firstName ?? "Website",
         lastName: lead.lastName ?? "Lead",
         email: lead.email ?? "",
         phone: lead.phone ?? "",
+        propertyInterest: [lead.intent, lead.area, lead.budget]
+          .filter(Boolean)
+          .join(" · "),
         message: detailLines.join("\n"),
       }),
     });
