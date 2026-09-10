@@ -46,6 +46,15 @@ const posts = [
     readTime: "11 min read",
   },
   {
+    slug: "calgary-zoning-changes-august-2026",
+    title: "Calgary's Blanket Rezoning Is Gone: What the August 2026 Repeal Actually Changed",
+    excerpt:
+      "On August 4, 2026 the citywide R-CG rezoning was undone and about 99% of affected lots reverted to R-C1 or R-C2. Chan explains what reverted, what kept R-CG, and what it means for buyers, sellers, and investors.",
+    date: "September 10, 2026",
+    category: "Market Insights",
+    readTime: "9 min read",
+  },
+  {
     slug: "calgary-zoning-explained",
     title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
     excerpt:
