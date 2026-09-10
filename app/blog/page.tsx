@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { postsByNewest, formatPostDate } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
@@ -7,80 +8,6 @@ export const metadata: Metadata = {
   description:
     "Practical Calgary real estate advice from REMAX Complete Realty agent Chan Kawaguchi: market insights, buyer and seller tips, neighbourhood guides, and more.",
 };
-
-const posts = [
-  {
-    slug: "calgary-housing-market-august-2026",
-    title: "Calgary Housing Market, August 2026: Slower Sales, Steadier Prices",
-    excerpt:
-      "Sales fell 16% and new listings fell 10%, yet the benchmark barely moved. Chan breaks down CREB's August numbers, why the condo segment keeps sliding, and how the market has split in two.",
-    date: "September 3, 2026",
-    category: "Market Insights",
-    readTime: "11 min read",
-  },
-  {
-    slug: "calgary-property-tax-assessment",
-    title: "Calgary Property Tax Assessment: How It Works and How to Challenge It",
-    excerpt:
-      "Every January, your assessment notice determines how much tax you'll pay. Chan explains how Calgary calculates your assessed value, common errors to look for, and exactly how to challenge it through the ARB.",
-    date: "May 1, 2026",
-    category: "Homeowner Tips",
-    readTime: "10 min read",
-  },
-  {
-    slug: "bitcoin-real-estate-calgary",
-    title: "Bitcoin and Real Estate in Calgary: How Crypto Transactions Actually Work",
-    excerpt:
-      "Calgary has been at the forefront of Bitcoin real estate in Canada. Chan breaks down how it works, the CRA tax implications, and includes a live BTC/CAD calculator.",
-    date: "April 1, 2026",
-    category: "Investor Tips",
-    readTime: "12 min read",
-  },
-  {
-    slug: "legal-vs-illegal-basement-suites-calgary",
-    title: "Legal vs. Illegal Basement Suites in Calgary: What Every Landlord and Tenant Needs to Know",
-    excerpt:
-      "Calgary has 20,000+ registered suites, but many more aren't. Chan breaks down what makes a suite legal, the real risks of an illegal one, and how to legalize yours.",
-    date: "April 1, 2026",
-    category: "Investor Tips",
-    readTime: "11 min read",
-  },
-  {
-    slug: "calgary-zoning-changes-august-2026",
-    title: "Calgary's Blanket Rezoning Is Gone: What the August 2026 Repeal Actually Changed",
-    excerpt:
-      "On August 4, 2026 the citywide R-CG rezoning was undone and about 99% of affected lots reverted to R-C1 or R-C2. Chan explains what reverted, what kept R-CG, and what it means for buyers, sellers, and investors.",
-    date: "September 10, 2026",
-    category: "Market Insights",
-    readTime: "9 min read",
-  },
-  {
-    slug: "calgary-zoning-explained",
-    title: "Calgary Zoning Explained: R-CG, R-C1, M-C1, and the Blanket Rezoning That Changed Everything",
-    excerpt:
-      "The 2024 blanket rezoning automatically converted thousands of Calgary lots to R-CG. Here's what that means and what the potential 2026 repeal could change again.",
-    date: "April 1, 2026",
-    category: "Investor Tips",
-    readTime: "10 min read",
-  },
-  {
-    slug: "renting-vs-buying",
-    title: "Renting vs. Buying in Calgary: A Honest Comparison",
-    excerpt:
-      "Not sure whether to rent or buy? Chan breaks down the real pros and cons of each, including what most people get wrong about the math.",
-    date: "March 31, 2026",
-    category: "Buyer Tips",
-    readTime: "8 min read",
-  },
-];
-
-/**
- * Newest first. The array above is maintained by hand, so without this a new
- * post lands wherever it was pasted rather than at the top of the grid.
- */
-const postsByNewest = [...posts].sort(
-  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-);
 
 export default function BlogPage() {
   return (
@@ -122,7 +49,7 @@ export default function BlogPage() {
                   {post.excerpt}
                 </p>
                 <div className="mt-5 flex items-center justify-between">
-                  <span className="text-xs text-gray-400">{post.date}</span>
+                  <span className="text-xs text-gray-400">{formatPostDate(post.publishedAt)}</span>
                   <span className="text-xs font-semibold text-accent group-hover:underline">
                     Read More →
                   </span>

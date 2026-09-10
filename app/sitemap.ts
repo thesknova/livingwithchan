@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { listings } from "@/lib/listings";
 import { getAllReports } from "@/lib/market-reports";
+import { posts, postLastModified } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/site";
 
 const BASE = SITE_URL;
@@ -40,16 +41,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/search/nw`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/search/sw`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/search/se`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BASE}/blog/calgary-housing-market-august-2026`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/blog/calgary-zoning-changes-august-2026`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/blog/calgary-property-tax-assessment`, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${BASE}/blog/renting-vs-buying`, changeFrequency: "yearly", priority: 0.7 },
-    { url: `${BASE}/blog/bitcoin-real-estate-calgary`, changeFrequency: "yearly", priority: 0.7 },
-    { url: `${BASE}/blog/calgary-zoning-explained`, changeFrequency: "yearly", priority: 0.7 },
-    { url: `${BASE}/blog/legal-vs-illegal-basement-suites-calgary`, changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/terms`, changeFrequency: "yearly", priority: 0.3 },
   ];
+
+  // Derived from the post registry so a new post cannot be live but missing
+  // here, and carries the post's own date as lastmod.
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: postLastModified(post),
+    changeFrequency: post.changeFrequency ?? ("yearly" as const),
+    priority: post.priority ?? 0.7,
+  }));
 
   const listingRoutes: MetadataRoute.Sitemap = listings.map((l) => ({
     url: `${BASE}/listings/${l.id}`,
@@ -74,11 +77,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // data dir may not exist in all environments
   }
 
-  const dated = staticRoutes.map((route) =>
-    route.url === `${BASE}/market-reports` && latestReportDate
-      ? { ...route, lastModified: latestReportDate }
-      : route
-  );
+  // Max rather than blogRoutes[0], so appending a post to the registry in any
+  // order still dates the index correctly.
+  const newestPost = posts.length
+    ? new Date(Math.max(...posts.map((p) => postLastModified(p).getTime())))
+    : undefined;
+  const dated = staticRoutes.map((route) => {
+    if (route.url === `${BASE}/market-reports` && latestReportDate) {
+      return { ...route, lastModified: latestReportDate };
+    }
+    // The blog index lists every post, so it is as fresh as the newest one.
+    if (route.url === `${BASE}/blog` && newestPost) {
+      return { ...route, lastModified: newestPost };
+    }
+    return route;
+  });
 
-  return [...dated, ...listingRoutes, ...reportRoutes];
+  return [...dated, ...listingRoutes, ...blogRoutes, ...reportRoutes];
 }
