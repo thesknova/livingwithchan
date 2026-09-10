@@ -9,10 +9,34 @@ export const metadata: Metadata = {
   description:
     "On August 4, 2026 Calgary's blanket rezoning was repealed and about 99% of affected lots went back to R-C1 or R-C2. Here is what reverted, what kept R-CG, what changed for suites, and what it means for buyers, sellers, and investors.",
   openGraph: {
+    // Next.js replaces the parent openGraph object rather than merging it, so
+    // type, siteName and the image have to be restated here or this page ships
+    // with no share image at all.
+    type: "article",
+    siteName: "Living With Chan",
     title: "Calgary Zoning Changes August 2026: The Blanket Rezoning Repeal Explained",
     description:
       "Calgary undid its citywide R-CG rezoning on August 4, 2026. Rowhouses and townhouses are now approved lot by lot, through Council. Chan Kawaguchi explains what actually changed.",
     url: "https://www.livingwithchan.com/blog/calgary-zoning-changes-august-2026",
+    publishedTime: "2026-09-10T00:00:00.000Z",
+    modifiedTime: "2026-09-10T00:00:00.000Z",
+    authors: ["Chan Kawaguchi"],
+    images: [
+      {
+        url: "/blog/calgary-zoning-august-2026-hero.png",
+        width: 1600,
+        height: 840,
+        alt: "Calgary zoning after the August 2026 repeal: four rowhouses allowed by default under R-CG, versus a single detached home under R-C1 or R-C2",
+      },
+    ],
+  },
+  twitter: {
+    // Same story: without this the card inherits the site-wide homepage title.
+    card: "summary_large_image",
+    title: "Calgary Zoning Changes August 2026: The Blanket Rezoning Repeal Explained",
+    description:
+      "The citywide R-CG rezoning was undone on August 4, 2026. Rowhouses are approved lot by lot again, through Council.",
+    images: ["/blog/calgary-zoning-august-2026-hero.png"],
   },
 };
 
@@ -27,6 +51,41 @@ const articleSchema = {
   datePublished: "2026-09-10",
   dateModified: "2026-09-10",
   url: "https://www.livingwithchan.com/blog/calgary-zoning-changes-august-2026",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.livingwithchan.com/blog/calgary-zoning-changes-august-2026",
+  },
+  image: ["https://www.livingwithchan.com/blog/calgary-zoning-august-2026-hero.png"],
+  articleSection: "Market Insights",
+  inLanguage: "en-CA",
+  isAccessibleForFree: true,
+  keywords: [
+    "Calgary blanket rezoning repeal",
+    "R-CG",
+    "R-C1",
+    "R-C2",
+    "land use redesignation",
+    "Calgary infill",
+    "secondary suite",
+    "backyard suite",
+    "Bylaw 26P2026",
+  ],
+  about: { "@type": "Place", name: "Calgary, Alberta" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.livingwithchan.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.livingwithchan.com/blog" },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Calgary Zoning Changes August 2026",
+      item: "https://www.livingwithchan.com/blog/calgary-zoning-changes-august-2026",
+    },
+  ],
 };
 
 const inlineLink = "font-semibold text-accent hover:underline";
@@ -35,6 +94,7 @@ export default function CalgaryZoningChangesPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="bg-neutral-light min-h-screen">
         <div className="bg-primary text-white py-14 px-6">
           <div className="max-w-3xl mx-auto">
@@ -318,7 +378,12 @@ export default function CalgaryZoningChangesPost() {
               low-density residential district. A qualifying basement suite no longer needs a development permit at
               all. It goes straight to building permit review, provided it meets the requirements in the Land Use
               Bylaw. For a homeowner who wants a mortgage helper or a legal rental, that is a genuine improvement over
-              the old process, and it survived the repeal untouched.
+              the old process, and it survived the repeal untouched. Zoning is only half the job, though. A suite
+              still has to meet the building and safety requirements that separate{" "}
+              <Link href="/blog/legal-vs-illegal-basement-suites-calgary" className={inlineLink}>
+                a legal suite from an illegal one
+              </Link>
+              , and none of that changed with the repeal.
             </p>
             <p>
               Backyard suites, sometimes called garden or laneway suites, did not get the same treatment. Council
@@ -372,7 +437,11 @@ export default function CalgaryZoningChangesPost() {
             <p>
               One more thing worth watching: if the supply of new infill units slows down, that pressure does not
               disappear. It moves. Established neighbourhoods with the character buyers want may see more competition
-              for the existing housing stock, not less.
+              for the existing housing stock, not less. The monthly{" "}
+              <Link href="/market-reports" className={inlineLink}>
+                Calgary market reports
+              </Link>{" "}
+              are the place to watch whether that shows up in prices.
             </p>
           </section>
 

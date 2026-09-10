@@ -74,6 +74,14 @@ const posts = [
   },
 ];
 
+/**
+ * Newest first. The array above is maintained by hand, so without this a new
+ * post lands wherever it was pasted rather than at the top of the grid.
+ */
+const postsByNewest = [...posts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
 export default function BlogPage() {
   return (
     <div className="bg-neutral-light min-h-screen">
@@ -94,7 +102,7 @@ export default function BlogPage() {
       {/* Post list */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {postsByNewest.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
