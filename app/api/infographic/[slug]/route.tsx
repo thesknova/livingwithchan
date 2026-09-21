@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 import { getReport, formatPrice, formatChange, marketLabel } from "@/lib/market-reports";
 
@@ -5,6 +7,12 @@ export const runtime = "nodejs";
 
 // 1080x1080 square optimised for Instagram and Facebook
 const SIZE = 1080;
+
+// Satori needs images as data URIs (or absolute URLs); reading from disk avoids
+// a network round trip to our own domain. 1405x711 source, ~1.98:1.
+const REMAX_LOGO = `data:image/jpeg;base64,${fs
+  .readFileSync(path.join(process.cwd(), "public", "remax-complete-realty-logo.jpg"))
+  .toString("base64")}`;
 
 export async function GET(
   _req: Request,
@@ -40,7 +48,7 @@ export async function GET(
       >
         {/* Decorative accent bar */}
         <div
-          style={{
+          style={{ display: "flex",
             position: "absolute",
             top: 0,
             left: 64,
@@ -53,19 +61,19 @@ export async function GET(
 
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 40 }}>
-          <div>
-            <div style={{ fontSize: 13, color: "#A3856F", fontWeight: 700, letterSpacing: 3, textTransform: "uppercase", marginBottom: 10 }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", fontSize: 13, color: "#A3856F", fontWeight: 700, letterSpacing: 3, textTransform: "uppercase", marginBottom: 10 }}>
               Calgary Housing Market
             </div>
-            <div style={{ fontSize: 56, fontWeight: 800, color: "white", lineHeight: 1.0 }}>
+            <div style={{ display: "flex", fontSize: 56, fontWeight: 800, color: "white", lineHeight: 1.0 }}>
               {report.month}
             </div>
-            <div style={{ fontSize: 32, fontWeight: 400, color: "#9CA3AF", lineHeight: 1.1 }}>
+            <div style={{ display: "flex", fontSize: 32, fontWeight: 400, color: "#9CA3AF", lineHeight: 1.1 }}>
               {report.year}
             </div>
           </div>
           <div
-            style={{
+            style={{ display: "flex",
               background: "rgba(163,133,111,0.15)",
               border: "1px solid #A3856F",
               color: "#A3856F",
@@ -92,25 +100,25 @@ export async function GET(
             alignItems: "center",
           }}
         >
-          <div>
-            <div style={{ fontSize: 13, color: "#9CA3AF", fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", fontSize: 13, color: "#9CA3AF", fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 8 }}>
               Overall Benchmark Price
             </div>
-            <div style={{ fontSize: 64, fontWeight: 800, color: "white", lineHeight: 1 }}>
+            <div style={{ display: "flex", fontSize: 64, fontWeight: 800, color: "white", lineHeight: 1 }}>
               {formatPrice(report.benchmarkPrice.overall)}
             </div>
           </div>
-          <div style={{ textAlign: "right" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
             <div
-              style={{
+              style={{ display: "flex",
                 fontSize: 28,
                 fontWeight: 700,
                 color: report.benchmarkPriceYoy.overall >= 0 ? "#34D399" : "#F87171",
               }}
             >
-              {formatChange(report.benchmarkPriceYoy.overall)} YoY
+              {`${formatChange(report.benchmarkPriceYoy.overall)} YoY`}
             </div>
-            <div style={{ fontSize: 13, color: "#9CA3AF", marginTop: 4 }}>Year-over-year</div>
+            <div style={{ display: "flex", fontSize: 13, color: "#9CA3AF", marginTop: 4 }}>Year-over-year</div>
           </div>
         </div>
 
@@ -132,11 +140,11 @@ export async function GET(
                 flexDirection: "column",
               }}
             >
-              <div style={{ fontSize: 11, color: "#A3856F", fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", marginBottom: 8 }}>
+              <div style={{ display: "flex", fontSize: 11, color: "#A3856F", fontWeight: 700, letterSpacing: 2, textTransform: "uppercase", marginBottom: 8 }}>
                 {s.label}
               </div>
-              <div style={{ fontSize: 36, fontWeight: 800, color: "white" }}>{s.value}</div>
-              <div style={{ fontSize: 12, color: "#9CA3AF", marginTop: 4 }}>{s.sub}</div>
+              <div style={{ display: "flex", fontSize: 36, fontWeight: 800, color: "white" }}>{s.value}</div>
+              <div style={{ display: "flex", fontSize: 12, color: "#9CA3AF", marginTop: 4 }}>{s.sub}</div>
             </div>
           ))}
         </div>
@@ -155,14 +163,14 @@ export async function GET(
                 flexDirection: "column",
               }}
             >
-              <div style={{ fontSize: 10, color: "#9CA3AF", fontWeight: 600, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>
+              <div style={{ display: "flex", fontSize: 10, color: "#9CA3AF", fontWeight: 600, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>
                 {t.label}
               </div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: "white" }}>
+              <div style={{ display: "flex", fontSize: 20, fontWeight: 700, color: "white" }}>
                 {formatPrice(t.price)}
               </div>
-              <div style={{ fontSize: 11, color: t.yoy >= 0 ? "#34D399" : "#F87171", marginTop: 2, fontWeight: 600 }}>
-                {formatChange(t.yoy)} YoY
+              <div style={{ display: "flex", fontSize: 11, color: t.yoy >= 0 ? "#34D399" : "#F87171", marginTop: 2, fontWeight: 600 }}>
+                {`${formatChange(t.yoy)} YoY`}
               </div>
             </div>
           ))}
@@ -180,28 +188,17 @@ export async function GET(
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div
-              style={{
-                width: 44,
-                height: 44,
-                background: "#cc0000",
-                borderRadius: 8,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "white",
-                fontSize: 9,
-                fontWeight: 800,
-              }}
-            >
-              RE/MAX
+            {/* Brokerage branding must be the official logo, not a text stand-in.
+                The JPG has a black background, so it sits in a black tile. */}
+            <div style={{ display: "flex", background: "#000", borderRadius: 8, padding: "6px 10px" }}>
+              <img src={REMAX_LOGO} width={99} height={50} alt="REMAX Complete Realty" />
             </div>
-            <div>
-              <div style={{ color: "white", fontSize: 16, fontWeight: 700 }}>Chan Kawaguchi</div>
-              <div style={{ color: "#9CA3AF", fontSize: 12 }}>REMAX Complete Realty</div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", color: "white", fontSize: 16, fontWeight: 700 }}>Chan Kawaguchi</div>
+              <div style={{ display: "flex", color: "#9CA3AF", fontSize: 12 }}>REMAX Complete Realty</div>
             </div>
           </div>
-          <div style={{ color: "#9CA3AF", fontSize: 12 }}>livingwithchan.com · 403-681-0107</div>
+          <div style={{ display: "flex", color: "#9CA3AF", fontSize: 12 }}>livingwithchan.com · 403-681-0107</div>
         </div>
       </div>
     ),

@@ -22,18 +22,24 @@ const nextConfig: NextConfig = {
     const RESLUGGED: Record<string, string> = {
       "2026-03": "2026-04",
     };
-    return Object.entries(RESLUGGED).flatMap(([from, to]) => [
-      {
-        source: `/market-reports/${from}`,
-        destination: `/market-reports/${to}`,
-        permanent: true,
-      },
-      {
-        source: `/market-reports/${from}/infographic`,
-        destination: `/market-reports/${to}/infographic`,
-        permanent: true,
-      },
-    ]);
+    return [
+      // /listings/1 through /listings/9 were placeholder homes from the first
+      // build, with made-up Calgary addresses. They were in the sitemap and got
+      // indexed, so send anyone still arriving on one to the real listings page.
+      { source: "/listings/:id", destination: "/listings", permanent: true },
+      ...Object.entries(RESLUGGED).flatMap(([from, to]) => [
+        {
+          source: `/market-reports/${from}`,
+          destination: `/market-reports/${to}`,
+          permanent: true,
+        },
+        {
+          source: `/market-reports/${from}/infographic`,
+          destination: `/market-reports/${to}/infographic`,
+          permanent: true,
+        },
+      ]),
+    ];
   },
   async headers() {
     return [

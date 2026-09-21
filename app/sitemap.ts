@@ -1,5 +1,4 @@
 import { MetadataRoute } from "next";
-import { listings } from "@/lib/listings";
 import { getAllReports } from "@/lib/market-reports";
 import { posts, postLastModified } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/site";
@@ -54,12 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: post.priority ?? 0.7,
   }));
 
-  const listingRoutes: MetadataRoute.Sitemap = listings.map((l) => ({
-    url: `${BASE}/listings/${l.id}`,
-    changeFrequency: "weekly" as const,
-    priority: 0.6,
-  }));
-
   let reportRoutes: MetadataRoute.Sitemap = [];
   let latestReportDate: Date | undefined;
   try {
@@ -93,5 +86,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return route;
   });
 
-  return [...dated, ...listingRoutes, ...blogRoutes, ...reportRoutes];
+  return [...dated, ...blogRoutes, ...reportRoutes];
 }

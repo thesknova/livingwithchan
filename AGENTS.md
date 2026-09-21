@@ -51,16 +51,13 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - `components/Hero.tsx` — full-bleed photo hero
 - `components/StatsBar.tsx` — "150+ Homes Sold" stat strip
 - `components/AgentBio.tsx` — agent photo + bio (compact prop for homepage)
-- `components/ListingCard.tsx` + `ListingGrid.tsx` — property cards
 - `components/ContactForm.tsx` — form wired to Formspree
 - `components/market-report/DistrictMap.tsx` — interactive 8-district choropleth (client component)
 - `components/ui/Button.tsx` — primary / outline / ghost variants
 
 ## Data
-- `lib/listings.ts` — 9 placeholder Calgary listings
 - `lib/districts.ts` — Calgary's 8 CREB housing districts: pre-projected SVG paths, label
   anchors, and the district/property-type types. No `fs` import, so client components may use it.
-- `lib/types.ts` — `Listing` TypeScript type
 
 ## Monthly Market Report Update
 
