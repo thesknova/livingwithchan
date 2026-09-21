@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      // Sold-home covers published from the CRM (lib/sold.ts).
+      {
+        protocol: "https",
+        hostname: "jrhehczqseqlcflpflmi.supabase.co",
+        pathname: "/storage/v1/object/public/sold-covers/**",
+      },
     ],
   },
   async redirects() {

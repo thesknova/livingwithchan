@@ -8,6 +8,7 @@ import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/motion";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Listings", href: "/listings" },
+  { label: "Sold", href: "/sold" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

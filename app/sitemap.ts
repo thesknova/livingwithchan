@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllReports } from "@/lib/market-reports";
 import { posts, postLastModified } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/site";
+import { fetchSoldPosts } from "@/lib/sold";
 
 const BASE = SITE_URL;
 
@@ -14,10 +15,11 @@ const BASE = SITE_URL;
  * publication date) and omitted everywhere else.
  */
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: BASE, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/listings`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${BASE}/sold`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/sell`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contact`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/about`, changeFrequency: "monthly", priority: 0.8 },
@@ -75,7 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const newestPost = posts.length
     ? new Date(Math.max(...posts.map((p) => postLastModified(p).getTime())))
     : undefined;
+  // /sold is as fresh as the most recently published sale.
+  const sold = await fetchSoldPosts();
+  const newestSale = sold[0] ? new Date(sold[0].publishedAt) : undefined;
   const dated = staticRoutes.map((route) => {
+    if (route.url === `${BASE}/sold` && newestSale) {
+      return { ...route, lastModified: newestSale };
+    }
     if (route.url === `${BASE}/market-reports` && latestReportDate) {
       return { ...route, lastModified: latestReportDate };
     }
