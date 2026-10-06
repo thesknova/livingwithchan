@@ -32,6 +32,17 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "calgary-housing-market-september-2026",
+    title: "Calgary Housing Market, September 2026: Detached Holds the Line While High-Density Keeps Sliding",
+    excerpt:
+      "Detached sales rose more than 4% while apartment prices fell 8%. Chan breaks down CREB's September numbers, the seven-point spread between property types, and which districts are carrying the declines.",
+    publishedAt: "2026-10-06",
+    category: "Market Insights",
+    readTime: "9 min read",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     slug: "calgary-zoning-changes-august-2026",
     title: "Calgary's Blanket Rezoning Is Gone: What the August 2026 Repeal Actually Changed",
     excerpt:

@@ -1,0 +1,389 @@
+{
+  "slug": "2026-10",
+  "month": "October",
+  "year": 2026,
+  "dataMonth": "September",
+  "dataYear": 2026,
+  "publishedAt": "2026-10-06",
+  "headline": "Detached Sales Hold the Line While High-Density Prices Keep Easing",
+  "summary": "Calgary sales held at 1,650 units in September 2026, almost unchanged from August and nearly 4% below last September, as stronger detached activity prevented the usual seasonal pullback. New listings rose almost 7% from August to 3,354, dropping the sales-to-new-listings ratio to 49% and leaving inventory and months of supply roughly where August left them. The citywide benchmark eased to $566,700, 0.8% below last year, with the declines concentrated in apartment and row homes.",
+  "benchmarkPrice": {
+    "overall": 566700,
+    "detached": 739400,
+    "semiDetached": 685200,
+    "townhouse": 412400,
+    "condo": 291400
+  },
+  "benchmarkPriceYoy": {
+    "overall": -0.8,
+    "detached": -1,
+    "semiDetached": 0.1,
+    "townhouse": -5.5,
+    "condo": -8.3
+  },
+  "sales": {
+    "total": 1650,
+    "momChange": -0.6,
+    "yoyChange": -3.8
+  },
+  "newListings": {
+    "total": 3354,
+    "momChange": 6.8,
+    "yoyChange": -11.3
+  },
+  "activeListings": {
+    "total": 6486,
+    "momChange": -0.4,
+    "yoyChange": -6.3
+  },
+  "daysOnMarket": 44,
+  "salesToNewListingsRatio": 49.2,
+  "marketType": "balanced",
+  "monthsOfSupply": {
+    "overall": 3.93,
+    "detached": 3.31,
+    "semiDetached": 3.67,
+    "row": 4.45,
+    "condo": 5.29
+  },
+  "propertyTypeSNLR": {
+    "detached": 52,
+    "semiDetached": 45,
+    "row": 45,
+    "condo": 48
+  },
+  "regionalMarkets": [
+    {
+      "name": "Airdrie",
+      "benchmarkPrice": 505800,
+      "momChange": -0.6,
+      "yoyChange": -3.8,
+      "monthsOfSupply": 4.17,
+      "inventory": 480,
+      "sales": 115
+    },
+    {
+      "name": "Cochrane",
+      "benchmarkPrice": 575400,
+      "momChange": 0.9,
+      "yoyChange": -0.4,
+      "monthsOfSupply": 5.19,
+      "inventory": 353,
+      "sales": 68
+    },
+    {
+      "name": "Okotoks",
+      "benchmarkPrice": 606800,
+      "momChange": -0.3,
+      "yoyChange": 0.1,
+      "monthsOfSupply": 2.18,
+      "inventory": 122,
+      "sales": 56
+    },
+    {
+      "name": "Chestermere",
+      "benchmarkPrice": 690200,
+      "momChange": -1,
+      "yoyChange": -0.2,
+      "monthsOfSupply": 5.73,
+      "inventory": 292,
+      "sales": 51
+    }
+  ],
+  "priceHistory": [
+    {
+      "label": "Apr '26",
+      "price": 568800
+    },
+    {
+      "label": "May '26",
+      "price": 570500
+    },
+    {
+      "label": "Jun '26",
+      "price": 572500
+    },
+    {
+      "label": "Jul '26",
+      "price": 569200
+    },
+    {
+      "label": "Aug '26",
+      "price": 569800
+    },
+    {
+      "label": "Sep '26",
+      "price": 566700
+    }
+  ],
+  "insights": [
+    "Detached homes carried the month: 896 sales, up more than 4% from last September, helped by a jump in new listings that gave buyers something to choose from. At 3.31 months of supply, detached remains the tightest segment in the city.",
+    "The split between property types is now a gap, not a nuance. Detached is down 1% year over year and semi-detached is flat, while row is down 5.5% and apartments are down 8.3%.",
+    "Apartment sales actually improved from August, and inventory eased slightly, but at 5.29 months of supply it is still the most oversupplied segment in Calgary. The benchmark has fallen to $291,400.",
+    "Row homes crossed four months of supply for the first time this year. Declines range from 2% in the North West to nearly 12% in the North East and 12.5% in the East.",
+    "Sellers came back faster than buyers: new listings rose 6.8% from August while sales held flat, pulling the sales-to-new-listings ratio down to 49%.",
+    "Outside the city, Okotoks stayed tight at 2.18 months of supply while Chestermere sat at 5.73. Cochrane was the one regional market with sales up year over year, by nearly 10%."
+  ],
+  "districts": {
+    "Detached": {
+      "City Centre": {
+        "price": 981300,
+        "yoy": 0.72,
+        "mom": -1.45,
+        "mos": 3.5,
+        "inv": 371
+      },
+      "North": {
+        "price": 640200,
+        "yoy": -3.8,
+        "mom": -1.11,
+        "mos": 3.19,
+        "inv": 440
+      },
+      "North East": {
+        "price": 556600,
+        "yoy": -6.01,
+        "mom": -0.7,
+        "mos": 5.61,
+        "inv": 494
+      },
+      "North West": {
+        "price": 781400,
+        "yoy": -0.66,
+        "mom": -0.01,
+        "mos": 2.86,
+        "inv": 352
+      },
+      "West": {
+        "price": 993700,
+        "yoy": 2.69,
+        "mom": 0.12,
+        "mos": 2.73,
+        "inv": 232
+      },
+      "East": {
+        "price": 476200,
+        "yoy": -4.99,
+        "mom": -2.72,
+        "mos": 3.33,
+        "inv": 110
+      },
+      "South": {
+        "price": 709400,
+        "yoy": -0.82,
+        "mom": -0.81,
+        "mos": 2.75,
+        "inv": 555
+      },
+      "South East": {
+        "price": 698900,
+        "yoy": -1.55,
+        "mom": -0.67,
+        "mos": 3.34,
+        "inv": 398
+      },
+      "TOTAL CITY": {
+        "price": 739400,
+        "yoy": -0.95,
+        "mom": -0.66,
+        "mos": 3.31,
+        "inv": 2968
+      }
+    },
+    "Semi-detached": {
+      "City Centre": {
+        "price": 957500,
+        "yoy": 0.2,
+        "mom": -0.85,
+        "mos": 3.48,
+        "inv": 167
+      },
+      "North": {
+        "price": 484100,
+        "yoy": -1.57,
+        "mom": -1.67,
+        "mos": 4.47,
+        "inv": 76
+      },
+      "North East": {
+        "price": 416500,
+        "yoy": -6.02,
+        "mom": -1.61,
+        "mos": 7.89,
+        "inv": 71
+      },
+      "North West": {
+        "price": 680000,
+        "yoy": 1.33,
+        "mom": -0.09,
+        "mos": 3.13,
+        "inv": 50
+      },
+      "West": {
+        "price": 826000,
+        "yoy": 1.46,
+        "mom": 0.24,
+        "mos": 5.18,
+        "inv": 57
+      },
+      "East": {
+        "price": 368600,
+        "yoy": -5.02,
+        "mom": -2.33,
+        "mos": 3.13,
+        "inv": 25
+      },
+      "South": {
+        "price": 524400,
+        "yoy": -1.37,
+        "mom": -0.94,
+        "mos": 2.5,
+        "inv": 80
+      },
+      "South East": {
+        "price": 506100,
+        "yoy": -1.58,
+        "mom": -0.65,
+        "mos": 3.4,
+        "inv": 68
+      },
+      "TOTAL CITY": {
+        "price": 685200,
+        "yoy": 0.09,
+        "mom": -0.77,
+        "mos": 3.67,
+        "inv": 599
+      }
+    },
+    "Row": {
+      "City Centre": {
+        "price": 566200,
+        "yoy": -4.79,
+        "mom": -1.38,
+        "mos": 4.58,
+        "inv": 165
+      },
+      "North": {
+        "price": 373400,
+        "yoy": -7.25,
+        "mom": -0.13,
+        "mos": 3.56,
+        "inv": 178
+      },
+      "North East": {
+        "price": 326100,
+        "yoy": -11.86,
+        "mom": -1.51,
+        "mos": 6,
+        "inv": 144
+      },
+      "North West": {
+        "price": 434000,
+        "yoy": -2.01,
+        "mom": -0.64,
+        "mos": 6.56,
+        "inv": 118
+      },
+      "West": {
+        "price": 439600,
+        "yoy": -6.05,
+        "mom": 1.13,
+        "mos": 5.36,
+        "inv": 118
+      },
+      "East": {
+        "price": 258300,
+        "yoy": -12.53,
+        "mom": -0.42,
+        "mos": 13.67,
+        "inv": 41
+      },
+      "South": {
+        "price": 369200,
+        "yoy": -5.28,
+        "mom": -1.91,
+        "mos": 3.66,
+        "inv": 183
+      },
+      "South East": {
+        "price": 421300,
+        "yoy": -5.45,
+        "mom": -0.57,
+        "mos": 3.41,
+        "inv": 150
+      },
+      "TOTAL CITY": {
+        "price": 412400,
+        "yoy": -5.54,
+        "mom": -0.67,
+        "mos": 4.45,
+        "inv": 1103
+      }
+    },
+    "Apartment": {
+      "City Centre": {
+        "price": 297900,
+        "yoy": -8.08,
+        "mom": -1.85,
+        "mos": 5.77,
+        "inv": 819
+      },
+      "North": {
+        "price": 298400,
+        "yoy": -9.02,
+        "mom": -0.83,
+        "mos": 4.68,
+        "inv": 145
+      },
+      "North East": {
+        "price": 249500,
+        "yoy": -13.07,
+        "mom": -0.95,
+        "mos": 15.38,
+        "inv": 123
+      },
+      "North West": {
+        "price": 274900,
+        "yoy": -7.97,
+        "mom": -2.97,
+        "mos": 5,
+        "inv": 150
+      },
+      "West": {
+        "price": 321700,
+        "yoy": -6.62,
+        "mom": -0.25,
+        "mos": 3.89,
+        "inv": 148
+      },
+      "East": {
+        "price": 209800,
+        "yoy": -13.13,
+        "mom": -0.62,
+        "mos": 4.3,
+        "inv": 43
+      },
+      "South": {
+        "price": 271900,
+        "yoy": -9.22,
+        "mom": -1.02,
+        "mos": 4.61,
+        "inv": 203
+      },
+      "South East": {
+        "price": 309100,
+        "yoy": -7.95,
+        "mom": -0.8,
+        "mos": 4.53,
+        "inv": 181
+      },
+      "TOTAL CITY": {
+        "price": 291400,
+        "yoy": -8.28,
+        "mom": -1.35,
+        "mos": 5.29,
+        "inv": 1816
+      }
+    }
+  }
+}

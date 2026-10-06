@@ -54,34 +54,56 @@ const dir = mkdtempSync(join(tmpdir(), "creb-"));
 const pdf = join(dir, "pkg.pdf");
 writeFileSync(pdf, Buffer.from(await res.arrayBuffer()));
 
-let text;
-try {
-  text = execFileSync("pdftotext", ["-layout", pdf, "-"], {
-    encoding: "utf8",
-    maxBuffer: 64 * 1024 * 1024,
-  });
-} catch {
-  console.error("Could not run `pdftotext`. Install poppler and retry.");
+// `-table` keeps each district table in its own rows. `-layout` was enough
+// until the 09/2026 package, which it reads as one merged table: the four
+// blocks come out interleaved and the rows mix. Xpdf's pdftotext has `-table`,
+// poppler's does not, so try it first and fall back to `-layout`.
+function extract(mode) {
+  try {
+    return execFileSync("pdftotext", [mode, pdf, "-"], {
+      encoding: "utf8",
+      maxBuffer: 64 * 1024 * 1024,
+    });
+  } catch {
+    return null;
+  }
+}
+let mode = "-table";
+let text = extract(mode);
+if (text === null) {
+  mode = "-layout";
+  text = extract(mode);
+}
+if (text === null) {
+  console.error("Could not run `pdftotext`. Install xpdf or poppler and retry.");
   process.exit(1);
 }
 
 // Walk the lines, closing a block each time the TOTAL CITY row lands.
-const blocks = [];
-let current = [];
-for (const line of text.split("\n")) {
-  const m = ROW.exec(line);
-  if (!m) continue;
-  current.push({
-    district: m[1],
-    stat: { price: num(m[4]), yoy: Number(m[5]), mom: Number(m[6]), mos: Number(m[3]), inv: num(m[2]) },
-  });
-  if (m[1] === "TOTAL CITY") {
-    blocks.push(current);
-    current = [];
+function parseBlocks(input) {
+  const blocks = [];
+  let current = [];
+  for (const line of input.split("\n")) {
+    const m = ROW.exec(line);
+    if (!m) continue;
+    current.push({
+      district: m[1],
+      stat: { price: num(m[4]), yoy: Number(m[5]), mom: Number(m[6]), mos: Number(m[3]), inv: num(m[2]) },
+    });
+    if (m[1] === "TOTAL CITY") {
+      blocks.push(current);
+      current = [];
+    }
   }
+  return blocks.filter((b) => b.length === DISTRICT_ORDER.length).slice(0, 4);
 }
 
-const usable = blocks.filter((b) => b.length === DISTRICT_ORDER.length).slice(0, 4);
+let usable = parseBlocks(text);
+// Try the other mode before giving up, in case this month's layout suits it.
+if (usable.length < 4) {
+  const other = extract(mode === "-table" ? "-layout" : "-table");
+  if (other) usable = parseBlocks(other);
+}
 if (usable.length < 4) {
   console.error(
     `Expected 4 complete district blocks, found ${usable.length}. ` +
