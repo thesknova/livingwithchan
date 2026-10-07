@@ -71,6 +71,11 @@ export async function GET(
             <div style={{ display: "flex", fontSize: 32, fontWeight: 400, color: "#9CA3AF", lineHeight: 1.1 }}>
               {report.year}
             </div>
+            {/* The month in the title is when the report is published; the
+                figures below it always cover the month before, so say which. */}
+            <div style={{ display: "flex", fontSize: 15, color: "#9CA3AF", letterSpacing: 1, marginTop: 8 }}>
+              {`${report.dataMonth} ${report.dataYear} data`}
+            </div>
           </div>
           <div
             style={{ display: "flex",
