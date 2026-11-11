@@ -42,3 +42,9 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# Working photo and marketing libraries. Together ~96MB of source JPEGs, PSD-scale
+# PNGs and print PDFs that are never served: anything the site actually uses lives
+# in /public. Kept out of the repo so clones stay small.
+/Pictures/
+/Marketing_Material/
