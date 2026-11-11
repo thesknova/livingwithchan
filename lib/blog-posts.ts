@@ -32,6 +32,17 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "calgary-housing-market-october-2026",
+    title: "Calgary Housing Market, October 2026: Supply Eases Into Winter, and Rates Turn the Other Way",
+    excerpt:
+      "Sales fell 15%, but sellers pulled back just as fast and inventory tightened, holding prices within half a percent of last year. Chan breaks down CREB's October numbers and what the Bank of Canada's first rate hike in three years changes.",
+    publishedAt: "2026-11-10",
+    category: "Market Insights",
+    readTime: "9 min read",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     slug: "calgary-housing-market-september-2026",
     title: "Calgary Housing Market, September 2026: Detached Holds the Line While High-Density Keeps Sliding",
     excerpt:
